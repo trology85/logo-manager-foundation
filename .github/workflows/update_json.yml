@@ -1,0 +1,23 @@
+name: Logo Guncelleyici Bot
+on:
+  push:
+    paths:
+      - 'logos/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Python Kur
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: JSON Guncelle
+        run: python update_logos.py
+      - name: Kaydet ve Push Et
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "LogoBot"
+          git add logolar.json
+          git commit -m "Yeni logo eklendi" || exit 0
+          git push
