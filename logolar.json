@@ -1,7 +1,27 @@
 [
   {
+    "name": " KRA TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ KRA TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": " LKE TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ LKE TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": " OCUKSMART",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ OCUKSMART.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "0 SIFIR TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/0 SIFIR TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "1+1",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/1+1.png",
     "rev": "rev=1"
   },
   {
@@ -10,8 +30,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "1+1",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/1+1.png",
+    "name": "1-2-3.tv",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/1-2-3.tv.png",
     "rev": "rev=1"
   },
   {
@@ -22,11 +42,6 @@
   {
     "name": "1-2-3.tv HD2",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/1-2-3.tv HD2.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "1-2-3.tv",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/1-2-3.tv.png",
     "rev": "rev=1"
   },
   {
@@ -65,6 +80,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "24",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/24.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "24 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/24 HD.png",
     "rev": "rev=1"
@@ -72,11 +92,6 @@
   {
     "name": "24 Kitchen",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/24 Kitchen.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "24",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/24.png",
     "rev": "rev=1"
   },
   {
@@ -90,23 +105,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "360 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/360 HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "360",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/360.png",
     "rev": "rev=1"
   },
   {
-    "name": "3sat HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/3sat HD.png",
+    "name": "360 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/360 HD.png",
     "rev": "rev=1"
   },
   {
     "name": "3sat",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/3sat.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "3sat HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/3sat HD.png",
     "rev": "rev=1"
   },
   {
@@ -155,6 +170,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "A HABER",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A HABER.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "A HABER HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A HABER HD.png",
     "rev": "rev=1"
@@ -165,8 +185,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "A HABER",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A HABER.png",
+    "name": "A NEWS",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A NEWS.png",
     "rev": "rev=1"
   },
   {
@@ -175,8 +195,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "A NEWS",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A NEWS.png",
+    "name": "A PARA",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A PARA.png",
     "rev": "rev=1"
   },
   {
@@ -185,8 +205,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "A PARA",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A PARA.png",
+    "name": "A SPOR",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A SPOR.png",
     "rev": "rev=1"
   },
   {
@@ -200,8 +220,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "A SPOR",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A SPOR.png",
+    "name": "a.tv HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/a.tv HD.png",
     "rev": "rev=1"
   },
   {
@@ -210,23 +230,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "a.tv HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/a.tv HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "a1",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/a1.png",
     "rev": "rev=1"
   },
   {
-    "name": "A2 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A2 HD.png",
+    "name": "A2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A2.png",
     "rev": "rev=1"
   },
   {
-    "name": "A2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A2.png",
+    "name": "A2 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/A2 HD.png",
     "rev": "rev=1"
   },
   {
@@ -270,13 +285,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "action.box",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/action.box.png",
+    "name": "action",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/action.png",
     "rev": "rev=1"
   },
   {
-    "name": "action",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/action.png",
+    "name": "action.box",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/action.box.png",
     "rev": "rev=1"
   },
   {
@@ -380,13 +395,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "AMC SK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AMC SK.png",
+    "name": "AMC",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AMC.png",
     "rev": "rev=1"
   },
   {
-    "name": "AMC",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AMC.png",
+    "name": "AMC SK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AMC SK.png",
     "rev": "rev=1"
   },
   {
@@ -410,13 +425,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Animal Planet Poland HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Animal Planet Poland HD.png",
+    "name": "Animal Planet",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Animal Planet.png",
     "rev": "rev=1"
   },
   {
-    "name": "Animal Planet",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Animal Planet.png",
+    "name": "Animal Planet Poland HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Animal Planet Poland HD.png",
     "rev": "rev=1"
   },
   {
@@ -430,18 +445,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "ANT1 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ANT1 HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "ANT1",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ANT1.png",
     "rev": "rev=1"
   },
   {
+    "name": "ANT1 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ANT1 HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Antalya Radyosu",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Antalya Radyosu.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "ANTENA",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ANTENA.png",
     "rev": "rev=1"
   },
   {
@@ -455,18 +475,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Antena Stars HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Antena Stars HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Antena Stars",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Antena Stars.png",
     "rev": "rev=1"
   },
   {
-    "name": "ANTENA",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ANTENA.png",
+    "name": "Antena Stars HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Antena Stars HD.png",
     "rev": "rev=1"
   },
   {
@@ -530,13 +545,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "AS TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AS TV.png",
+    "name": "AS",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AS.png",
     "rev": "rev=1"
   },
   {
-    "name": "AS",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AS.png",
+    "name": "AS TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AS TV.png",
     "rev": "rev=1"
   },
   {
@@ -550,18 +565,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "AstroTV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AstroTV HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "AstroTV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AstroTV.png",
     "rev": "rev=1"
   },
   {
+    "name": "AstroTV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/AstroTV HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "ATOMIC TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ATOMIC TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "ATV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ATV.png",
     "rev": "rev=1"
   },
   {
@@ -572,11 +592,6 @@
   {
     "name": "ATV HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ATV HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "ATV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ATV.png",
     "rev": "rev=1"
   },
   {
@@ -665,13 +680,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "BBC Earth HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BBC Earth HD.png",
+    "name": "BBC EARTH",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BBC EARTH.png",
     "rev": "rev=1"
   },
   {
-    "name": "BBC EARTH",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BBC EARTH.png",
+    "name": "BBC Earth HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BBC Earth HD.png",
     "rev": "rev=1"
   },
   {
@@ -685,13 +700,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "BBC News Europe",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BBC News Europe.png",
+    "name": "BBC News",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BBC News.png",
     "rev": "rev=1"
   },
   {
-    "name": "BBC News",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BBC News.png",
+    "name": "BBC News Europe",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BBC News Europe.png",
     "rev": "rev=1"
   },
   {
@@ -710,6 +725,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "beIN  Z",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/beIN  Z.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "beIN BOX OFFICE",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/beIN BOX OFFICE.png",
     "rev": "rev=1"
@@ -725,13 +745,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "beIN MOVIES PREMIERE 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/beIN MOVIES PREMIERE 2.png",
+    "name": "beIN İZ",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/beIN İZ.png",
     "rev": "rev=1"
   },
   {
     "name": "beIN MOVIES PREMIERE",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/beIN MOVIES PREMIERE.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "beIN MOVIES PREMIERE 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/beIN MOVIES PREMIERE 2.png",
     "rev": "rev=1"
   },
   {
@@ -830,13 +855,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "beIN  Z",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/beIN  Z.png",
+    "name": "BENG  T RK HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BENG  T RK HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "BENG  T RK HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BENG  T RK HD.png",
+    "name": "BENGÜ TÜRK HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BENGÜ TÜRK HD.png",
     "rev": "rev=1"
   },
   {
@@ -850,13 +875,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "BEYAZ TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BEYAZ TV HD.png",
+    "name": "BEYAZ TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BEYAZ TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "BEYAZ TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BEYAZ TV.png",
+    "name": "BEYAZ TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BEYAZ TV HD.png",
     "rev": "rev=1"
   },
   {
@@ -870,6 +895,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "BFZ TÜRK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BFZ TÜRK.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "BG+",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BG+.png",
     "rev": "rev=1"
@@ -880,13 +910,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Bibel TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Bibel TV HD.png",
+    "name": "Bibel TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Bibel TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "Bibel TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Bibel TV.png",
+    "name": "Bibel TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Bibel TV HD.png",
     "rev": "rev=1"
   },
   {
@@ -925,13 +955,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "BLOOMBERGHT HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BLOOMBERGHT HD.png",
+    "name": "BLOOMBERGHT",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BLOOMBERGHT.png",
     "rev": "rev=1"
   },
   {
-    "name": "BLOOMBERGHT",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BLOOMBERGHT.png",
+    "name": "BLOOMBERGHT HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BLOOMBERGHT HD.png",
     "rev": "rev=1"
   },
   {
@@ -965,13 +995,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "BR Fernsehen Nord",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BR Fernsehen Nord.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "BR Fernsehen Nord HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BR Fernsehen Nord HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "BR Fernsehen Nord",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BR Fernsehen Nord.png",
+    "name": "BR Fernsehen S d",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BR Fernsehen S d.png",
     "rev": "rev=1"
   },
   {
@@ -980,8 +1015,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "BR Fernsehen S d",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BR Fernsehen S d.png",
+    "name": "BR Fernsehen Süd",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BR Fernsehen Süd.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "BR Fernsehen Süd HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BR Fernsehen Süd HD.png",
     "rev": "rev=1"
   },
   {
@@ -1000,13 +1040,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "BRT 2 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BRT 2 HD.png",
+    "name": "BRT 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BRT 2.png",
     "rev": "rev=1"
   },
   {
-    "name": "BRT 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BRT 2.png",
+    "name": "BRT 2 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/BRT 2 HD.png",
     "rev": "rev=1"
   },
   {
@@ -1025,13 +1065,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "bTV Action HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/bTV Action HD.png",
+    "name": "bTV Action",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/bTV Action.png",
     "rev": "rev=1"
   },
   {
-    "name": "bTV Action",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/bTV Action.png",
+    "name": "bTV Action HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/bTV Action HD.png",
     "rev": "rev=1"
   },
   {
@@ -1110,13 +1150,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "CANAL+ Action HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CANAL+ Action HD.png",
+    "name": "CANAL+ Action",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CANAL+ Action.png",
     "rev": "rev=1"
   },
   {
-    "name": "CANAL+ Action",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CANAL+ Action.png",
+    "name": "CANAL+ Action HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CANAL+ Action HD.png",
     "rev": "rev=1"
   },
   {
@@ -1235,13 +1275,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "CARTOON NETWORK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CARTOON NETWORK.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Cartoon Network Poland HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Cartoon Network Poland HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "CARTOON NETWORK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CARTOON NETWORK.png",
+    "name": "CARTOONITO",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CARTOONITO.png",
     "rev": "rev=1"
   },
   {
@@ -1252,11 +1297,6 @@
   {
     "name": "Cartoonito Poland HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Cartoonito Poland HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "CARTOONITO",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CARTOONITO.png",
     "rev": "rev=1"
   },
   {
@@ -1290,8 +1330,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "CGTN DOCUMENTARY HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CGTN DOCUMENTARY HD.png",
+    "name": "CGTN",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CGTN.png",
     "rev": "rev=1"
   },
   {
@@ -1300,13 +1340,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "CGTN Francais HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CGTN Francais HD.png",
+    "name": "CGTN DOCUMENTARY HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CGTN DOCUMENTARY HD.png",
     "rev": "rev=1"
   },
   {
     "name": "CGTN Francais",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CGTN Francais.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "CGTN Francais HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CGTN Francais HD.png",
     "rev": "rev=1"
   },
   {
@@ -1320,18 +1365,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "CGTN",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CGTN.png",
+    "name": "Channel21",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Channel21.png",
     "rev": "rev=1"
   },
   {
     "name": "Channel21 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Channel21 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "Channel21",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Channel21.png",
     "rev": "rev=1"
   },
   {
@@ -1405,6 +1445,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "CNBC",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNBC.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "CNBC HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNBC HD.png",
     "rev": "rev=1"
@@ -1412,11 +1457,6 @@
   {
     "name": "CNBC-E",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNBC-E.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "CNBC",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNBC.png",
     "rev": "rev=1"
   },
   {
@@ -1440,6 +1480,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "CNN T RK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNN T RK.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "CNN T RK HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNN T RK HD.png",
     "rev": "rev=1"
@@ -1450,8 +1495,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "CNN T RK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNN T RK.png",
+    "name": "CNN TÜRK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNN TÜRK.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "CNN TÜRK HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNN TÜRK HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "CNN TÜRK RADYO",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/CNN TÜRK RADYO.png",
     "rev": "rev=1"
   },
   {
@@ -1465,8 +1520,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "Comedy Central HD.",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Comedy Central HD..png",
+    "name": "Comedy Central",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Comedy Central.png",
     "rev": "rev=1"
   },
   {
@@ -1475,8 +1530,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "Comedy Central",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Comedy Central.png",
+    "name": "Comedy Central HD.",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Comedy Central HD..png",
     "rev": "rev=1"
   },
   {
@@ -1500,13 +1555,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Crime Time HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Crime Time HD.png",
+    "name": "Crime Time",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Crime Time.png",
     "rev": "rev=1"
   },
   {
-    "name": "Crime Time",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Crime Time.png",
+    "name": "Crime Time HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Crime Time HD.png",
     "rev": "rev=1"
   },
   {
@@ -1560,6 +1615,16 @@
     "rev": "rev=1"
   },
   {
+    "name": "D Z  PREMIUM",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/D Z  PREMIUM.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "D Z SMART MAX",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/D Z SMART MAX.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "DA VINCI",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DA VINCI.png",
     "rev": "rev=1"
@@ -1570,13 +1635,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Das Erste HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Das Erste HD.png",
+    "name": "Das Erste",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Das Erste.png",
     "rev": "rev=1"
   },
   {
-    "name": "Das Erste",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Das Erste.png",
+    "name": "Das Erste HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Das Erste HD.png",
     "rev": "rev=1"
   },
   {
@@ -1600,18 +1665,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Deluxe Dance by Kontor HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Dance by Kontor HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Deluxe Dance by Kontor",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Dance by Kontor.png",
     "rev": "rev=1"
   },
   {
-    "name": "Deluxe Flashback HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Flashback HD.png",
+    "name": "Deluxe Dance by Kontor HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Dance by Kontor HD.png",
     "rev": "rev=1"
   },
   {
@@ -1620,8 +1680,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "Deluxe Lounge HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Lounge HD.png",
+    "name": "Deluxe Flashback HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Flashback HD.png",
     "rev": "rev=1"
   },
   {
@@ -1630,8 +1690,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "Deluxe Music HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Music HD.png",
+    "name": "Deluxe Lounge HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Lounge HD.png",
     "rev": "rev=1"
   },
   {
@@ -1640,8 +1700,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "Deluxe Rap HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Rap HD.png",
+    "name": "Deluxe Music HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Music HD.png",
     "rev": "rev=1"
   },
   {
@@ -1650,13 +1710,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "Deluxe Rock HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Rock HD.png",
+    "name": "Deluxe Rap HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Rap HD.png",
     "rev": "rev=1"
   },
   {
     "name": "Deluxe Rock",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Rock.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "Deluxe Rock HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Deluxe Rock HD.png",
     "rev": "rev=1"
   },
   {
@@ -1670,6 +1735,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "Diema",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Diema.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Diema Family",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Diema Family.png",
     "rev": "rev=1"
@@ -1680,23 +1750,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "Diema Sport 3 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Diema Sport 3 HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Diema Sport 3",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Diema Sport 3.png",
     "rev": "rev=1"
   },
   {
-    "name": "Diema Sport HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Diema Sport HD.png",
+    "name": "Diema Sport 3 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Diema Sport 3 HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "Diema",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Diema.png",
+    "name": "Diema Sport HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Diema Sport HD.png",
     "rev": "rev=1"
   },
   {
@@ -1735,23 +1800,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "Disney Channel HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Disney Channel HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Disney Channel",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Disney Channel.png",
     "rev": "rev=1"
   },
   {
-    "name": "DISNEY JUNIOR HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DISNEY JUNIOR HD.png",
+    "name": "Disney Channel HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Disney Channel HD.png",
     "rev": "rev=1"
   },
   {
     "name": "Disney Junior",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Disney Junior.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "DISNEY JUNIOR HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DISNEY JUNIOR HD.png",
     "rev": "rev=1"
   },
   {
@@ -1770,13 +1835,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "DIYANET TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DIYANET TV HD.png",
+    "name": "DIYANET TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DIYANET TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "DIYANET TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DIYANET TV.png",
+    "name": "DIYANET TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DIYANET TV HD.png",
     "rev": "rev=1"
   },
   {
@@ -1785,8 +1850,23 @@
     "rev": "rev=1"
   },
   {
+    "name": "DİZİ PREMIUM",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DİZİ PREMIUM.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "DİZİSMART MAX",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DİZİSMART MAX.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Dla Ciebie TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Dla Ciebie TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "DMAX",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DMAX.png",
     "rev": "rev=1"
   },
   {
@@ -1802,11 +1882,6 @@
   {
     "name": "DMAX Italy HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DMAX Italy HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "DMAX",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DMAX.png",
     "rev": "rev=1"
   },
   {
@@ -1840,13 +1915,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Dorcel TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Dorcel TV HD.png",
+    "name": "DORCEL TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DORCEL TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "DORCEL TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DORCEL TV.png",
+    "name": "Dorcel TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Dorcel TV HD.png",
     "rev": "rev=1"
   },
   {
@@ -1860,13 +1935,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "DREAM T RK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DREAM T RK.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "DREAM TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DREAM TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "DREAM T RK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DREAM T RK.png",
+    "name": "DREAM TÜRK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/DREAM TÜRK.png",
     "rev": "rev=1"
   },
   {
@@ -1890,16 +1970,6 @@
     "rev": "rev=1"
   },
   {
-    "name": "D Z  PREMIUM",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/D Z  PREMIUM.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "D Z SMART MAX",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/D Z SMART MAX.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "E! Entertainment",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/E! Entertainment.png",
     "rev": "rev=1"
@@ -1920,6 +1990,16 @@
     "rev": "rev=1"
   },
   {
+    "name": "EK NT RK TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EK NT RK TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "EKİNTÜRK TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EKİNTÜRK TV.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Eko TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eko TV.png",
     "rev": "rev=1"
@@ -1930,23 +2010,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "EKOL TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EKOL TV HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "EKOL TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EKOL TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "EKOTURK HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EKOTURK HD.png",
+    "name": "EKOL TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EKOL TV HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "EK NT RK TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EK NT RK TV.png",
+    "name": "EKOTURK HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EKOTURK HD.png",
     "rev": "rev=1"
   },
   {
@@ -1985,6 +2060,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "ENGELSİZ",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ENGELSİZ.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Epic Drama HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Epic Drama HD.png",
     "rev": "rev=1"
@@ -2020,23 +2100,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "ERT 2 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT 2 HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "ERT 2",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT 2.png",
     "rev": "rev=1"
   },
   {
-    "name": "ERT 3 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT 3 HD.png",
+    "name": "ERT 2 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT 2 HD.png",
     "rev": "rev=1"
   },
   {
     "name": "ERT 3",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT 3.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "ERT 3 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT 3 HD.png",
     "rev": "rev=1"
   },
   {
@@ -2070,23 +2150,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "Eska Rock HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eska Rock HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Eska Rock",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eska Rock.png",
     "rev": "rev=1"
   },
   {
-    "name": "Eska TV Extra HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eska TV Extra HD.png",
+    "name": "Eska Rock HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eska Rock HD.png",
     "rev": "rev=1"
   },
   {
     "name": "Eska TV Extra",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eska TV Extra.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "Eska TV Extra HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eska TV Extra HD.png",
     "rev": "rev=1"
   },
   {
@@ -2115,6 +2195,16 @@
     "rev": "rev=1"
   },
   {
+    "name": "Eurosport",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eurosport.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "EUROSPORT 1",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EUROSPORT 1.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Eurosport 1 Deutschland",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eurosport 1 Deutschland.png",
     "rev": "rev=1"
@@ -2130,8 +2220,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "EUROSPORT 1",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EUROSPORT 1.png",
+    "name": "EUROSPORT 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EUROSPORT 2.png",
     "rev": "rev=1"
   },
   {
@@ -2145,18 +2235,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "EUROSPORT 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/EUROSPORT 2.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Eurosport 4K",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eurosport 4K.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "Eurosport",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Eurosport.png",
     "rev": "rev=1"
   },
   {
@@ -2180,13 +2260,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Fashion TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Fashion TV HD.png",
+    "name": "FASHION TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FASHION TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "FASHION TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FASHION TV.png",
+    "name": "Fashion TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Fashion TV HD.png",
     "rev": "rev=1"
   },
   {
@@ -2212,6 +2292,11 @@
   {
     "name": "FHM T RK",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FHM T RK.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "FHM TÜRK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FHM TÜRK.png",
     "rev": "rev=1"
   },
   {
@@ -2245,6 +2330,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "FILMBOX",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FILMBOX.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "FilmBox Action",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FilmBox Action.png",
     "rev": "rev=1"
@@ -2255,13 +2345,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "FilmBox Extra HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FilmBox Extra HD.png",
+    "name": "FilmBox Extra",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FilmBox Extra.png",
     "rev": "rev=1"
   },
   {
-    "name": "FilmBox Extra",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FilmBox Extra.png",
+    "name": "FilmBox Extra HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FilmBox Extra HD.png",
     "rev": "rev=1"
   },
   {
@@ -2277,11 +2367,6 @@
   {
     "name": "FilmBox Stars",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FilmBox Stars.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "FILMBOX",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FILMBOX.png",
     "rev": "rev=1"
   },
   {
@@ -2315,6 +2400,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "Food Network",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Food Network.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Food Network HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Food Network HD.png",
     "rev": "rev=1"
@@ -2325,13 +2415,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Food Network",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Food Network.png",
+    "name": "FOX",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FOX.png",
     "rev": "rev=1"
   },
   {
-    "name": "FOX",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FOX.png",
+    "name": "FRANCE 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FRANCE 2.png",
     "rev": "rev=1"
   },
   {
@@ -2340,8 +2430,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "FRANCE 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/FRANCE 2.png",
+    "name": "France 24",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/France 24.png",
     "rev": "rev=1"
   },
   {
@@ -2362,11 +2452,6 @@
   {
     "name": "France 24 HD (in English)",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/France 24 HD (in English).png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "France 24",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/France 24.png",
     "rev": "rev=1"
   },
   {
@@ -2470,13 +2555,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "GRT TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/GRT TV.png",
+    "name": "GRT",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/GRT.png",
     "rev": "rev=1"
   },
   {
-    "name": "GRT",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/GRT.png",
+    "name": "GRT TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/GRT TV.png",
     "rev": "rev=1"
   },
   {
@@ -2495,8 +2580,23 @@
     "rev": "rev=1"
   },
   {
+    "name": "H henrausch",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/H henrausch.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "H henrausch HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/H henrausch HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "H!t Music Channel",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/H!t Music Channel.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "HABER GLOBAL",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HABER GLOBAL.png",
     "rev": "rev=1"
   },
   {
@@ -2505,8 +2605,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "HABER GLOBAL",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HABER GLOBAL.png",
+    "name": "HABERTURK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HABERTURK.png",
     "rev": "rev=1"
   },
   {
@@ -2520,13 +2620,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "HABERTURK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HABERTURK.png",
+    "name": "HADI TV 3",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HADI TV 3.png",
     "rev": "rev=1"
   },
   {
-    "name": "HADI TV 3",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HADI TV 3.png",
+    "name": "HALK TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HALK TV.png",
     "rev": "rev=1"
   },
   {
@@ -2535,8 +2635,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "HALK TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HALK TV.png",
+    "name": "Handystar TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Handystar TV.png",
     "rev": "rev=1"
   },
   {
@@ -2547,11 +2647,6 @@
   {
     "name": "Handystar TV HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Handystar TV HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "Handystar TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Handystar TV.png",
     "rev": "rev=1"
   },
   {
@@ -2595,6 +2690,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "HGTV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HGTV.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "HGTV HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HGTV HD.png",
     "rev": "rev=1"
@@ -2605,18 +2705,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "HGTV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HGTV.png",
+    "name": "Hip Trips",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Hip Trips.png",
     "rev": "rev=1"
   },
   {
     "name": "Hip Trips HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Hip Trips HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "Hip Trips",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Hip Trips.png",
     "rev": "rev=1"
   },
   {
@@ -2670,13 +2765,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "hr-fernsehen HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/hr-fernsehen HD.png",
+    "name": "hr-fernsehen",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/hr-fernsehen.png",
     "rev": "rev=1"
   },
   {
-    "name": "hr-fernsehen",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/hr-fernsehen.png",
+    "name": "hr-fernsehen HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/hr-fernsehen HD.png",
     "rev": "rev=1"
   },
   {
@@ -2685,13 +2780,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "HSE Extra HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HSE Extra HD.png",
+    "name": "HSE Extra",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HSE Extra.png",
     "rev": "rev=1"
   },
   {
-    "name": "HSE Extra",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HSE Extra.png",
+    "name": "HSE Extra HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HSE Extra HD.png",
     "rev": "rev=1"
   },
   {
@@ -2710,6 +2805,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "HT SPOR",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HT SPOR.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "HT SPOR HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HT SPOR HD.png",
     "rev": "rev=1"
@@ -2720,18 +2820,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "HT SPOR",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/HT SPOR.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Hustler HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Hustler HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "Hustler TV CZ",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Hustler TV CZ.png",
     "rev": "rev=1"
   },
   {
@@ -2740,13 +2830,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "H henrausch HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/H henrausch HD.png",
+    "name": "Hustler TV CZ",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Hustler TV CZ.png",
     "rev": "rev=1"
   },
   {
-    "name": "H henrausch",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/H henrausch.png",
+    "name": "Höhenrausch",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Höhenrausch.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "Höhenrausch HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Höhenrausch HD.png",
     "rev": "rev=1"
   },
   {
@@ -2775,6 +2870,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "ID",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ID.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "ID Poland HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ID Poland HD.png",
     "rev": "rev=1"
@@ -2785,23 +2885,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "ID",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ID.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "INPLUS",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/INPLUS.png",
     "rev": "rev=1"
   },
   {
-    "name": "Insight TV UHD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Insight TV UHD.png",
+    "name": "INSIGHT TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/INSIGHT TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "INSIGHT TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/INSIGHT TV.png",
+    "name": "Insight TV UHD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Insight TV UHD.png",
     "rev": "rev=1"
   },
   {
@@ -2842,6 +2937,16 @@
   {
     "name": "IZVESTIYA",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/IZVESTIYA.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "İKRA TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/İKRA TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "İLKE TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/İLKE TV.png",
     "rev": "rev=1"
   },
   {
@@ -2905,13 +3010,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "JOY FM TÜRKİYE",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/JOY FM TÜRKİYE.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "JOYT RK FM",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/JOYT RK FM.png",
     "rev": "rev=1"
   },
   {
-    "name": "Just Cooking HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Just Cooking HD.png",
+    "name": "JOYTÜRK FM",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/JOYTÜRK FM.png",
     "rev": "rev=1"
   },
   {
@@ -2920,13 +3030,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "Just Fishing HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Just Fishing HD.png",
+    "name": "Just Cooking HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Just Cooking HD.png",
     "rev": "rev=1"
   },
   {
     "name": "Just Fishing",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Just Fishing.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "Just Fishing HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Just Fishing HD.png",
     "rev": "rev=1"
   },
   {
@@ -2975,13 +3090,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "kabel eins classics",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/kabel eins classics.png",
+    "name": "kabel eins",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/kabel eins.png",
     "rev": "rev=1"
   },
   {
-    "name": "Kabel Eins Doku HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Kabel Eins Doku HD.png",
+    "name": "kabel eins classics",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/kabel eins classics.png",
     "rev": "rev=1"
   },
   {
@@ -2990,8 +3105,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "kabel eins HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/kabel eins HD Austria.png",
+    "name": "Kabel Eins Doku HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Kabel Eins Doku HD.png",
     "rev": "rev=1"
   },
   {
@@ -3000,8 +3115,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "kabel eins",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/kabel eins.png",
+    "name": "kabel eins HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/kabel eins HD Austria.png",
     "rev": "rev=1"
   },
   {
@@ -3015,13 +3130,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "KABLO INFO HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KABLO INFO HD.png",
+    "name": "KABLO INFO",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KABLO INFO.png",
     "rev": "rev=1"
   },
   {
-    "name": "KABLO INFO",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KABLO INFO.png",
+    "name": "KABLO INFO HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KABLO INFO HD.png",
     "rev": "rev=1"
   },
   {
@@ -3065,13 +3180,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "KANAL 3 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 3 HD.png",
+    "name": "KANAL 3",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 3.png",
     "rev": "rev=1"
   },
   {
-    "name": "KANAL 3",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 3.png",
+    "name": "KANAL 3 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 3 HD.png",
     "rev": "rev=1"
   },
   {
@@ -3095,8 +3210,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "KANAL 7 AVRUPA HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 7 AVRUPA HD.png",
+    "name": "KANAL 7",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 7.png",
     "rev": "rev=1"
   },
   {
@@ -3105,13 +3220,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "KANAL 7 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 7 HD.png",
+    "name": "KANAL 7 AVRUPA HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 7 AVRUPA HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "KANAL 7",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 7.png",
+    "name": "KANAL 7 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL 7 HD.png",
     "rev": "rev=1"
   },
   {
@@ -3125,13 +3240,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "KANAL D HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL D HD.png",
+    "name": "KANAL D",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL D.png",
     "rev": "rev=1"
   },
   {
-    "name": "KANAL D",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL D.png",
+    "name": "KANAL D HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KANAL D HD.png",
     "rev": "rev=1"
   },
   {
@@ -3180,18 +3295,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "KBS WORLD  HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KBS WORLD  HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "KBS WORLD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KBS WORLD.png",
     "rev": "rev=1"
   },
   {
-    "name": "KIBRIS TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KIBRIS TV HD.png",
+    "name": "KBS WORLD  HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KBS WORLD  HD.png",
     "rev": "rev=1"
   },
   {
@@ -3200,13 +3310,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "KiKA HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KiKA HD.png",
+    "name": "KIBRIS TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KIBRIS TV HD.png",
     "rev": "rev=1"
   },
   {
     "name": "KiKA",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KiKA.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "KiKA HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/KiKA HD.png",
     "rev": "rev=1"
   },
   {
@@ -3290,6 +3405,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "L DER HABER HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/L DER HABER HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "L'EQUIPE",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/L'EQUIPE.png",
     "rev": "rev=1"
@@ -3370,8 +3490,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "LİDER HABER HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/LİDER HABER HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Lokal-TV-Portal HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Lokal-TV-Portal HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "LOVE NATURE",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/LOVE NATURE.png",
     "rev": "rev=1"
   },
   {
@@ -3385,11 +3515,6 @@
     "rev": "rev=1"
   },
   {
-    "name": "LOVE NATURE",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/LOVE NATURE.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "LT1-OOE",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/LT1-OOE.png",
     "rev": "rev=1"
@@ -3400,8 +3525,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "L DER HABER HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/L DER HABER HD.png",
+    "name": "m nchen.tv HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/m nchen.tv HD.png",
     "rev": "rev=1"
   },
   {
@@ -3555,18 +3680,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "MDR S-Anhalt HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR S-Anhalt HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "MDR S-Anhalt",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR S-Anhalt.png",
     "rev": "rev=1"
   },
   {
-    "name": "MDR Sachsen HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR Sachsen HD.png",
+    "name": "MDR S-Anhalt HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR S-Anhalt HD.png",
     "rev": "rev=1"
   },
   {
@@ -3575,13 +3695,28 @@
     "rev": "rev=1"
   },
   {
-    "name": "MDR Th ringen HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR Th ringen HD.png",
+    "name": "MDR Sachsen HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR Sachsen HD.png",
     "rev": "rev=1"
   },
   {
     "name": "MDR Th ringen",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR Th ringen.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "MDR Th ringen HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR Th ringen HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "MDR Thüringen",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR Thüringen.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "MDR Thüringen HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MDR Thüringen HD.png",
     "rev": "rev=1"
   },
   {
@@ -3645,13 +3780,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Mezzo TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Mezzo TV.png",
+    "name": "Mezzo",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Mezzo.png",
     "rev": "rev=1"
   },
   {
-    "name": "Mezzo",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Mezzo.png",
+    "name": "Mezzo TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Mezzo TV.png",
     "rev": "rev=1"
   },
   {
@@ -3715,6 +3850,16 @@
     "rev": "rev=1"
   },
   {
+    "name": "MOVIE TÜRK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MOVIE TÜRK.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "MTV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MTV.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "MTV 00s",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MTV 00s.png",
     "rev": "rev=1"
@@ -3745,11 +3890,6 @@
     "rev": "rev=1"
   },
   {
-    "name": "MTV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MTV.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "MULTIDEPORTE",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/MULTIDEPORTE.png",
     "rev": "rev=1"
@@ -3775,8 +3915,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "m nchen.tv HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/m nchen.tv HD.png",
+    "name": "münchen.tv HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/münchen.tv HD.png",
     "rev": "rev=1"
   },
   {
@@ -3825,18 +3965,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "NDR FS HH HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS HH HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "NDR FS HH",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS HH.png",
     "rev": "rev=1"
   },
   {
-    "name": "NDR FS MV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS MV HD.png",
+    "name": "NDR FS HH HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS HH HD.png",
     "rev": "rev=1"
   },
   {
@@ -3845,8 +3980,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "NDR FS NDS HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS NDS HD.png",
+    "name": "NDR FS MV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS MV HD.png",
     "rev": "rev=1"
   },
   {
@@ -3855,13 +3990,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "NDR FS SH HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS SH HD.png",
+    "name": "NDR FS NDS HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS NDS HD.png",
     "rev": "rev=1"
   },
   {
     "name": "NDR FS SH",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS SH.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "NDR FS SH HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NDR FS SH HD.png",
     "rev": "rev=1"
   },
   {
@@ -3905,13 +4045,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Nickelodeon CZ",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nickelodeon CZ.png",
+    "name": "Nickelodeon",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nickelodeon.png",
     "rev": "rev=1"
   },
   {
-    "name": "Nickelodeon",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nickelodeon.png",
+    "name": "Nickelodeon CZ",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nickelodeon CZ.png",
     "rev": "rev=1"
   },
   {
@@ -3925,6 +4065,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "NITRO",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NITRO.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "NITRO Austria",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NITRO Austria.png",
     "rev": "rev=1"
@@ -3932,11 +4077,6 @@
   {
     "name": "NITRO HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NITRO HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "NITRO",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NITRO.png",
     "rev": "rev=1"
   },
   {
@@ -3950,13 +4090,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "Nova Action HD.",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nova Action HD..png",
+    "name": "NOVA",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NOVA.png",
     "rev": "rev=1"
   },
   {
     "name": "Nova Action HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nova Action HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "Nova Action HD.",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nova Action HD..png",
     "rev": "rev=1"
   },
   {
@@ -3990,6 +4135,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "Nova Sport",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nova Sport.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Nova Sport 1 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nova Sport 1 HD.png",
     "rev": "rev=1"
@@ -4012,16 +4162,6 @@
   {
     "name": "Nova Sport 5 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nova Sport 5 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "Nova Sport",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Nova Sport.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "NOVA",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NOVA.png",
     "rev": "rev=1"
   },
   {
@@ -4095,13 +4235,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "NOW HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NOW HD.png",
+    "name": "NOW",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NOW.png",
     "rev": "rev=1"
   },
   {
-    "name": "NOW",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NOW.png",
+    "name": "NOW HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NOW HD.png",
     "rev": "rev=1"
   },
   {
@@ -4110,13 +4250,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "NR1 FM.",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NR1 FM..png",
+    "name": "NR1 FM",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NR1 FM.png",
     "rev": "rev=1"
   },
   {
-    "name": "NR1 FM",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NR1 FM.png",
+    "name": "NR1 FM.",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NR1 FM..png",
     "rev": "rev=1"
   },
   {
@@ -4132,6 +4272,11 @@
   {
     "name": "NR1 TURK TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NR1 TURK TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "NTV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NTV.png",
     "rev": "rev=1"
   },
   {
@@ -4180,11 +4325,6 @@
     "rev": "rev=1"
   },
   {
-    "name": "NTV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/NTV.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "ntvHD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ntvHD.png",
     "rev": "rev=1"
@@ -4215,13 +4355,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "One Terra HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/One Terra HD.png",
+    "name": "One Terra",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/One Terra.png",
     "rev": "rev=1"
   },
   {
-    "name": "One Terra",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/One Terra.png",
+    "name": "One Terra HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/One Terra HD.png",
     "rev": "rev=1"
   },
   {
@@ -4240,18 +4380,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Orange Sport 1 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 1 HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Orange Sport 1",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 1.png",
     "rev": "rev=1"
   },
   {
-    "name": "Orange Sport 2 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 2 HD.png",
+    "name": "Orange Sport 1 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 1 HD.png",
     "rev": "rev=1"
   },
   {
@@ -4260,8 +4395,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "Orange Sport 3 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 3 HD.png",
+    "name": "Orange Sport 2 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 2 HD.png",
     "rev": "rev=1"
   },
   {
@@ -4270,13 +4405,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "Orange Sport 4 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 4 HD.png",
+    "name": "Orange Sport 3 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 3 HD.png",
     "rev": "rev=1"
   },
   {
     "name": "Orange Sport 4",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 4.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "Orange Sport 4 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Orange Sport 4 HD.png",
     "rev": "rev=1"
   },
   {
@@ -4295,13 +4435,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "ORF III HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF III HD.png",
+    "name": "ORF III",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF III.png",
     "rev": "rev=1"
   },
   {
-    "name": "ORF III",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF III.png",
+    "name": "ORF III HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF III HD.png",
     "rev": "rev=1"
   },
   {
@@ -4310,13 +4450,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "ORF1",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF1.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "ORF1 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF1 HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "ORF1",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF1.png",
+    "name": "ORF2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF2.png",
     "rev": "rev=1"
   },
   {
@@ -4362,11 +4507,6 @@
   {
     "name": "ORF2 W",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF2 W.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "ORF2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ORF2.png",
     "rev": "rev=1"
   },
   {
@@ -4450,13 +4590,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Paramount Network Polska",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Paramount Network Polska.png",
+    "name": "Paramount Network",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Paramount Network.png",
     "rev": "rev=1"
   },
   {
-    "name": "Paramount Network",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Paramount Network.png",
+    "name": "Paramount Network Polska",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Paramount Network Polska.png",
     "rev": "rev=1"
   },
   {
@@ -4745,13 +4885,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Prima COOL HD SK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Prima COOL HD SK.png",
+    "name": "Prima COOL HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Prima COOL HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "Prima COOL HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Prima COOL HD.png",
+    "name": "Prima COOL HD SK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Prima COOL HD SK.png",
     "rev": "rev=1"
   },
   {
@@ -4810,13 +4950,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Pro7 MAXX Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Pro7 MAXX Austria.png",
+    "name": "Pro7 MAXX",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Pro7 MAXX.png",
     "rev": "rev=1"
   },
   {
-    "name": "Pro7 MAXX HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Pro7 MAXX HD Austria.png",
+    "name": "Pro7 MAXX Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Pro7 MAXX Austria.png",
     "rev": "rev=1"
   },
   {
@@ -4825,8 +4965,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Pro7 MAXX",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Pro7 MAXX.png",
+    "name": "Pro7 MAXX HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Pro7 MAXX HD Austria.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "ProSieben",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ProSieben.png",
     "rev": "rev=1"
   },
   {
@@ -4837,11 +4982,6 @@
   {
     "name": "ProSieben HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ProSieben HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "ProSieben",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ProSieben.png",
     "rev": "rev=1"
   },
   {
@@ -4875,6 +5015,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "QVC",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/QVC.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "QVC Deutschland",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/QVC Deutschland.png",
     "rev": "rev=1"
@@ -4897,11 +5042,6 @@
   {
     "name": "QVC ZWEI HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/QVC ZWEI HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "QVC",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/QVC.png",
     "rev": "rev=1"
   },
   {
@@ -4980,13 +5120,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "RADYO 7 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RADYO 7 HD.png",
+    "name": "RADYO 7",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RADYO 7.png",
     "rev": "rev=1"
   },
   {
-    "name": "RADYO 7",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RADYO 7.png",
+    "name": "RADYO 7 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RADYO 7 HD.png",
     "rev": "rev=1"
   },
   {
@@ -5045,6 +5185,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "RADYO VİVA",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RADYO VİVA.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "Rai 1 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Rai 1 HD.png",
     "rev": "rev=1"
@@ -5085,13 +5230,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Rai News 24 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Rai News 24 HD.png",
+    "name": "Rai News 24",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Rai News 24.png",
     "rev": "rev=1"
   },
   {
-    "name": "Rai News 24",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Rai News 24.png",
+    "name": "Rai News 24 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Rai News 24 HD.png",
     "rev": "rev=1"
   },
   {
@@ -5120,23 +5265,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "rbb Berlin HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/rbb Berlin HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "rbb Berlin",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/rbb Berlin.png",
     "rev": "rev=1"
   },
   {
-    "name": "rbb Brandenburg HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/rbb Brandenburg HD.png",
+    "name": "rbb Berlin HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/rbb Berlin HD.png",
     "rev": "rev=1"
   },
   {
     "name": "rbb Brandenburg",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/rbb Brandenburg.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "rbb Brandenburg HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/rbb Brandenburg HD.png",
     "rev": "rev=1"
   },
   {
@@ -5155,13 +5300,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Red Adventure HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Red Adventure HD.png",
+    "name": "Red Adventure",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Red Adventure.png",
     "rev": "rev=1"
   },
   {
-    "name": "Red Adventure",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Red Adventure.png",
+    "name": "Red Adventure HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Red Adventure HD.png",
     "rev": "rev=1"
   },
   {
@@ -5245,13 +5390,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Romance TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Romance TV HD.png",
+    "name": "Romance TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Romance TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "Romance TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Romance TV.png",
+    "name": "Romance TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Romance TV HD.png",
     "rev": "rev=1"
   },
   {
@@ -5262,6 +5407,11 @@
   {
     "name": "RSI LA 2 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RSI LA 2 HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "RTL",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL.png",
     "rev": "rev=1"
   },
   {
@@ -5285,13 +5435,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "RTL HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL HD Austria.png",
+    "name": "RTL HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "RTL HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL HD.png",
+    "name": "RTL HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL HD Austria.png",
     "rev": "rev=1"
   },
   {
@@ -5310,23 +5460,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "RTL UHD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL UHD Austria.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "RTL UHD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL UHD.png",
     "rev": "rev=1"
   },
   {
-    "name": "RTL",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL.png",
+    "name": "RTL UHD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL UHD Austria.png",
     "rev": "rev=1"
   },
   {
     "name": "RTL9",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTL9.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "RTLup",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTLup.png",
     "rev": "rev=1"
   },
   {
@@ -5340,8 +5490,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "RTLup",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTLup.png",
+    "name": "RTLZWEI",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTLZWEI.png",
     "rev": "rev=1"
   },
   {
@@ -5350,18 +5500,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "RTLZWEI HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTLZWEI HD Austria.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "RTLZWEI HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTLZWEI HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "RTLZWEI",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTLZWEI.png",
+    "name": "RTLZWEI HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RTLZWEI HD Austria.png",
     "rev": "rev=1"
   },
   {
@@ -5415,6 +5560,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "RUMELİ TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RUMELİ TV.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "RUSSIA 24 TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/RUSSIA 24 TV.png",
     "rev": "rev=1"
@@ -5425,13 +5575,78 @@
     "rev": "rev=1"
   },
   {
-    "name": "S SPORT 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S SPORT 2.png",
+    "name": "S NEMA 1001",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA 1001.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA 1002",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA 1002.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA 2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA A LE",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA A LE.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA A LE 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA A LE 2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA AKS YON",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA AKS YON.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA AKS YON 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA AKS YON 2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA KOMED ",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA KOMED .png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA KOMED  2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA KOMED  2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA YERL ",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA YERL .png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S NEMA YERL  2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA YERL  2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S PER FM",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S PER FM.png",
     "rev": "rev=1"
   },
   {
     "name": "S SPORT",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S SPORT.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "S SPORT 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S SPORT 2.png",
     "rev": "rev=1"
   },
   {
@@ -5450,6 +5665,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "SAT.1",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "SAT.1 A",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 A.png",
     "rev": "rev=1"
@@ -5465,13 +5685,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "SAT.1 Gold HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 Gold HD Austria.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "SAT.1 Gold HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 Gold HD.png",
+    "name": "SAT.1 Gold",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 Gold.png",
     "rev": "rev=1"
   },
   {
@@ -5480,8 +5695,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "SAT.1 Gold",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 Gold.png",
+    "name": "SAT.1 Gold HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 Gold HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SAT.1 Gold HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 Gold HD Austria.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SAT.1 Gold Österreich",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 Gold Österreich.png",
     "rev": "rev=1"
   },
   {
@@ -5507,11 +5732,6 @@
   {
     "name": "SAT.1 RhlPf-Hessen",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1 RhlPf-Hessen.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "SAT.1",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SAT.1.png",
     "rev": "rev=1"
   },
   {
@@ -5605,13 +5825,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "SHOW MAX HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SHOW MAX HD.png",
+    "name": "SHOW MAX",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SHOW MAX.png",
     "rev": "rev=1"
   },
   {
-    "name": "SHOW MAX",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SHOW MAX.png",
+    "name": "SHOW MAX HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SHOW MAX HD.png",
     "rev": "rev=1"
   },
   {
@@ -5620,13 +5840,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "SHOW TURK HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SHOW TURK HD.png",
+    "name": "SHOW TURK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SHOW TURK.png",
     "rev": "rev=1"
   },
   {
-    "name": "SHOW TURK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SHOW TURK.png",
+    "name": "SHOW TURK HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SHOW TURK HD.png",
     "rev": "rev=1"
   },
   {
@@ -5645,13 +5865,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "sixx AUSTRIA",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/sixx AUSTRIA.png",
+    "name": "sixx",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/sixx.png",
     "rev": "rev=1"
   },
   {
-    "name": "sixx HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/sixx HD Austria.png",
+    "name": "sixx AUSTRIA",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/sixx AUSTRIA.png",
     "rev": "rev=1"
   },
   {
@@ -5660,8 +5880,68 @@
     "rev": "rev=1"
   },
   {
-    "name": "sixx",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/sixx.png",
+    "name": "sixx HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/sixx HD Austria.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA 1001",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA 1001.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA 1002",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA 1002.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA 2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA AİLE",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA AİLE.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA AİLE 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA AİLE 2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA AKSİYON",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA AKSİYON.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA AKSİYON 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA AKSİYON 2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA KOMEDİ",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA KOMEDİ.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA KOMEDİ 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA KOMEDİ 2.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA TV.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA YERLİ",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA YERLİ.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "SİNEMA YERLİ 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SİNEMA YERLİ 2.png",
     "rev": "rev=1"
   },
   {
@@ -5700,6 +5980,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "SLOWTÜRK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SLOWTÜRK.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "SMTv San Marino HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SMTv San Marino HD.png",
     "rev": "rev=1"
@@ -5730,13 +6015,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "SPACETOON TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPACETOON TV.png",
+    "name": "SPACETOON",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPACETOON.png",
     "rev": "rev=1"
   },
   {
-    "name": "SPACETOON",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPACETOON.png",
+    "name": "SPACETOON TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPACETOON TV.png",
     "rev": "rev=1"
   },
   {
@@ -5745,13 +6030,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "SPORSMART 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPORSMART 2.png",
+    "name": "SPORSMART",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPORSMART.png",
     "rev": "rev=1"
   },
   {
-    "name": "SPORSMART",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPORSMART.png",
+    "name": "SPORSMART 2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPORSMART 2.png",
     "rev": "rev=1"
   },
   {
@@ -5765,6 +6050,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "SPORT1",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPORT1.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "SPORT1 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPORT1 HD.png",
     "rev": "rev=1"
@@ -5772,11 +6062,6 @@
   {
     "name": "SPORT1+",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPORT1+.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "SPORT1",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SPORT1.png",
     "rev": "rev=1"
   },
   {
@@ -5810,13 +6095,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "SR Fernsehen HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SR Fernsehen HD.png",
+    "name": "SR Fernsehen",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SR Fernsehen.png",
     "rev": "rev=1"
   },
   {
-    "name": "SR Fernsehen",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SR Fernsehen.png",
+    "name": "SR Fernsehen HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SR Fernsehen HD.png",
     "rev": "rev=1"
   },
   {
@@ -5860,13 +6145,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "STAR TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/STAR TV HD.png",
+    "name": "STAR TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/STAR TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "STAR TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/STAR TV.png",
+    "name": "STAR TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/STAR TV HD.png",
     "rev": "rev=1"
   },
   {
@@ -5935,6 +6220,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "SUPER RTL",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SUPER RTL.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "SUPER RTL A",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SUPER RTL A.png",
     "rev": "rev=1"
@@ -5942,11 +6232,6 @@
   {
     "name": "SUPER RTL HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SUPER RTL HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "SUPER RTL",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SUPER RTL.png",
     "rev": "rev=1"
   },
   {
@@ -5960,6 +6245,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "SUPERTURK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SUPERTURK.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "SuperTV2",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SuperTV2.png",
     "rev": "rev=1"
@@ -5970,13 +6260,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "SVOBODA NEWS",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SVOBODA NEWS.png",
+    "name": "SVOBODA",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SVOBODA.png",
     "rev": "rev=1"
   },
   {
-    "name": "SVOBODA",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SVOBODA.png",
+    "name": "SVOBODA NEWS",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SVOBODA NEWS.png",
     "rev": "rev=1"
   },
   {
@@ -6015,68 +6305,33 @@
     "rev": "rev=1"
   },
   {
-    "name": "S PER FM",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S PER FM.png",
+    "name": "SÜPER FM",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SÜPER FM.png",
     "rev": "rev=1"
   },
   {
-    "name": "S NEMA 1001",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA 1001.png",
+    "name": "T V BU SPOR 1 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR 1 HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "S NEMA 1002",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA 1002.png",
+    "name": "T V BU SPOR 2 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR 2 HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "S NEMA 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA 2.png",
+    "name": "T V BU SPOR 3 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR 3 HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "S NEMA AKS YON 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA AKS YON 2.png",
+    "name": "T V BU SPOR 4 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR 4 HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "S NEMA AKS YON",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA AKS YON.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "S NEMA A LE 2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA A LE 2.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "S NEMA A LE",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA A LE.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "S NEMA KOMED  2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA KOMED  2.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "S NEMA KOMED ",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA KOMED .png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "S NEMA TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA TV.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "S NEMA YERL  2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA YERL  2.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "S NEMA YERL ",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/S NEMA YERL .png",
+    "name": "T V BU SPOR HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR HD.png",
     "rev": "rev=1"
   },
   {
@@ -6095,8 +6350,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "TARIM ORMAN EKRANI HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TARIM ORMAN EKRANI HD.png",
+    "name": "TAR H TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TAR H TV.png",
     "rev": "rev=1"
   },
   {
@@ -6105,8 +6360,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TAR H TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TAR H TV.png",
+    "name": "TARIM ORMAN EKRANI HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TARIM ORMAN EKRANI HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TARİH TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TARİH TV.png",
     "rev": "rev=1"
   },
   {
@@ -6130,18 +6390,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "TELE 1 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TELE 1 HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "TELE 1",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TELE 1.png",
     "rev": "rev=1"
   },
   {
-    "name": "TELE 5 HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TELE 5 HD Austria.png",
+    "name": "TELE 1 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TELE 1 HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TELE 5",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TELE 5.png",
     "rev": "rev=1"
   },
   {
@@ -6150,8 +6410,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "TELE 5",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TELE 5.png",
+    "name": "TELE 5 HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TELE 5 HD Austria.png",
     "rev": "rev=1"
   },
   {
@@ -6200,13 +6460,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "TEVE2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TEVE2.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TEVE2 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TEVE2 HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "TEVE2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TEVE2.png",
+    "name": "TF1",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TF1.png",
     "rev": "rev=1"
   },
   {
@@ -6217,11 +6482,6 @@
   {
     "name": "TF1 SERIES FILMS",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TF1 SERIES FILMS.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TF1",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TF1.png",
     "rev": "rev=1"
   },
   {
@@ -6240,6 +6500,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "TGRT BELGESEL",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT BELGESEL.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TGRT BELGESEL HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT BELGESEL HD.png",
     "rev": "rev=1"
@@ -6250,8 +6515,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "TGRT BELGESEL",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT BELGESEL.png",
+    "name": "TGRT EU",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT EU.png",
     "rev": "rev=1"
   },
   {
@@ -6260,13 +6525,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TGRT EU",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT EU.png",
+    "name": "TGRT FM",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT FM.png",
     "rev": "rev=1"
   },
   {
-    "name": "TGRT FM",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT FM.png",
+    "name": "TGRT HABER",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT HABER.png",
     "rev": "rev=1"
   },
   {
@@ -6277,11 +6542,6 @@
   {
     "name": "TGRT HABER SD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT HABER SD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TGRT HABER",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TGRT HABER.png",
     "rev": "rev=1"
   },
   {
@@ -6310,8 +6570,38 @@
     "rev": "rev=1"
   },
   {
+    "name": "TİVİBU SPOR 1 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TİVİBU SPOR 1 HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TİVİBU SPOR 2 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TİVİBU SPOR 2 HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TİVİBU SPOR 3 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TİVİBU SPOR 3 HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TİVİBU SPOR 4 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TİVİBU SPOR 4 HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TİVİBU SPOR HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TİVİBU SPOR HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TJK tv HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TJK tv HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TLC",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TLC.png",
     "rev": "rev=1"
   },
   {
@@ -6322,11 +6612,6 @@
   {
     "name": "TLC HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TLC HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TLC",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TLC.png",
     "rev": "rev=1"
   },
   {
@@ -6410,18 +6695,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT ARABI HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT ARABI HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "TRT ARABI",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT ARABI.png",
     "rev": "rev=1"
   },
   {
-    "name": "TRT AVAZ HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT AVAZ HD.png",
+    "name": "TRT ARABI HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT ARABI HD.png",
     "rev": "rev=1"
   },
   {
@@ -6430,8 +6710,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT BELGESEL HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT BELGESEL HD.png",
+    "name": "TRT AVAZ HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT AVAZ HD.png",
     "rev": "rev=1"
   },
   {
@@ -6440,8 +6720,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT COCUK HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT COCUK HD.png",
+    "name": "TRT BELGESEL HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT BELGESEL HD.png",
     "rev": "rev=1"
   },
   {
@@ -6450,13 +6730,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT DIYANET COCUK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT DIYANET COCUK.png",
+    "name": "TRT COCUK HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT COCUK HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "TRT EBA HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT EBA HD.png",
+    "name": "TRT DIYANET COCUK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT DIYANET COCUK.png",
     "rev": "rev=1"
   },
   {
@@ -6465,8 +6745,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "TRT EBA HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT EBA HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TRT FM",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT FM.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TRT HABER",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT HABER.png",
     "rev": "rev=1"
   },
   {
@@ -6475,8 +6765,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT HABER",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT HABER.png",
+    "name": "TRT KURDI",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT KURDI.png",
     "rev": "rev=1"
   },
   {
@@ -6490,23 +6780,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT KURDI",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT KURDI.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "TRT Memleketim FM",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT Memleketim FM.png",
     "rev": "rev=1"
   },
   {
-    "name": "TRT MUZIK HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT MUZIK HD.png",
+    "name": "TRT MUZIK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT MUZIK.png",
     "rev": "rev=1"
   },
   {
-    "name": "TRT MUZIK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT MUZIK.png",
+    "name": "TRT MUZIK HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT MUZIK HD.png",
     "rev": "rev=1"
   },
   {
@@ -6520,6 +6805,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "TRT SPOR",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT SPOR.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TRT SPOR HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT SPOR HD.png",
     "rev": "rev=1"
@@ -6530,18 +6820,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT SPOR",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT SPOR.png",
+    "name": "TRT TURK",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT TURK.png",
     "rev": "rev=1"
   },
   {
     "name": "TRT TURK HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT TURK HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TRT TURK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT TURK.png",
     "rev": "rev=1"
   },
   {
@@ -6555,6 +6840,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "TRT WORLD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT WORLD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TRT WORLD HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT WORLD HD.png",
     "rev": "rev=1"
@@ -6565,8 +6855,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT WORLD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT WORLD.png",
+    "name": "TRT1",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT1.png",
     "rev": "rev=1"
   },
   {
@@ -6575,18 +6865,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TRT1",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT1.png",
+    "name": "TRT2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT2.png",
     "rev": "rev=1"
   },
   {
     "name": "TRT2 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT2 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TRT2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TRT2.png",
     "rev": "rev=1"
   },
   {
@@ -6630,13 +6915,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TV 100 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV 100 HD.png",
+    "name": "TV 100",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV 100.png",
     "rev": "rev=1"
   },
   {
-    "name": "TV 100",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV 100.png",
+    "name": "TV 100 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV 100 HD.png",
     "rev": "rev=1"
   },
   {
@@ -6735,13 +7020,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TV2 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV2 HD.png",
+    "name": "TV2",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV2.png",
     "rev": "rev=1"
   },
   {
-    "name": "TV2",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV2.png",
+    "name": "TV2 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV2 HD.png",
     "rev": "rev=1"
   },
   {
@@ -6765,18 +7050,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TV5 MONDE",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV5 MONDE.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "TV5",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV5.png",
     "rev": "rev=1"
   },
   {
-    "name": "TV5MONDE EUROPE HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV5MONDE EUROPE HD.png",
+    "name": "TV5 MONDE",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV5 MONDE.png",
     "rev": "rev=1"
   },
   {
@@ -6785,23 +7065,13 @@
     "rev": "rev=1"
   },
   {
+    "name": "TV5MONDE EUROPE HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV5MONDE EUROPE HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TV6 HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV6 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TV8 5 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV8 5 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TV8 5",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV8 5.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TV8 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV8 HD.png",
     "rev": "rev=1"
   },
   {
@@ -6810,18 +7080,33 @@
     "rev": "rev=1"
   },
   {
+    "name": "TV8 5",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV8 5.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TV8 5 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV8 5 HD.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TV8 HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TV8 HD.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TVA Vicenza",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVA Vicenza.png",
     "rev": "rev=1"
   },
   {
-    "name": "TVC SUPER",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVC SUPER.png",
+    "name": "TVC",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVC.png",
     "rev": "rev=1"
   },
   {
-    "name": "TVC",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVC.png",
+    "name": "TVC SUPER",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVC SUPER.png",
     "rev": "rev=1"
   },
   {
@@ -6880,6 +7165,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "TVNET",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVNET.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TVNET HD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVNET HD.png",
     "rev": "rev=1"
@@ -6887,11 +7177,6 @@
   {
     "name": "TVNET RADYO",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVNET RADYO.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TVNET",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVNET.png",
     "rev": "rev=1"
   },
   {
@@ -7005,13 +7290,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "TVRUS Plus",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVRUS Plus.png",
+    "name": "TVRUS",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVRUS.png",
     "rev": "rev=1"
   },
   {
-    "name": "TVRUS",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVRUS.png",
+    "name": "TVRUS Plus",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TVRUS Plus.png",
     "rev": "rev=1"
   },
   {
@@ -7025,31 +7310,6 @@
     "rev": "rev=1"
   },
   {
-    "name": "T V BU SPOR 1 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR 1 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "T V BU SPOR 2 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR 2 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "T V BU SPOR 3 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR 3 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "T V BU SPOR 4 HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR 4 HD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "T V BU SPOR HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/T V BU SPOR HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "U TV",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/U TV.png",
     "rev": "rev=1"
@@ -7060,13 +7320,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "ULKE TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ULKE TV HD.png",
+    "name": "ULKE TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ULKE TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "ULKE TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ULKE TV.png",
+    "name": "ULKE TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ULKE TV HD.png",
     "rev": "rev=1"
   },
   {
@@ -7110,23 +7370,23 @@
     "rev": "rev=1"
   },
   {
-    "name": "Viasat Explore Fantazzy",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Viasat Explore Fantazzy.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "Viasat Explore",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Viasat Explore.png",
     "rev": "rev=1"
   },
   {
-    "name": "Viasat History HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Viasat History HD.png",
+    "name": "Viasat Explore Fantazzy",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Viasat Explore Fantazzy.png",
     "rev": "rev=1"
   },
   {
     "name": "VIASAT HISTORY",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VIASAT HISTORY.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "Viasat History HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Viasat History HD.png",
     "rev": "rev=1"
   },
   {
@@ -7140,18 +7400,28 @@
     "rev": "rev=1"
   },
   {
-    "name": "VIRGIN RADIO T RK YE",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VIRGIN RADIO T RK YE.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "VIRGIN RADIO",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VIRGIN RADIO.png",
     "rev": "rev=1"
   },
   {
+    "name": "VIRGIN RADIO T RK YE",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VIRGIN RADIO T RK YE.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "VIRGIN RADIO TÜRKİYE",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VIRGIN RADIO TÜRKİYE.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "VISIT-X.tv",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VISIT-X.tv.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "Vivid",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Vivid.png",
     "rev": "rev=1"
   },
   {
@@ -7167,11 +7437,6 @@
   {
     "name": "Vivid Touch SD",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Vivid Touch SD.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "Vivid",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Vivid.png",
     "rev": "rev=1"
   },
   {
@@ -7205,13 +7470,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "VOX Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOX Austria.png",
+    "name": "VOX",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOX.png",
     "rev": "rev=1"
   },
   {
-    "name": "VOX HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOX HD Austria.png",
+    "name": "VOX Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOX Austria.png",
     "rev": "rev=1"
   },
   {
@@ -7220,8 +7485,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "VOX Music TV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOX Music TV HD.png",
+    "name": "VOX HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOX HD Austria.png",
     "rev": "rev=1"
   },
   {
@@ -7230,18 +7495,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "VOX",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOX.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "VOXup HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOXup HD.png",
+    "name": "VOX Music TV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOX Music TV HD.png",
     "rev": "rev=1"
   },
   {
     "name": "VOXup",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOXup.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "VOXup HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/VOXup HD.png",
     "rev": "rev=1"
   },
   {
@@ -7260,13 +7525,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "WarnerTV HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WarnerTV HD.png",
+    "name": "Warner_TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Warner_TV.png",
     "rev": "rev=1"
   },
   {
-    "name": "Warner_TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Warner_TV.png",
+    "name": "WarnerTV HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WarnerTV HD.png",
     "rev": "rev=1"
   },
   {
@@ -7295,6 +7560,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "WDR D sseldorf",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR D sseldorf.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "WDR Dortmund",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR Dortmund.png",
     "rev": "rev=1"
@@ -7305,8 +7575,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "WDR D sseldorf",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR D sseldorf.png",
+    "name": "WDR Düsseldorf",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR Düsseldorf.png",
     "rev": "rev=1"
   },
   {
@@ -7330,6 +7600,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "WDR HD D sseldorf",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR HD D sseldorf.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "WDR HD Dortmund",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR HD Dortmund.png",
     "rev": "rev=1"
@@ -7340,8 +7615,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "WDR HD D sseldorf",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR HD D sseldorf.png",
+    "name": "WDR HD Düsseldorf",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR HD Düsseldorf.png",
     "rev": "rev=1"
   },
   {
@@ -7355,8 +7630,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "WDR HD Köln",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR HD Köln.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "WDR HD M nster",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR HD M nster.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "WDR HD Münster",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR HD Münster.png",
     "rev": "rev=1"
   },
   {
@@ -7375,8 +7660,18 @@
     "rev": "rev=1"
   },
   {
+    "name": "WDR Köln",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR Köln.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "WDR M nster",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR M nster.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "WDR Münster",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WDR Münster.png",
     "rev": "rev=1"
   },
   {
@@ -7400,8 +7695,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "WELT HD Austria",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WELT HD Austria.png",
+    "name": "WELT",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WELT.png",
     "rev": "rev=1"
   },
   {
@@ -7410,8 +7705,8 @@
     "rev": "rev=1"
   },
   {
-    "name": "WELT",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WELT.png",
+    "name": "WELT HD Austria",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/WELT HD Austria.png",
     "rev": "rev=1"
   },
   {
@@ -7455,13 +7750,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "Xplore HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Xplore HD.png",
+    "name": "Xplore",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Xplore.png",
     "rev": "rev=1"
   },
   {
-    "name": "Xplore",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Xplore.png",
+    "name": "Xplore HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/Xplore HD.png",
     "rev": "rev=1"
   },
   {
@@ -7490,6 +7785,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "YENİ KOCAELİ TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/YENİ KOCAELİ TV.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "YILDIZ EN",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/YILDIZ EN.png",
     "rev": "rev=1"
@@ -7510,23 +7810,18 @@
     "rev": "rev=1"
   },
   {
-    "name": "ZDF HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ZDF HD.png",
-    "rev": "rev=1"
-  },
-  {
     "name": "ZDF",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ZDF.png",
     "rev": "rev=1"
   },
   {
-    "name": "ZDFinfo HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ZDFinfo HD.png",
+    "name": "ZDF HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ZDF HD.png",
     "rev": "rev=1"
   },
   {
-    "name": "ZDFinfo",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ZDFinfo.png",
+    "name": "zdf_neo",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/zdf_neo.png",
     "rev": "rev=1"
   },
   {
@@ -7535,8 +7830,13 @@
     "rev": "rev=1"
   },
   {
-    "name": "zdf_neo",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/zdf_neo.png",
+    "name": "ZDFinfo",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ZDFinfo.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "ZDFinfo HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ZDFinfo HD.png",
     "rev": "rev=1"
   },
   {
@@ -7550,23 +7850,8 @@
     "rev": "rev=1"
   },
   {
-    "name": " OCUKSMART",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ OCUKSMART.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": " KRA TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ KRA TV.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": " LKE TV",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ LKE TV.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "SUPERTURK",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SUPERTURK.png",
+    "name": "ÇOCUKSMART",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ÇOCUKSMART.png",
     "rev": "rev=1"
   }
 ]
