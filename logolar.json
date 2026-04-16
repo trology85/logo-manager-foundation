@@ -2810,6 +2810,11 @@
     "rev": "rev=1"
   },
   {
+    "name": "ic_launcher_foreground",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ic_launcher_foreground.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "icon_purple_background",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/icon_purple_background.png",
     "rev": "rev=1"
@@ -6425,6 +6430,16 @@
     "rev": "rev=1"
   },
   {
+    "name": "TEST0",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/test0.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "TEST1",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/test1.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "TEVE2",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/TEVE2.png",
     "rev": "rev=1"
@@ -7797,16 +7812,6 @@
   {
     "name": "ÇOCUKSMART",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ÇOCUKSMART.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TEST0",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/test0.png",
-    "rev": "rev=1"
-  },
-  {
-    "name": "TEST1",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/test1.png",
     "rev": "rev=1"
   }
 ]
