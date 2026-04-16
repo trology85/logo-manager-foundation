@@ -130,8 +130,9 @@
                 <div id="failLog" style="background:#0a0a0a; padding:15px; border-radius:12px; color:#ff0000; font-family:monospace; font-size:12px; height:350px; overflow-y:auto; border:1px solid #222;"></div>
             </div>
         </div>
-        <button id="downloadM3U" class="btn-green" style="margin-top:20px;">DÜZENLENMİŞ M3U DOSYASINI İNDİR</button>
-    </div>
+       <div id="downloadArea" style="display:none; margin-top:20px;">
+    <button id="downloadM3U" class="btn-green">DÜZENLENMİŞ M3U DOSYASINI İNDİR</button>
+</div>
 </div>
 
 <div id="tab-inspector" style="display:none;">
@@ -228,7 +229,6 @@ async function processM3U() {
     const fileInput = document.getElementById('m3uInput');
     const matchLog = document.getElementById('matchLog');
     const failLog = document.getElementById('failLog');
-    const downloadArea = document.getElementById('downloadArea');
     
     if (!fileInput.files.length) return alert("Önce bir M3U dosyası seçmelisin usta!");
 
@@ -239,12 +239,9 @@ async function processM3U() {
     const lines = content.split('\n');
     let resultLines = [];
     
-    // Temizlik ve Başlık Hazırlığı
+    // Temizlik
     matchLog.innerHTML = "";
     failLog.innerHTML = "";
-    document.getElementById('successTitle').innerText = "✅ Eşleşen Kanallar";
-    document.getElementById('failTitle').innerText = "❌ Fihristte Yok";
-    downloadArea.style.display = 'block';
 
     const myLogos = manifestData.map(m => m.name.toUpperCase());
 
@@ -255,14 +252,15 @@ async function processM3U() {
             const upperName = rawName.toUpperCase();
 
             if (myLogos.includes(upperName)) {
+                // Mevcut logo taglarını temizle ve yenisini ekle
                 let cleanedLine = line.replace(/\s*tvg-logo="[^"]*"/gi, "");
                 cleanedLine = cleanedLine.replace(/\s*logo-id="[^"]*"/gi, "");
                 const finalLine = cleanedLine.replace(',', ` logo-id="${upperName}",`);
                 resultLines.push(finalLine);
-                matchLog.innerHTML += `<div>✔️ ${rawName} -> logo-id eklendi</div>`;
+                matchLog.innerHTML += `<div>✔️ ${rawName}</div>`;
             } else {
                 resultLines.push(line);
-                failLog.innerHTML += `<div>✖️ ${rawName} -> Fihristte yok</div>`;
+                failLog.innerHTML += `<div>✖️ ${rawName}</div>`;
             }
         } else {
             resultLines.push(line);
@@ -270,13 +268,17 @@ async function processM3U() {
     });
 
     finalM3U = resultLines.join('\n');
+    
+    // Sonuç panelini göster
     document.getElementById('detectiveResult').style.display = 'block';
+    
     hideLoader();
     alert("Dedektif taramayı bitirdi!");
 }
 
-// İndirme Fonksiyonu
+// İndirme işlemini sadece BURADA (dışarıda) bırakalım, tek bir yerde olması yeterli
 document.getElementById('downloadM3U').onclick = () => {
+    if(!finalM3U) return alert("Önce bir dosya işlemen lazım usta!");
     const blob = new Blob([finalM3U], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
