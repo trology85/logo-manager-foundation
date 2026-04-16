@@ -2,73 +2,39 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>LOGO MANAGER PRO - V6.0 FINAL</title>
+    <title>LOGO MANAGER PRO - V7.0 SYNC</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <style>
-        /* --- DİNAMİK DEĞİŞKENLER --- */
-        :root {
-            --main-accent: #ff0000;
-            --bg-dark: #0a0a0a;
-            --card-bg: #161616;
-            --text-color: #ffffff;
-            --sidebar-bg: #000000;
-            --border-color: #222222;
-            --input-bg: #1a1a1a;
-            --overlay-bg: rgba(0,0,0,0.9);
-        }
+        :root { --main-accent: #ff0000; --bg-dark: #0a0a0a; --card-bg: #161616; --text-color: #ffffff; --sidebar-bg: #000000; --border-color: #222222; --input-bg: #1a1a1a; --overlay-bg: rgba(0,0,0,0.9); }
+        body.light-mode { --bg-dark: #f0f2f5; --card-bg: #ffffff; --text-color: #1a1a1a; --sidebar-bg: #ffffff; --border-color: #dddfe2; --input-bg: #f5f6f7; --overlay-bg: rgba(255,255,255,0.9); }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: var(--text-color); margin: 0; overflow: hidden; transition: 0.3s; }
 
-        body.light-mode {
-            --bg-dark: #f0f2f5;
-            --card-bg: #ffffff;
-            --text-color: #1a1a1a;
-            --sidebar-bg: #ffffff;
-            --border-color: #dddfe2;
-            --input-bg: #f5f6f7;
-            --overlay-bg: rgba(255,255,255,0.9);
-        }
-
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: var(--text-color); margin: 0; overflow: hidden; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-
-        /* --- GİRİŞ PERDESİ --- */
-        #loginOverlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 9999; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; transition: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .lock-box { background: #1a1a1a; padding: 40px; border-radius: 20px; border-top: 4px solid var(--main-accent); text-align: center; width: 350px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
-        .token-input { width: 100%; padding: 12px; background: #222; border: 1px solid #333; color: white; border-radius: 8px; margin-bottom: 15px; text-align: center; box-sizing: border-box; outline: none; }
-
-        /* --- ANA PANEL --- */
+        /* GİRİŞ VE PANEL YAPI */
+        #loginOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.7s; }
+        .lock-box { background: #1a1a1a; padding: 40px; border-radius: 20px; border-top: 4px solid var(--main-accent); text-align: center; width: 350px; }
         #mainPanel { display: flex; height: 100vh; filter: blur(15px); pointer-events: none; transition: 0.6s; opacity: 0; }
         .sidebar { width: 260px; background: var(--sidebar-bg); padding: 20px; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
         .main-content { flex: 1; overflow-y: auto; padding: 30px; background: var(--bg-dark); }
         
+        /* BUTONLAR VE NAV */
         .nav-btn { background: none; border: none; color: #888; padding: 15px; text-align: left; cursor: pointer; border-radius: 10px; margin-bottom: 5px; width: 100%; transition: 0.3s; font-weight: 600; }
         .nav-btn.active { background: var(--main-accent); color: white !important; }
-        .nav-btn:hover:not(.active) { color: var(--main-accent); background: rgba(128,128,128,0.1); }
-
-        /* --- KARTLAR --- */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; }
-        .logo-card { background: var(--card-bg); padding: 15px; border-radius: 15px; text-align: center; border: 1px solid var(--border-color); position: relative; transition: 0.3s; }
-        .logo-card:hover { border-color: var(--main-accent); transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .logo-card img { width: 90px; height: 90px; object-fit: contain; background: #000; padding: 5px; border-radius: 8px; margin-bottom: 10px; }
-        .select-check { position: absolute; top: 10px; left: 10px; accent-color: var(--main-accent); cursor: pointer; }
-
-        /* --- AYARLAR VE RENK KUTULARI --- */
-        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 20px; }
-        .color-box { height: 50px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); transition: 0.2s; border: 3px solid transparent; text-align: center; padding: 5px; }
-        .color-box:hover { transform: scale(1.05); }
-        .color-box.active { border-color: var(--text-color); box-shadow: 0 0 15px var(--main-accent); }
-
-        /* --- CUSTOM POPUP --- */
-        #customPopup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay-bg); z-index: 10000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
-        .popup-box { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 2px solid var(--main-accent); text-align: center; width: 320px; color: var(--text-color); }
-
-        /* BUTONLAR */
         .btn-action { background: var(--main-accent); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
         .btn-green { background: #28a745; color: white; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; }
-        
+
+        /* KARTLAR */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
+        .logo-card { background: var(--card-bg); padding: 15px; border-radius: 15px; text-align: center; border: 1px solid var(--border-color); position: relative; transition: 0.3s; }
+        .logo-card:hover { border-color: var(--main-accent); transform: translateY(-5px); }
+        .logo-card img { width: 80px; height: 80px; object-fit: contain; background: #000; padding: 5px; border-radius: 8px; margin-bottom: 10px; }
+        .select-check { position: absolute; top: 10px; left: 10px; accent-color: var(--main-accent); cursor: pointer; width: 18px; height: 18px; }
+
+        /* POPUP VE AYARLAR */
+        #customPopup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay-bg); z-index: 10000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
+        .popup-box { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 2px solid var(--main-accent); text-align: center; width: 320px; }
+        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 20px; }
+        .color-box { height: 50px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); border: 3px solid transparent; }
         .spinner { border: 3px solid rgba(0,0,0,0.1); border-top: 3px solid var(--main-accent); border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
@@ -88,127 +54,218 @@
 
     <div id="loginOverlay">
         <div class="lock-box">
-            <h2 style="color:var(--main-accent);">YETKİLİ GİRİŞİ</h2>
+            <h2 id="loginTitle" style="color:var(--main-accent);">SİSTEM KİLİTLİ</h2>
             <input type="password" id="entryToken" class="token-input" placeholder="GitHub Token Girin">
-            <button class="btn-action" style="width:100%" onclick="unlock()">SİSTEMİ AÇ</button>
+            <button class="btn-action" style="width:100%" onclick="unlock()">GİRİŞ YAP</button>
         </div>
     </div>
 
     <div id="mainPanel">
         <div class="sidebar">
-            <h2 style="color:var(--main-accent); text-align:center; margin-bottom:40px;">LOGO PRO</h2>
-            <button id="nav-up" class="nav-btn active" onclick="showTab('tab-upload', this)">📤 Çoklu Yükle</button>
-            <button id="nav-lib" class="nav-btn" onclick="showTab('tab-library', this)">📂 Kütüphane</button>
-            <button id="nav-set" class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar</button>
+            <h2 id="sideLogo" style="color:var(--main-accent); text-align:center; margin-bottom:40px;">LOGO PRO</h2>
+            <button class="nav-btn active" onclick="showTab('tab-upload', this)">📤 Çoklu Yükle</button>
+            <button class="nav-btn" onclick="showTab('tab-library', this)">📂 Tüm Arşiv (GitHub)</button>
+            <button class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar</button>
             <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 20px;">
-                <button id="publishBtn" class="btn-green" onclick="publishJson()">SİSTEMİ YAYINLA</button>
+                <button id="publishBtn" class="btn-green" onclick="publishSystem()">SİSTEMİ YAYINLA</button>
                 <p onclick="logout()" style="text-align:center; color:#666; cursor:pointer; font-size:11px; margin-top:15px;">Güvenli Çıkış</p>
             </div>
         </div>
 
         <div class="main-content">
             <div id="tab-upload" class="tab-content">
-                <h1>📤 Çoklu Logo Yükle</h1>
+                <h1>📤 Yeni Logo Yükle</h1>
                 <div style="border: 3px dashed var(--border-color); padding: 100px; text-align:center; border-radius:20px; cursor:pointer;" onclick="document.getElementById('fileInput').click()">
-                    <h2 id="statusText" style="color:#666;">Dosyaları Seçin</h2>
-                    <input type="file" id="fileInput" multiple accept="image/*" style="display:none" onchange="handleMultipleUpload(this.files)">
+                    <h2 id="statusText" style="color:#666;">Dosyaları Sürükleyin veya Tıklayın</h2>
+                    <input type="file" id="fileInput" multiple accept="image/*" style="display:none" onchange="handleUpload(this.files)">
                 </div>
             </div>
 
             <div id="tab-library" class="tab-content" style="display:none;">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-                    <h1>📂 Logo Kütüphanesi</h1>
-                    <div id="multiDeleteBar" style="display:none; gap:10px; align-items:center; background:var(--main-accent); padding:10px; border-radius:8px; color:white;">
-                        <span id="selectedCount">0 seçildi</span>
-                        <button onclick="deleteSelected()" style="background:white; color:var(--main-accent); border:none; padding:5px 10px; border-radius:4px; font-weight:bold; cursor:pointer;">SİL</button>
+                    <h1>📂 Tüm Arşiv <span id="syncStatus" style="font-size:12px; color:var(--main-accent);"></span></h1>
+                    <div id="deleteTool" style="display:none; gap:10px; background:var(--main-accent); padding:10px; border-radius:8px;">
+                        <span id="selCount">0 seçildi</span>
+                        <button onclick="deleteFiles()" style="background:white; color:var(--main-accent); border:none; padding:5px 10px; border-radius:4px; font-weight:bold; cursor:pointer;">SİL</button>
                     </div>
-                    <input type="text" id="searchInput" placeholder="İsimle ara..." onkeyup="loadLogos()" style="padding:10px; border-radius:8px; border:1px solid var(--border-color); background:var(--card-bg); color:var(--text-color);">
+                    <input type="text" id="searchInput" placeholder="Ara..." onkeyup="filterLogos()" style="padding:10px; border-radius:8px; border:1px solid var(--border-color); background:var(--card-bg); color:var(--text-color);">
                 </div>
-                <div id="gridContainer" class="grid-container"></div>
+                <div id="githubGrid" class="grid-container"></div>
             </div>
 
             <div id="tab-settings" class="tab-content" style="display:none;">
-                <h1>⚙️ Ayarlar & Tema</h1>
-                <div style="background:var(--card-bg); padding:20px; border-radius:15px; border:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-                    <div><h3>Görünüm Modu</h3><p style="color:#666; font-size:12px;">Koyu / Açık tema geçişi</p></div>
-                    <button class="btn-action" onclick="toggleTheme()" id="themeBtn">AÇIK TEMAYA GEÇ</button>
-                </div>
-                <h3>Vurgu Renkleri (10 Renk)</h3>
+                <h1>⚙️ Tema Ayarları</h1>
+                <button class="btn-action" onclick="toggleTheme()" id="themeBtn">AÇIK TEMAYA GEÇ</button>
                 <div class="color-grid" id="colorGrid"></div>
             </div>
         </div>
     </div>
 
 <script>
-    const myColors = [
-        { name: "Vişne Kırmızısı", code: "#ff0000" },
-        { name: "Uygulama Mavisi", code: "#00d4ff" }, // SENİN İSTEDİĞİN O MAVİ
-        { name: "Neon Mavisi", code: "#00f3ff" },
-        { name: "Amber Gold", code: "#ffbf00" },
-        { name: "Bakır Bronz", code: "#cd7f32" },
-        { name: "Gece Laciverti", code: "#000080" },
-        { name: "Electric Violet", code: "#8f00ff" },
-        { name: "Mint Green", code: "#98ff98" },
-        { name: "Petrol Yeşili", code: "#005f56" },
-        { name: "Platin Gri", code: "#e5e4e2" }
-    ];
-
-    function initColors() {
-        const grid = document.getElementById('colorGrid');
-        myColors.forEach(c => {
-            const b = document.createElement('div');
-            b.className = 'color-box'; b.style.background = c.code; b.innerText = c.name;
-            b.onclick = () => { document.documentElement.style.setProperty('--main-accent', c.code); localStorage.setItem('theme_accent', c.code); loadLogos(); };
-            grid.appendChild(b);
-        });
-        const saved = localStorage.getItem('theme_accent') || '#ff0000';
-        document.documentElement.style.setProperty('--main-accent', saved);
-        if(localStorage.getItem('theme_mode') === 'light') toggleTheme(true);
-    }
-
-    function toggleTheme(init = false) {
-        const isLight = document.body.classList.toggle('light-mode');
-        if(!init) localStorage.setItem('theme_mode', isLight ? 'light' : 'dark');
-        document.getElementById('themeBtn').innerText = isLight ? "KOYU TEMAYA GEÇ" : "AÇIK TEMAYA GEÇ";
-    }
-
-    const popup = {
-        dom: document.getElementById('customPopup'),
-        show: function(t, txt, conf = false) {
-            document.getElementById('popupTitle').innerText = t;
-            document.getElementById('popupText').innerText = txt;
-            document.getElementById('btnPopupNo').style.display = conf ? 'block' : 'none';
-            this.dom.style.display = 'flex';
-            return new Promise(res => {
-                document.getElementById('btnPopupYes').onclick = () => { this.dom.style.display='none'; res(true); };
-                document.getElementById('btnPopupNo').onclick = () => { this.dom.style.display='none'; res(false); };
-            });
-        }
-    };
-    window.alert = (m) => popup.show("BİLGİ", m);
-    window.confirm = (m) => popup.show("ONAY", m, true);
-
-    const firebaseConfig = { apiKey: "AIzaSyB...", authDomain: "logo-server-fixed.firebaseapp.com", projectId: "logo-server-fixed", storageBucket: "logo-server-fixed.firebasestorage.app", messagingSenderId: "822558792997", appId: "1:822558792997:web:b83cb53311bb68bbb68ecc" };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
+    // --- KONFİGÜRASYON ---
     const GITHUB_USER = "trology85";
     const GITHUB_REPO = "logo-manager-foundation";
+    const firebaseConfig = { apiKey: "AIzaSyB...", authDomain: "logo-server-fixed.firebaseapp.com", projectId: "logo-server-fixed", storageBucket: "logo-server-fixed.firebasestorage.app", messagingSenderId: "822558792997", appId: "1:822558792997:web:b83cb53311bb68bbb68ecc" };
+    
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    let githubFiles = [];
 
+    // --- RENK PALETİ ---
+    const colors = [
+        { name: "Vişne Kırmızısı", code: "#ff0000" }, { name: "Uygulama Mavisi", code: "#00d4ff" },
+        { name: "Neon Mavisi", code: "#00f3ff" }, { name: "Amber Gold", code: "#ffbf00" },
+        { name: "Bakır Bronz", code: "#cd7f32" }, { name: "Gece Laciverti", code: "#000080" },
+        { name: "Electric Violet", code: "#8f00ff" }, { name: "Mint Green", code: "#98ff98" },
+        { name: "Petrol Yeşili", code: "#005f56" }, { name: "Platin Gri", code: "#e5e4e2" }
+    ];
+
+    // --- GİRİŞ VE TEMA ---
     function unlock() {
         const t = document.getElementById('entryToken').value;
         if(t.startsWith("ghp_")) {
             localStorage.setItem('gh_token', t);
             document.getElementById('loginOverlay').style.transform = "translateY(-100%)";
             setTimeout(() => {
-                document.getElementById('mainPanel').style.filter = "none";
                 document.getElementById('mainPanel').style.opacity = "1";
+                document.getElementById('mainPanel').style.filter = "none";
                 document.getElementById('mainPanel').style.pointerEvents = "all";
-                loadLogos();
+                loadGithubArchive();
             }, 600);
-        } else { alert("Geçersiz Token!"); }
+        }
     }
 
-    function logout() { localStorage.removeItem('gh_token'); location.reload(); }
+    function toggleTheme() {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme_mode', isLight ? 'light' : 'dark');
+        document.getElementById('themeBtn').innerText = isLight ? "KOYU TEMAYA GEÇ" : "AÇIK TEMAYA GEÇ";
+    }
+
+    // --- ANA MOTOR: GITHUB'DAN ÇEKME ---
+    async function loadGithubArchive() {
+        const token = localStorage.getItem('gh_token');
+        const grid = document.getElementById('githubGrid');
+        const status = document.getElementById('syncStatus');
+        
+        status.innerText = "(Taranıyor...)";
+        grid.innerHTML = "<p>GitHub Arşivi Yükleniyor...</p>";
+
+        try {
+            const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logos`, {
+                headers: { "Authorization": `token ${token}` }
+            });
+            const files = await res.json();
+            githubFiles = files.filter(f => f.name.match(/\.(png|jpg|jpeg|gif|webp)$/i));
+            
+            renderGrid(githubFiles);
+            status.innerText = `(${githubFiles.length} Logo Bulundu)`;
+        } catch (e) {
+            grid.innerHTML = "<p>GitHub Bağlantı Hatası!</p>";
+        }
+    }
+
+    function renderGrid(files) {
+        const grid = document.getElementById('githubGrid');
+        grid.innerHTML = "";
+        files.forEach(f => {
+            grid.innerHTML += `
+                <div class="logo-card">
+                    <input type="checkbox" class="select-check" value="${f.path}" data-sha="${f.sha}" onchange="updateSelection()">
+                    <img src="https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${f.path}">
+                    <p style="font-size:11px; overflow:hidden;">${f.name.split('.')[0].toUpperCase()}</p>
+                </div>`;
+        });
+    }
+
+    // --- YÜKLEME VE YAYINLAMA (SYNC) ---
+    async function handleUpload(files) {
+        const token = localStorage.getItem('gh_token');
+        const status = document.getElementById('statusText');
+        for (let file of files) {
+            status.innerHTML = `<div class="spinner"></div> ${file.name} yükleniyor...`;
+            const reader = new FileReader();
+            await new Promise(res => {
+                reader.readAsDataURL(file);
+                reader.onload = async () => {
+                    const content = reader.result.split(',')[1];
+                    await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logos/${file.name}`, {
+                        method: "PUT", headers: { "Authorization": `token ${token}` },
+                        body: JSON.stringify({ message: "Upload", content: content })
+                    });
+                    res();
+                };
+            });
+        }
+        status.innerText = "Yükleme Tamamlandı!";
+        loadGithubArchive();
+    }
+
+    async function publishSystem() {
+        const btn = document.getElementById('publishBtn');
+        btn.innerHTML = `<div class="spinner"></div> SENKRONİZE EDİLİYOR...`;
+        btn.disabled = true;
+
+        try {
+            // 1. GitHub'daki güncel listeyi al
+            const jsonList = githubFiles.map(f => ({
+                name: f.name.split('.')[0].toUpperCase(),
+                url: `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${f.path}`,
+                rev: "rev=1"
+            }));
+
+            // 2. Firestore'u Temizle ve Güncelle (Android 7 için Veritabanı Sync)
+            const oldDocs = await db.collection("logoListesi").get();
+            const batch = db.batch();
+            oldDocs.forEach(doc => batch.delete(doc.ref));
+            jsonList.forEach(item => {
+                const newRef = db.collection("logoListesi").doc();
+                batch.set(newRef, { ...item, tarih: firebase.firestore.FieldValue.serverTimestamp() });
+            });
+            await batch.commit();
+
+            // 3. logolar.json Dosyasını GitHub'da Güncelle
+            const token = localStorage.getItem('gh_token');
+            const content = btoa(unescape(encodeURIComponent(JSON.stringify(jsonList, null, 2))));
+            const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { headers: { "Authorization": `token ${token}` } });
+            let sha = ""; if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
+
+            await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
+                method: "PUT", headers: { "Authorization": `token ${token}` },
+                body: JSON.stringify({ message: "Sync System", content: content, sha: sha })
+            });
+
+            alert("Sistem başarıyla senkronize edildi! Eski logolar dahil tüm arşiv hem panelde hem Android 7 veritabanında güncellendi.");
+        } catch (e) {
+            alert("Hata: " + e.message);
+        } finally {
+            btn.innerText = "SİSTEMİ YAYINLA"; btn.disabled = false;
+        }
+    }
+
+    // --- DİĞER FONKSİYONLAR ---
+    let selectedFiles = [];
+    function updateSelection() {
+        selectedFiles = Array.from(document.querySelectorAll('.select-check:checked')).map(c => ({ path: c.value, sha: c.dataset.sha }));
+        document.getElementById('deleteTool').style.display = selectedFiles.length ? 'flex' : 'none';
+        document.getElementById('selCount').innerText = selectedFiles.length + " seçildi";
+    }
+
+    async function deleteFiles() {
+        if(!await confirm("Seçilen dosyalar GitHub'dan silinecek. Emin misin?")) return;
+        const token = localStorage.getItem('gh_token');
+        for(let file of selectedFiles) {
+            await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${file.path}`, {
+                method: "DELETE", headers: { "Authorization": `token ${token}` },
+                body: JSON.stringify({ message: "Delete", sha: file.sha })
+            });
+        }
+        loadGithubArchive();
+    }
+
+    function filterLogos() {
+        const val = document.getElementById('searchInput').value.toUpperCase();
+        renderGrid(githubFiles.filter(f => f.name.toUpperCase().includes(val)));
+    }
 
     function showTab(id, btn) {
         document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
@@ -217,82 +274,35 @@
         btn.classList.add('active');
     }
 
-    async function handleMultipleUpload(files) {
-        const token = localStorage.getItem('gh_token');
-        const status = document.getElementById('statusText');
-        let i = 0;
-        for (let file of files) {
-            i++; status.innerHTML = `<div class="spinner"></div> Yükleniyor (${i}/${files.length}): ${file.name}`;
-            const reader = new FileReader();
-            await new Promise(resolve => {
-                reader.readAsDataURL(file);
-                reader.onload = async () => {
-                    const content = reader.result.split(',')[1];
-                    const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logos/${file.name}`, {
-                        method: "PUT", headers: { "Authorization": `token ${token}` },
-                        body: JSON.stringify({ message: "Upload: " + file.name, content: content })
-                    });
-                    if(res.ok) {
-                        await db.collection("logoListesi").add({
-                            name: file.name.split('.')[0].toUpperCase(),
-                            url: `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/logos/${file.name}`,
-                            tarih: firebase.firestore.FieldValue.serverTimestamp()
-                        });
-                    }
-                    resolve();
-                };
+    function logout() { localStorage.removeItem('gh_token'); location.reload(); }
+
+    window.onload = () => {
+        const grid = document.getElementById('colorGrid');
+        colors.forEach(c => {
+            const b = document.createElement('div');
+            b.className = 'color-box'; b.style.background = c.code; b.innerText = c.name;
+            b.onclick = () => { document.documentElement.style.setProperty('--main-accent', c.code); localStorage.setItem('theme_accent', c.code); };
+            grid.appendChild(b);
+        });
+        document.documentElement.style.setProperty('--main-accent', localStorage.getItem('theme_accent') || '#ff0000');
+        if(localStorage.getItem('theme_mode') === 'light') toggleTheme();
+        if(localStorage.getItem('gh_token')) { document.getElementById('entryToken').value = localStorage.getItem('gh_token'); unlock(); }
+    };
+
+    const popup = {
+        show: function(t, txt, conf = false) {
+            document.getElementById('popupTitle').innerText = t;
+            document.getElementById('popupText').innerText = txt;
+            document.getElementById('btnPopupNo').style.display = conf ? 'block' : 'none';
+            document.getElementById('customPopup').style.display = 'flex';
+            return new Promise(res => {
+                document.getElementById('btnPopupYes').onclick = () => { document.getElementById('customPopup').style.display='none'; res(true); };
+                document.getElementById('btnPopupNo').onclick = () => { document.getElementById('customPopup').style.display='none'; res(false); };
             });
         }
-        status.innerText = "Yükleme Tamam!"; loadLogos();
-    }
-
-    function loadLogos() {
-        const search = document.getElementById('searchInput').value.toUpperCase();
-        db.collection("logoListesi").orderBy("name", "asc").onSnapshot(s => {
-            const container = document.getElementById('gridContainer');
-            container.innerHTML = "";
-            s.forEach(doc => {
-                const d = doc.data();
-                if(d.name.includes(search)) {
-                    container.innerHTML += `<div class="logo-card"><input type="checkbox" class="select-check" value="${doc.id}" onchange="updateSelection()"><img src="${d.url}"><p>${d.name}</p></div>`;
-                }
-            });
-        });
-    }
-
-    let selectedIds = [];
-    function updateSelection() {
-        selectedIds = Array.from(document.querySelectorAll('.select-check:checked')).map(c => c.value);
-        document.getElementById('multiDeleteBar').style.display = selectedIds.length ? 'flex' : 'none';
-        document.getElementById('selectedCount').innerText = selectedIds.length + " seçildi";
-    }
-
-    async function deleteSelected() {
-        if(await confirm("Seçilen logoları silmek istediğine emin misin?")) {
-            for(let id of selectedIds) { await db.collection("logoListesi").doc(id).delete(); }
-            updateSelection();
-        }
-    }
-
-    async function publishJson() {
-        const token = localStorage.getItem('gh_token');
-        const btn = document.getElementById('publishBtn');
-        btn.innerHTML = `<div class="spinner"></div> Yayınlanıyor...`; btn.disabled = true;
-        const snap = await db.collection("logoListesi").orderBy("name", "asc").get();
-        let list = [];
-        snap.forEach(doc => { const d = doc.data(); list.push({ name: d.name, url: d.url, rev: "rev=1" }); });
-        const content = btoa(unescape(encodeURIComponent(JSON.stringify(list, null, 2))));
-        const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { headers: { "Authorization": `token ${token}` } });
-        let sha = ""; if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
-        const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
-            method: "PUT", headers: { "Authorization": `token ${token}` },
-            body: JSON.stringify({ message: "Update", content: content, sha: sha })
-        });
-        alert(res.ok ? "Başarıyla Yayınlandı!" : "Hata!");
-        btn.innerText = "SİSTEMİ YAYINLA"; btn.disabled = false;
-    }
-
-    window.onload = () => { initColors(); const t = localStorage.getItem('gh_token'); if(t) { document.getElementById('entryToken').value = t; unlock(); } };
+    };
+    window.alert = (m) => popup.show("BİLGİ", m);
+    window.confirm = (m) => popup.show("ONAY", m, true);
 </script>
 </body>
 </html>
