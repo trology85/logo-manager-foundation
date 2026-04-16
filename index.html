@@ -2,116 +2,137 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>LOGO MANAGER PRO - V7.0 SYNC</title>
+    <title>LOGO MANAGER PRO - V7.5 LARGE ARCHIVE</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <style>
-        :root { --main-accent: #ff0000; --bg-dark: #0a0a0a; --card-bg: #161616; --text-color: #ffffff; --sidebar-bg: #000000; --border-color: #222222; --input-bg: #1a1a1a; --overlay-bg: rgba(0,0,0,0.9); }
-        body.light-mode { --bg-dark: #f0f2f5; --card-bg: #ffffff; --text-color: #1a1a1a; --sidebar-bg: #ffffff; --border-color: #dddfe2; --input-bg: #f5f6f7; --overlay-bg: rgba(255,255,255,0.9); }
+        :root { --main-accent: #ff0000; --bg-dark: #0a0a0a; --card-bg: #161616; --text-color: #ffffff; --sidebar-bg: #000000; --border-color: #222222; --input-bg: #1a1a1a; --overlay-bg: rgba(0,0,0,0.95); }
+        body.light-mode { --bg-dark: #f0f2f5; --card-bg: #ffffff; --text-color: #1a1a1a; --sidebar-bg: #ffffff; --border-color: #dddfe2; --input-bg: #f5f6f7; --overlay-bg: rgba(255,255,255,0.95); }
         body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: var(--text-color); margin: 0; overflow: hidden; transition: 0.3s; }
 
-        /* GİRİŞ VE PANEL YAPI */
-        #loginOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.7s; }
-        .lock-box { background: #1a1a1a; padding: 40px; border-radius: 20px; border-top: 4px solid var(--main-accent); text-align: center; width: 350px; }
-        #mainPanel { display: flex; height: 100vh; filter: blur(15px); pointer-events: none; transition: 0.6s; opacity: 0; }
-        .sidebar { width: 260px; background: var(--sidebar-bg); padding: 20px; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
-        .main-content { flex: 1; overflow-y: auto; padding: 30px; background: var(--bg-dark); }
+        /* GİRİŞ EKRANI DÜZELTME */
+        #loginOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: 0.8s ease-in-out; }
+        .lock-box { background: #111; padding: 50px; border-radius: 30px; border-top: 5px solid var(--main-accent); text-align: center; width: 380px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .token-input { width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: white; border-radius: 12px; margin-bottom: 20px; text-align: center; font-size: 14px; outline: none; }
+        .token-input:focus { border-color: var(--main-accent); }
+
+        /* ANA YAPI */
+        #mainPanel { display: flex; height: 100vh; opacity: 0; transition: 1s; }
+        .sidebar { width: 280px; background: var(--sidebar-bg); padding: 25px; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
+        .main-content { flex: 1; overflow-y: auto; padding: 40px; background: var(--bg-dark); }
         
-        /* BUTONLAR VE NAV */
-        .nav-btn { background: none; border: none; color: #888; padding: 15px; text-align: left; cursor: pointer; border-radius: 10px; margin-bottom: 5px; width: 100%; transition: 0.3s; font-weight: 600; }
-        .nav-btn.active { background: var(--main-accent); color: white !important; }
-        .btn-action { background: var(--main-accent); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .btn-green { background: #28a745; color: white; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; }
+        .nav-btn { background: none; border: none; color: #777; padding: 16px; text-align: left; cursor: pointer; border-radius: 12px; margin-bottom: 8px; width: 100%; transition: 0.3s; font-weight: 600; font-size: 14px; }
+        .nav-btn.active { background: var(--main-accent); color: white !important; box-shadow: 0 4px 15px rgba(255,0,0,0.2); }
+        .nav-btn:hover:not(.active) { color: var(--main-accent); background: rgba(128,128,128,0.05); }
 
-        /* KARTLAR */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
-        .logo-card { background: var(--card-bg); padding: 15px; border-radius: 15px; text-align: center; border: 1px solid var(--border-color); position: relative; transition: 0.3s; }
-        .logo-card:hover { border-color: var(--main-accent); transform: translateY(-5px); }
-        .logo-card img { width: 80px; height: 80px; object-fit: contain; background: #000; padding: 5px; border-radius: 8px; margin-bottom: 10px; }
-        .select-check { position: absolute; top: 10px; left: 10px; accent-color: var(--main-accent); cursor: pointer; width: 18px; height: 18px; }
+        /* KARTLAR VE SIRALAMA */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 25px; margin-top: 20px; }
+        .logo-card { background: var(--card-bg); padding: 20px; border-radius: 18px; text-align: center; border: 1px solid var(--border-color); position: relative; transition: 0.3s; }
+        .logo-card:hover { border-color: var(--main-accent); transform: translateY(-8px); }
+        .logo-card img { width: 100px; height: 100px; object-fit: contain; background: #000; padding: 8px; border-radius: 12px; margin-bottom: 12px; }
+        .select-check { position: absolute; top: 12px; left: 12px; accent-color: var(--main-accent); width: 20px; height: 20px; cursor: pointer; }
 
-        /* POPUP VE AYARLAR */
-        #customPopup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay-bg); z-index: 10000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
-        .popup-box { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 2px solid var(--main-accent); text-align: center; width: 320px; }
-        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 20px; }
-        .color-box { height: 50px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); border: 3px solid transparent; }
-        .spinner { border: 3px solid rgba(0,0,0,0.1); border-top: 3px solid var(--main-accent); border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
+        /* KONTROL PANELİ */
+        .controls { display: flex; gap: 15px; align-items: center; margin-bottom: 30px; }
+        select, input[type="text"] { padding: 12px 18px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); outline: none; }
+
+        /* BUTONLAR */
+        .btn-action { background: var(--main-accent); color: white; border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; }
+        .btn-green { background: #1db954; color: white; border: none; padding: 15px; border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; box-shadow: 0 4px 15px rgba(29, 185, 84, 0.2); }
+
+        /* LOADING SCREEN */
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay-bg); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 10001; }
+        .spinner { border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--main-accent); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin-bottom: 15px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
 
-    <div id="customPopup">
-        <div class="popup-box">
+    <div id="loader"><div class="spinner"></div><p id="loaderText">Veriler İşleniyor...</p></div>
+
+    <div id="customPopup" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:20000; display:none; justify-content:center; align-items:center; backdrop-filter:blur(5px);">
+        <div style="background:var(--card-bg); padding:30px; border-radius:20px; text-align:center; width:340px; border:1px solid var(--main-accent);">
             <h3 id="popupTitle">MESAJ</h3>
-            <p id="popupText"></p>
-            <div style="display:flex; gap:10px; margin-top:20px;">
-                <button id="btnPopupNo" class="btn-action" style="background:#444; flex:1;">VAZGEÇ</button>
-                <button id="btnPopupYes" class="btn-action" style="flex:1;">TAMAM</button>
+            <p id="popupText" style="color:#888;"></p>
+            <div style="display:flex; gap:10px; margin-top:25px;">
+                <button id="btnPopupNo" class="btn-action" style="background:#444;">VAZGEÇ</button>
+                <button id="btnPopupYes" class="btn-action">TAMAM</button>
             </div>
         </div>
     </div>
 
     <div id="loginOverlay">
         <div class="lock-box">
-            <h2 id="loginTitle" style="color:var(--main-accent);">SİSTEM KİLİTLİ</h2>
+            <h2 style="color:var(--main-accent); letter-spacing:2px; margin-bottom:10px;">LOGO MANAGER</h2>
+            <p style="color:#555; font-size:12px; margin-bottom:30px;">V7.5 PRO ARCHIVE SYSTEM</p>
             <input type="password" id="entryToken" class="token-input" placeholder="GitHub Token Girin">
-            <button class="btn-action" style="width:100%" onclick="unlock()">GİRİŞ YAP</button>
+            <button class="btn-action" onclick="unlock()">SİSTEMİ AÇ</button>
         </div>
     </div>
 
     <div id="mainPanel">
         <div class="sidebar">
-            <h2 id="sideLogo" style="color:var(--main-accent); text-align:center; margin-bottom:40px;">LOGO PRO</h2>
+            <h2 id="sideLogo" style="color:var(--main-accent); text-align:center; margin-bottom:40px; font-weight:900;">LOGO PRO</h2>
             <button class="nav-btn active" onclick="showTab('tab-upload', this)">📤 Çoklu Yükle</button>
             <button class="nav-btn" onclick="showTab('tab-library', this)">📂 Tüm Arşiv (GitHub)</button>
-            <button class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar</button>
-            <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 20px;">
+            <button class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar & Tema</button>
+            
+            <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 25px;">
                 <button id="publishBtn" class="btn-green" onclick="publishSystem()">SİSTEMİ YAYINLA</button>
-                <p onclick="logout()" style="text-align:center; color:#666; cursor:pointer; font-size:11px; margin-top:15px;">Güvenli Çıkış</p>
+                <p onclick="logout()" style="text-align:center; color:#555; cursor:pointer; font-size:11px; margin-top:15px;">Güvenli Çıkış</p>
             </div>
         </div>
 
         <div class="main-content">
-            <div id="tab-upload" class="tab-content">
-                <h1>📤 Yeni Logo Yükle</h1>
-                <div style="border: 3px dashed var(--border-color); padding: 100px; text-align:center; border-radius:20px; cursor:pointer;" onclick="document.getElementById('fileInput').click()">
-                    <h2 id="statusText" style="color:#666;">Dosyaları Sürükleyin veya Tıklayın</h2>
+            <div id="tab-upload">
+                <h1>📤 Yeni Dosya Yükle</h1>
+                <div style="border: 2px dashed var(--border-color); padding: 120px; text-align:center; border-radius:30px; cursor:pointer; background:rgba(255,255,255,0.02);" onclick="document.getElementById('fileInput').click()">
+                    <h2 id="statusText" style="color:#555;">Sürükle veya Tıkla</h2>
                     <input type="file" id="fileInput" multiple accept="image/*" style="display:none" onchange="handleUpload(this.files)">
                 </div>
             </div>
 
-            <div id="tab-library" class="tab-content" style="display:none;">
+            <div id="tab-library" style="display:none;">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-                    <h1>📂 Tüm Arşiv <span id="syncStatus" style="font-size:12px; color:var(--main-accent);"></span></h1>
-                    <div id="deleteTool" style="display:none; gap:10px; background:var(--main-accent); padding:10px; border-radius:8px;">
-                        <span id="selCount">0 seçildi</span>
-                        <button onclick="deleteFiles()" style="background:white; color:var(--main-accent); border:none; padding:5px 10px; border-radius:4px; font-weight:bold; cursor:pointer;">SİL</button>
+                    <h1>📂 Tüm Arşiv <span id="syncStatus" style="font-size:13px; color:var(--main-accent); font-weight:normal;"></span></h1>
+                    <div id="deleteTool" style="display:none; gap:15px; background:var(--main-accent); padding:10px 20px; border-radius:12px; color:white; align-items:center;">
+                        <span id="selCount" style="font-weight:bold;">0 seçildi</span>
+                        <button onclick="deleteFiles()" style="background:white; color:var(--main-accent); border:none; padding:8px 15px; border-radius:8px; font-weight:bold; cursor:pointer;">SEÇİLENLERİ SİL</button>
                     </div>
-                    <input type="text" id="searchInput" placeholder="Ara..." onkeyup="filterLogos()" style="padding:10px; border-radius:8px; border:1px solid var(--border-color); background:var(--card-bg); color:var(--text-color);">
+                </div>
+
+                <div class="controls">
+                    <input type="text" id="searchInput" placeholder="İsimle ara..." onkeyup="filterAndSort()" style="flex:1;">
+                    <select id="sortOrder" onchange="filterAndSort()">
+                        <option value="name_asc">İsim (A-Z)</option>
+                        <option value="name_desc">İsim (Z-A)</option>
+                    </select>
                 </div>
                 <div id="githubGrid" class="grid-container"></div>
             </div>
 
-            <div id="tab-settings" class="tab-content" style="display:none;">
-                <h1>⚙️ Tema Ayarları</h1>
-                <button class="btn-action" onclick="toggleTheme()" id="themeBtn">AÇIK TEMAYA GEÇ</button>
-                <div class="color-grid" id="colorGrid"></div>
+            <div id="tab-settings" style="display:none;">
+                <h1>⚙️ Tema & Görünüm</h1>
+                <div style="background:var(--card-bg); padding:30px; border-radius:20px; display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; border:1px solid var(--border-color);">
+                    <div><h3>Karanlık / Aydınlık Mod</h3><p style="color:#555; font-size:13px; margin-top:5px;">Panelin genel aydınlatmasını değiştirir.</p></div>
+                    <button class="btn-action" onclick="toggleTheme()" id="themeBtn" style="width:200px;">AÇIK TEMAYA GEÇ</button>
+                </div>
+                <h3>Vurgu Renkleri</h3>
+                <div id="colorGrid" class="grid-container" style="grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));"></div>
             </div>
         </div>
     </div>
 
 <script>
-    // --- KONFİGÜRASYON ---
     const GITHUB_USER = "trology85";
     const GITHUB_REPO = "logo-manager-foundation";
     const firebaseConfig = { apiKey: "AIzaSyDMgOE-RvyqOpNGLM9w6kWzofsCCB8BB54", authDomain: "logo-server-fixed.firebaseapp.com", projectId: "logo-server-fixed", storageBucket: "logo-server-fixed.firebasestorage.app", messagingSenderId: "822558792997", appId: "1:822558792997:web:b83cb53311bb68bbb68ecc" };
     
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-    let githubFiles = [];
+    let allFiles = []; // 1000+ dosyanın tamamı burada tutulacak
 
-    // --- RENK PALETİ ---
+    // --- RENKLER ---
     const colors = [
         { name: "Vişne Kırmızısı", code: "#ff0000" }, { name: "Uygulama Mavisi", code: "#00d4ff" },
         { name: "Neon Mavisi", code: "#00f3ff" }, { name: "Amber Gold", code: "#ffbf00" },
@@ -125,14 +146,13 @@
         const t = document.getElementById('entryToken').value;
         if(t.startsWith("ghp_")) {
             localStorage.setItem('gh_token', t);
-            document.getElementById('loginOverlay').style.transform = "translateY(-100%)";
+            document.getElementById('loginOverlay').style.opacity = "0";
             setTimeout(() => {
+                document.getElementById('loginOverlay').style.display = "none";
                 document.getElementById('mainPanel').style.opacity = "1";
-                document.getElementById('mainPanel').style.filter = "none";
-                document.getElementById('mainPanel').style.pointerEvents = "all";
-                loadGithubArchive();
-            }, 600);
-        }
+                loadAllGithubFiles();
+            }, 800);
+        } else { alert("Geçersiz Token!"); }
     }
 
     function toggleTheme() {
@@ -141,48 +161,129 @@
         document.getElementById('themeBtn').innerText = isLight ? "KOYU TEMAYA GEÇ" : "AÇIK TEMAYA GEÇ";
     }
 
-    // --- ANA MOTOR: GITHUB'DAN ÇEKME ---
-    async function loadGithubArchive() {
+    // --- GITHUB 1000+ DOSYA ÇEKME MOTORU ---
+    async function loadAllGithubFiles() {
+        showLoader("Tüm Arşiv Taranıyor (1000+)...");
         const token = localStorage.getItem('gh_token');
-        const grid = document.getElementById('githubGrid');
-        const status = document.getElementById('syncStatus');
-        
-        status.innerText = "(Taranıyor...)";
-        grid.innerHTML = "<p>GitHub Arşivi Yükleniyor...</p>";
+        allFiles = [];
+        let page = 1;
+        let hasMore = true;
 
         try {
-            const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logos`, {
-                headers: { "Authorization": `token ${token}` }
-            });
-            const files = await res.json();
-            githubFiles = files.filter(f => f.name.match(/\.(png|jpg|jpeg|gif|webp)$/i));
-            
-            renderGrid(githubFiles);
-            status.innerText = `(${githubFiles.length} Logo Bulundu)`;
+            while (hasMore) {
+                const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logos?page=${page}&per_page=1000`, {
+                    headers: { "Authorization": `token ${token}` }
+                });
+                const data = await res.json();
+                if (data.length > 0) {
+                    allFiles = allFiles.concat(data.filter(f => f.name.match(/\.(png|jpg|jpeg|webp)$/i)));
+                    page++;
+                    if (data.length < 1000) hasMore = false;
+                } else {
+                    hasMore = false;
+                }
+            }
+            filterAndSort();
+            document.getElementById('syncStatus').innerText = `(${allFiles.length} Logo Bulundu)`;
         } catch (e) {
-            grid.innerHTML = "<p>GitHub Bağlantı Hatası!</p>";
+            alert("GitHub verileri çekilemedi!");
+        } finally {
+            hideLoader();
         }
     }
 
-    function renderGrid(files) {
+    function filterAndSort() {
+        const search = document.getElementById('searchInput').value.toUpperCase();
+        const sort = document.getElementById('sortOrder').value;
+        
+        let filtered = allFiles.filter(f => f.name.toUpperCase().includes(search));
+
+        if (sort === "name_asc") filtered.sort((a,b) => a.name.localeCompare(b.name));
+        if (sort === "name_desc") filtered.sort((a,b) => b.name.localeCompare(a.name));
+
         const grid = document.getElementById('githubGrid');
-        grid.innerHTML = "";
-        files.forEach(f => {
-            grid.innerHTML += `
-                <div class="logo-card">
-                    <input type="checkbox" class="select-check" value="${f.path}" data-sha="${f.sha}" onchange="updateSelection()">
-                    <img src="https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${f.path}">
-                    <p style="font-size:11px; overflow:hidden;">${f.name.split('.')[0].toUpperCase()}</p>
-                </div>`;
-        });
+        grid.innerHTML = filtered.map(f => `
+            <div class="logo-card">
+                <input type="checkbox" class="select-check" value="${f.path}" data-sha="${f.sha}" onchange="updateSelection()">
+                <img src="https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${f.path}">
+                <p style="font-size:11px; margin:0; overflow:hidden; white-space:nowrap;">${f.name.split('.')[0].toUpperCase()}</p>
+            </div>
+        `).join('');
     }
 
-    // --- YÜKLEME VE YAYINLAMA (SYNC) ---
-    async function handleUpload(files) {
+    // --- YAYINLAMA VE SENKRONİZASYON ---
+    async function publishSystem() {
+        if(!await confirm("Arşivdeki tüm logolar Firebase ve JSON dosyasına mühürlenecek. Emin misin?")) return;
+        
+        showLoader("Sistem Yayınlanıyor... Lütfen Kapatmayın.");
+        const btn = document.getElementById('publishBtn');
+        btn.disabled = true;
+
+        try {
+            const jsonList = allFiles.map(f => ({
+                name: f.name.split('.')[0].toUpperCase(),
+                url: `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${f.path}`,
+                rev: "rev=1"
+            }));
+
+            // Firebase Batch Update
+            const oldDocs = await db.collection("logoListesi").get();
+            const batch = db.batch();
+            oldDocs.forEach(doc => batch.delete(doc.ref));
+            jsonList.forEach(item => {
+                const newRef = db.collection("logoListesi").doc();
+                batch.set(newRef, { ...item, tarih: firebase.firestore.FieldValue.serverTimestamp() });
+            });
+            await batch.commit();
+
+            // GitHub JSON Update
+            const token = localStorage.getItem('gh_token');
+            const content = btoa(unescape(encodeURIComponent(JSON.stringify(jsonList, null, 2))));
+            const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { headers: { "Authorization": `token ${token}` } });
+            let sha = ""; if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
+
+            await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
+                method: "PUT", headers: { "Authorization": `token ${token}` },
+                body: JSON.stringify({ message: "Final Sync", content: content, sha: sha })
+            });
+
+            alert("Sistem Başarıyla Güncellendi (logolar.json)!");
+        } catch (e) {
+            alert("Hata oluştu: " + e.message);
+        } finally {
+            btn.disabled = false;
+            hideLoader();
+        }
+    }
+
+    // --- YARDIMCI ARAÇLAR ---
+    function showLoader(txt) { document.getElementById('loader').style.display='flex'; document.getElementById('loaderText').innerText=txt; }
+    function hideLoader() { document.getElementById('loader').style.display='none'; }
+
+    let selectedFiles = [];
+    function updateSelection() {
+        selectedFiles = Array.from(document.querySelectorAll('.select-check:checked')).map(c => ({ path: c.value, sha: c.dataset.sha }));
+        document.getElementById('deleteTool').style.display = selectedFiles.length ? 'flex' : 'none';
+        document.getElementById('selCount').innerText = selectedFiles.length + " seçildi";
+    }
+
+    async function deleteFiles() {
+        if(!await confirm(`${selectedFiles.length} logo silinecek. Emin misin?`)) return;
+        showLoader("Siliniyor...");
         const token = localStorage.getItem('gh_token');
-        const status = document.getElementById('statusText');
+        for(let file of selectedFiles) {
+            await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${file.path}`, {
+                method: "DELETE", headers: { "Authorization": `token ${token}` },
+                body: JSON.stringify({ message: "Delete", sha: file.sha })
+            });
+        }
+        loadAllGithubFiles();
+    }
+
+    async function handleUpload(files) {
+        showLoader("Yükleniyor...");
+        const token = localStorage.getItem('gh_token');
         for (let file of files) {
-            status.innerHTML = `<div class="spinner"></div> ${file.name} yükleniyor...`;
             const reader = new FileReader();
             await new Promise(res => {
                 reader.readAsDataURL(file);
@@ -196,93 +297,27 @@
                 };
             });
         }
-        status.innerText = "Yükleme Tamamlandı!";
-        loadGithubArchive();
-    }
-
-    async function publishSystem() {
-        const btn = document.getElementById('publishBtn');
-        btn.innerHTML = `<div class="spinner"></div> SENKRONİZE EDİLİYOR...`;
-        btn.disabled = true;
-
-        try {
-            // 1. GitHub'daki güncel listeyi al
-            const jsonList = githubFiles.map(f => ({
-                name: f.name.split('.')[0].toUpperCase(),
-                url: `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${f.path}`,
-                rev: "rev=1"
-            }));
-
-            // 2. Firestore'u Temizle ve Güncelle (Android 7 için Veritabanı Sync)
-            const oldDocs = await db.collection("logoListesi").get();
-            const batch = db.batch();
-            oldDocs.forEach(doc => batch.delete(doc.ref));
-            jsonList.forEach(item => {
-                const newRef = db.collection("logoListesi").doc();
-                batch.set(newRef, { ...item, tarih: firebase.firestore.FieldValue.serverTimestamp() });
-            });
-            await batch.commit();
-
-            // 3. logolar.json Dosyasını GitHub'da Güncelle
-            const token = localStorage.getItem('gh_token');
-            const content = btoa(unescape(encodeURIComponent(JSON.stringify(jsonList, null, 2))));
-            const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { headers: { "Authorization": `token ${token}` } });
-            let sha = ""; if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
-
-            await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
-                method: "PUT", headers: { "Authorization": `token ${token}` },
-                body: JSON.stringify({ message: "Sync System", content: content, sha: sha })
-            });
-
-            alert("Sistem başarıyla senkronize edildi! Eski logolar dahil tüm arşiv hem panelde hem Android 7 veritabanında güncellendi.");
-        } catch (e) {
-            alert("Hata: " + e.message);
-        } finally {
-            btn.innerText = "SİSTEMİ YAYINLA"; btn.disabled = false;
-        }
-    }
-
-    // --- DİĞER FONKSİYONLAR ---
-    let selectedFiles = [];
-    function updateSelection() {
-        selectedFiles = Array.from(document.querySelectorAll('.select-check:checked')).map(c => ({ path: c.value, sha: c.dataset.sha }));
-        document.getElementById('deleteTool').style.display = selectedFiles.length ? 'flex' : 'none';
-        document.getElementById('selCount').innerText = selectedFiles.length + " seçildi";
-    }
-
-    async function deleteFiles() {
-        if(!await confirm("Seçilen dosyalar GitHub'dan silinecek. Emin misin?")) return;
-        const token = localStorage.getItem('gh_token');
-        for(let file of selectedFiles) {
-            await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${file.path}`, {
-                method: "DELETE", headers: { "Authorization": `token ${token}` },
-                body: JSON.stringify({ message: "Delete", sha: file.sha })
-            });
-        }
-        loadGithubArchive();
-    }
-
-    function filterLogos() {
-        const val = document.getElementById('searchInput').value.toUpperCase();
-        renderGrid(githubFiles.filter(f => f.name.toUpperCase().includes(val)));
+        loadAllGithubFiles();
     }
 
     function showTab(id, btn) {
-        document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-upload').style.display = 'none';
+        document.getElementById('tab-library').style.display = 'none';
+        document.getElementById('tab-settings').style.display = 'none';
         document.getElementById(id).style.display = 'block';
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
     }
 
     function logout() { localStorage.removeItem('gh_token'); location.reload(); }
 
     window.onload = () => {
-        const grid = document.getElementById('colorGrid');
+        const cGrid = document.getElementById('colorGrid');
         colors.forEach(c => {
-            const b = document.createElement('div');
-            b.className = 'color-box'; b.style.background = c.code; b.innerText = c.name;
-            b.onclick = () => { document.documentElement.style.setProperty('--main-accent', c.code); localStorage.setItem('theme_accent', c.code); };
-            grid.appendChild(b);
+            const b = document.createElement('div'); b.className = 'color-box';
+            b.style.cssText = `background:${c.code}; height:50px; border-radius:12px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:bold; color:white; border:3px solid transparent;`;
+            b.innerText = c.name; b.onclick = () => { document.documentElement.style.setProperty('--main-accent', c.code); localStorage.setItem('theme_accent', c.code); };
+            cGrid.appendChild(b);
         });
         document.documentElement.style.setProperty('--main-accent', localStorage.getItem('theme_accent') || '#ff0000');
         if(localStorage.getItem('theme_mode') === 'light') toggleTheme();
@@ -291,8 +326,7 @@
 
     const popup = {
         show: function(t, txt, conf = false) {
-            document.getElementById('popupTitle').innerText = t;
-            document.getElementById('popupText').innerText = txt;
+            document.getElementById('popupTitle').innerText = t; document.getElementById('popupText').innerText = txt;
             document.getElementById('btnPopupNo').style.display = conf ? 'block' : 'none';
             document.getElementById('customPopup').style.display = 'flex';
             return new Promise(res => {
