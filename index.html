@@ -67,6 +67,7 @@
             <button class="nav-btn active" onclick="showTab('tab-upload', this)">📤 Çoklu Yükle</button>
             <button class="nav-btn" onclick="showTab('tab-library', this)">📂 Tüm Arşiv (JSON)</button>
             <button class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar</button>
+            <button class="nav-btn" onclick="showTab('tab-detective', this)">🔍 Logo Dedektifi</button>
             <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 25px;">
                 <button id="publishBtn" class="btn-green" onclick="saveManifestAndFirebase()">DEĞİŞİKLİKLERİ KAYDET</button>
                 <p onclick="logout()" style="text-align:center; color:#555; cursor:pointer; font-size:11px; margin-top:15px;">Güvenli Çıkış</p>
@@ -108,6 +109,29 @@
                 <h3>Panel Vurgu Rengi</h3>
                 <div id="colorGrid" class="grid-container" style="grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));"></div>
             </div>
+           <div id="tab-detective" style="display:none;">
+           <h1>🔍 Logo Dedektifi</h1>
+           <p style="color:#888;">M3U listenizi yükleyin, fihristteki logolarla (Harf duyarsız) eşleştirelim.</p>
+    
+           <div style="background:var(--card-bg); padding:30px; border-radius:20px; border:1px solid var(--border-color); margin-bottom:20px;">
+           <input type="file" id="m3uInput" accept=".m3u,.m3u8" style="margin-bottom:20px; color:white;">
+           <button class="btn-action" onclick="processM3U()">LİSTEYİ TARA VE DÜZELT</button>
+    </div>
+
+    <div id="detectiveResult" style="display:none;">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+            <div>
+                <h3>✅ Eşleşen Kanallar</h3>
+                <div id="matchLog" style="background:#0a0a0a; padding:15px; border-radius:12px; color:#1db954; font-family:monospace; font-size:12px; height:250px; overflow-y:auto; border:1px solid #222;"></div>
+            </div>
+            <div>
+                <h3>❌ Bulunamayanlar</h3>
+                <div id="failLog" style="background:#0a0a0a; padding:15px; border-radius:12px; color:#ff0000; font-family:monospace; font-size:12px; height:250px; overflow-y:auto; border:1px solid #222;"></div>
+            </div>
+        </div>
+        <button id="downloadM3U" class="btn-green" style="margin-top:20px;">DÜZENLENMİŞ LİSTEYİ İNDİR (.M3U)</button>
+    </div>
+</div>
         </div>
     </div>
 
@@ -170,6 +194,73 @@
             </div>
         `).join('');
     }
+
+    let finalM3U = "";
+
+async function processM3U() {
+    const fileInput = document.getElementById('m3uInput');
+    if (!fileInput.files.length) return alert("Önce bir M3U dosyası seçmelisin usta!");
+
+    showLoader("Dedektif Çalışıyor...");
+    
+    const file = fileInput.files[0];
+    const content = await file.text();
+    const lines = content.split('\n');
+    let resultLines = [];
+    let matchLog = "";
+    let failLog = "";
+
+    // JSON'daki isimleri büyük harf yaparak hızlı erişim listesi oluştur
+    const myLogos = manifestData.map(m => m.name.toUpperCase());
+
+    lines.forEach(line => {
+        if (line.toUpperCase().startsWith('#EXTINF')) {
+            // 1. Kanal ismini virgülden yakala
+            const parts = line.split(',');
+            const rawName = parts[parts.length - 1].trim();
+            const upperName = rawName.toUpperCase();
+
+            // 2. Fihristte var mı kontrol et
+            if (myLogos.includes(upperName)) {
+                // KURAL 1 & 3: Varsa her türlü logo-id yazacağız.
+                // Önce varsa eski tvg-logo ve logo-id taglerini temizle (Temiz cerrahi)
+                let cleanedLine = line.replace(/\s*tvg-logo="[^"]*"/gi, "");
+                cleanedLine = cleanedLine.replace(/\s*logo-id="[^"]*"/gi, "");
+                
+                // Şimdi yeni logo-id'yi ekle (virgülden hemen öncesine veya araya)
+                const finalLine = cleanedLine.replace(',', ` logo-id="${upperName}",`);
+                resultLines.push(finalLine);
+                
+                matchLog += `✔️ ${rawName} -> logo-id eklendi\n`;
+            } else {
+                // KURAL 2 & 4: Yoksa dokunma
+                resultLines.push(line);
+                failLog += `✖️ ${rawName} -> Fihristte yok\n`;
+            }
+        } else {
+            // Link satırları veya M3U başlık satırları
+            resultLines.push(line);
+        }
+    });
+
+    finalM3U = resultLines.join('\n');
+    
+    document.getElementById('matchLog').innerText = matchLog || "Eşleşme yok.";
+    document.getElementById('failLog').innerText = failLog || "Tüm kanallar bulundu!";
+    document.getElementById('detectiveResult').style.display = 'block';
+    
+    hideLoader();
+    alert("Dedektif taramayı bitirdi! Raporu inceleyip indirebilirsin.");
+}
+
+// İndirme Fonksiyonu
+document.getElementById('downloadM3U').onclick = () => {
+    const blob = new Blob([finalM3U], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = "dedektif_onayli_liste.m3u";
+    link.click();
+};
 
     async function handleUpload(files) {
         showLoader("Logolar Yükleniyor...");
