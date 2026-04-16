@@ -260,12 +260,12 @@
         
         filterAndSort(); // Ekranı tazele
         
-    } catch (e) { 
+        } catch (e) { 
         hideLoader();
         console.error(e);
         alert("EYVAH! Bir hata oluştu: " + e.message); 
+        }
     }
-}
 
     async function deleteFromManifest() {
         if(!await confirm("Fihristten silinsin mi?")) return;
