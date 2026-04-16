@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>LOGO MANAGER PRO - V9.1 STABLE</title>
+    <title>LOGO MANAGER PRO - V9.2 FINAL</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <style>
@@ -56,7 +56,6 @@
     <div id="loginOverlay">
         <div class="lock-box">
             <h2 style="color:var(--main-accent);">LOGO MANAGER</h2>
-            <p style="color:#555; font-size:12px; margin-bottom:30px;">V9.1 STABLE ENGINE</p>
             <input type="password" id="entryToken" class="token-input" placeholder="GitHub Token Girin">
             <button class="btn-action" onclick="unlock()">SİSTEMİ AÇ</button>
         </div>
@@ -91,7 +90,6 @@
                         <button onclick="deleteFromManifest()" style="background:white; color:var(--main-accent); border:none; padding:8px 15px; border-radius:8px; font-weight:bold; cursor:pointer;">LİSTEDEN SİL</button>
                     </div>
                 </div>
-
                 <div class="controls">
                     <input type="text" id="searchInput" placeholder="İsimle ara..." onkeyup="filterAndSort()" style="flex:1;">
                     <select id="sortOrder" onchange="filterAndSort()">
@@ -149,21 +147,16 @@
         finally { hideLoader(); }
     }
 
-    // --- SIRALAMA VE FİLTRE MOTORU ---
     function filterAndSort() {
         const search = document.getElementById('searchInput').value.toUpperCase();
         const sort = document.getElementById('sortOrder').value;
-        
-        // 1. Arama Filtresi
         let filtered = manifestData.map((f, i) => ({...f, originalIndex: i}))
                                   .filter(f => f.name.includes(search));
 
-        // 2. Sıralama Mantığı
         if (sort === "name_asc") filtered.sort((a,b) => a.name.localeCompare(b.name));
         else if (sort === "name_desc") filtered.sort((a,b) => b.name.localeCompare(a.name));
-        else if (sort === "newest") filtered.reverse(); // Listeye son eklenen en sonda olduğu için reverse
-        else if (sort === "oldest") { /* default manifest sırası zaten oldest */ }
-
+        else if (sort === "newest") filtered.reverse();
+        
         renderGrid(filtered);
     }
 
@@ -199,73 +192,44 @@
                 };
             });
         }
-        //await saveManifestAndFirebase();
         hideLoader();
-        filterAndSort(); // <-- BU SATIRI EKLE (Logoların anında listede belirmesi için)
-        alert("Yükleme Tamamlandı! Şimdi 'KAYDET' butonuna basabilirsiniz.");
+        filterAndSort();
+        alert("Yükleme bitti! Şimdi yeşil butona basarak kalıcı olarak kaydedin.");
     }
 
     async function saveManifestAndFirebase() {
-    const token = localStorage.getItem('gh_token');
-    if(!token) return alert("Hata: Token bulunamadı!");
+        const token = localStorage.getItem('gh_token');
+        if(!token) return alert("Hata: Token yok!");
 
-    showLoader("1/3 - Fihrist Hazırlanıyor..."); 
-    
-    try {
-        // 1. ADIM: GitHub'daki mevcut dosyanın SHA bilgisini al (Güncelleme için şart)
-        const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { 
-            headers: { "Authorization": `token ${token}` } 
-        });
-        
-        let sha = ""; 
-        if(getFile.ok) { 
-            const f = await getFile.json(); 
-            sha = f.sha; 
-        }
-
-        // 2. ADIM: GitHub JSON dosyasını güncelle
-        showLoader("2/3 - GitHub Arşivi Mühürleniyor...");
-        const content = btoa(unescape(encodeURIComponent(JSON.stringify(manifestData, null, 2))));
-        
-        const ghRes = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
-            method: "PUT",
-            headers: { "Authorization": `token ${token}` },
-            body: JSON.stringify({ 
-                message: "Sistem Senkronizasyonu", 
-                content: content, 
-                sha: sha 
-            })
-        });
-
-        if(!ghRes.ok) throw new Error("GitHub güncellenemedi!");
-
-        // 3. ADIM: Firebase Veritabanını temizle ve yenilerini yaz
-        showLoader("3/3 - Firebase Veritabanı Güncelleniyor...");
-        const snap = await db.collection("logoListesi").get();
-        const batch = db.batch();
-        
-        // Eskileri sil
-        snap.forEach(d => batch.delete(d.ref));
-        
-        // Yenileri ekle
-        manifestData.forEach(item => {
-            batch.set(db.collection("logoListesi").doc(), { 
-                ...item, 
-                tarih: firebase.firestore.FieldValue.serverTimestamp() 
+        showLoader("Mühürleme Başladı..."); 
+        try {
+            const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { 
+                headers: { "Authorization": `token ${token}` } 
             });
-        });
-        
-        await batch.commit();
+            let sha = ""; if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
 
-        hideLoader();
-        alert("İŞLEM BAŞARILI!\n\n1. GitHub Fihristi Güncellendi.\n2. Firebase Veritabanı Mühürlendi.\n3. Tüm sistem senkronize edildi.");
-        
-        filterAndSort(); // Ekranı tazele
-        
+            const content = btoa(unescape(encodeURIComponent(JSON.stringify(manifestData, null, 2))));
+            const ghRes = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
+                method: "PUT", headers: { "Authorization": `token ${token}` },
+                body: JSON.stringify({ message: "Sync", content: content, sha: sha })
+            });
+
+            if(!ghRes.ok) throw new Error("GitHub Yazılamadı!");
+
+            const snap = await db.collection("logoListesi").get();
+            const batch = db.batch();
+            snap.forEach(d => batch.delete(d.ref));
+            manifestData.forEach(item => {
+                batch.set(db.collection("logoListesi").doc(), { ...item, tarih: firebase.firestore.FieldValue.serverTimestamp() });
+            });
+            await batch.commit();
+
+            hideLoader();
+            alert("İŞLEM BAŞARILI! Her şey kaydedildi.");
+            filterAndSort();
         } catch (e) { 
-        hideLoader();
-        console.error(e);
-        alert("EYVAH! Bir hata oluştu: " + e.message); 
+            hideLoader();
+            alert("Hata Oluştu: " + e.message); 
         }
     }
 
@@ -274,8 +238,6 @@
         const indices = Array.from(document.querySelectorAll('.select-check:checked')).map(c => parseInt(c.value)).sort((a,b) => b-a);
         indices.forEach(i => manifestData.splice(i, 1));
         await saveManifestAndFirebase();
-        updateSelection();
-        hideLoader();
     }
 
     function updateSelection() {
@@ -293,7 +255,6 @@
 
     function toggleTheme() {
         const isLight = document.body.classList.toggle('light-mode');
-        localStorage.setItem('theme_mode', isLight ? 'light' : 'dark');
         document.getElementById('themeBtn').innerText = isLight ? "KOYU TEMAYA GEÇ" : "AÇIK TEMAYA GEÇ";
     }
 
@@ -305,11 +266,9 @@
         colors.forEach(c => {
             const b = document.createElement('div'); b.className = 'logo-card';
             b.style.cssText = `background:${c.code}; height:45px; cursor:pointer; color:white; font-size:10px; font-weight:bold; display:flex; align-items:center; justify-content:center;`;
-            b.innerText = c.name; b.onclick = () => { document.documentElement.style.setProperty('--main-accent', c.code); localStorage.setItem('theme_accent', c.code); };
+            b.innerText = c.name; b.onclick = () => { document.documentElement.style.setProperty('--main-accent', c.code); };
             cGrid.appendChild(b);
         });
-        document.documentElement.style.setProperty('--main-accent', localStorage.getItem('theme_accent') || '#ff0000');
-        if(localStorage.getItem('theme_mode') === 'light') toggleTheme();
         if(localStorage.getItem('gh_token')) { document.getElementById('entryToken').value = localStorage.getItem('gh_token'); unlock(); }
     };
 
