@@ -7803,5 +7803,10 @@
     "name": "TEST1",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/test1.png",
     "rev": "rev=1"
+  },
+  {
+    "name": "IDMAN TV",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/IDMAN TV.png",
+    "rev": "rev=1"
   }
 ]
