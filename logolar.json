@@ -2815,6 +2815,26 @@
     "rev": "rev=1"
   },
   {
+    "name": "icon_purple_background",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/icon_purple_background.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "icon_purple_background111",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/icon_purple_background111.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "icon_purple_foreground",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/icon_purple_foreground.png",
+    "rev": "rev=1"
+  },
+  {
+    "name": "icon_purple_foreground1111",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/icon_purple_foreground1111.png",
+    "rev": "rev=1"
+  },
+  {
     "name": "iConcert",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/iConcert.png",
     "rev": "rev=1"
