@@ -2,11 +2,11 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>LOGO MANAGER PRO - V5.5 ULTIMATE FULL</title>
+    <title>LOGO MANAGER PRO - V6.0 FINAL</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <style>
-        /* --- DİNAMİK DEĞİŞKENLER VE TEMA MOTORU --- */
+        /* --- DİNAMİK DEĞİŞKENLER --- */
         :root {
             --main-accent: #ff0000;
             --bg-dark: #0a0a0a;
@@ -15,20 +15,20 @@
             --sidebar-bg: #000000;
             --border-color: #222222;
             --input-bg: #1a1a1a;
-            --overlay-bg: rgba(0,0,0,0.85);
+            --overlay-bg: rgba(0,0,0,0.9);
         }
 
         body.light-mode {
             --bg-dark: #f0f2f5;
             --card-bg: #ffffff;
-            --text-color: #1c1e21;
+            --text-color: #1a1a1a;
             --sidebar-bg: #ffffff;
             --border-color: #dddfe2;
             --input-bg: #f5f6f7;
             --overlay-bg: rgba(255,255,255,0.9);
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-dark); color: var(--text-color); margin: 0; overflow: hidden; transition: background 0.3s, color 0.3s; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: var(--text-color); margin: 0; overflow: hidden; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
         /* --- GİRİŞ PERDESİ --- */
         #loginOverlay {
@@ -41,50 +41,45 @@
 
         /* --- ANA PANEL --- */
         #mainPanel { display: flex; height: 100vh; filter: blur(15px); pointer-events: none; transition: 0.6s; opacity: 0; }
-        .sidebar { width: 260px; background: var(--sidebar-bg); padding: 20px; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; box-shadow: 2px 0 10px rgba(0,0,0,0.05); }
+        .sidebar { width: 260px; background: var(--sidebar-bg); padding: 20px; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
         .main-content { flex: 1; overflow-y: auto; padding: 30px; background: var(--bg-dark); }
         
-        .nav-btn { background: none; border: none; color: #888; padding: 15px; text-align: left; cursor: pointer; border-radius: 10px; margin-bottom: 5px; width: 100%; transition: 0.3s; font-weight: 600; font-size: 14px; }
-        .nav-btn.active { background: var(--main-accent); color: white !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .nav-btn { background: none; border: none; color: #888; padding: 15px; text-align: left; cursor: pointer; border-radius: 10px; margin-bottom: 5px; width: 100%; transition: 0.3s; font-weight: 600; }
+        .nav-btn.active { background: var(--main-accent); color: white !important; }
         .nav-btn:hover:not(.active) { color: var(--main-accent); background: rgba(128,128,128,0.1); }
 
-        /* --- KÜTÜPHANE --- */
+        /* --- KARTLAR --- */
         .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; }
         .logo-card { background: var(--card-bg); padding: 15px; border-radius: 15px; text-align: center; border: 1px solid var(--border-color); position: relative; transition: 0.3s; }
-        .logo-card:hover { border-color: var(--main-accent); transform: translateY(-5px); }
+        .logo-card:hover { border-color: var(--main-accent); transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
         .logo-card img { width: 90px; height: 90px; object-fit: contain; background: #000; padding: 5px; border-radius: 8px; margin-bottom: 10px; }
-        .select-check { position: absolute; top: 10px; left: 10px; width: 18px; height: 18px; accent-color: var(--main-accent); cursor: pointer; }
+        .select-check { position: absolute; top: 10px; left: 10px; accent-color: var(--main-accent); cursor: pointer; }
 
-        /* --- AYARLAR VE RENKLER --- */
-        .settings-card { background: var(--card-bg); padding: 25px; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 20px; }
-        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 20px; }
-        .color-box { height: 60px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.5); transition: 0.2s; border: 3px solid transparent; }
-        .color-box:hover { transform: scale(1.03); }
+        /* --- AYARLAR VE RENK KUTULARI --- */
+        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 20px; }
+        .color-box { height: 50px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); transition: 0.2s; border: 3px solid transparent; text-align: center; padding: 5px; }
+        .color-box:hover { transform: scale(1.05); }
         .color-box.active { border-color: var(--text-color); box-shadow: 0 0 15px var(--main-accent); }
 
-        /* --- POPUP --- */
+        /* --- CUSTOM POPUP --- */
         #customPopup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay-bg); z-index: 10000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
-        .popup-box { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 2px solid var(--main-accent); text-align: center; width: 340px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        .popup-box { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 2px solid var(--main-accent); text-align: center; width: 320px; color: var(--text-color); }
 
         /* BUTONLAR */
-        .btn-action { background: var(--main-accent); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-action { background: var(--main-accent); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
         .btn-green { background: #28a745; color: white; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; }
-        .btn-green:hover { filter: brightness(1.1); }
         
-        .spinner { border: 3px solid rgba(0,0,0,0.1); border-top: 3px solid var(--main-accent); border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; margin-right: 8px; }
+        .spinner { border: 3px solid rgba(0,0,0,0.1); border-top: 3px solid var(--main-accent); border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        #multiDeleteBar { display: none; background: var(--main-accent); color: white; padding: 15px 25px; border-radius: 12px; margin-bottom: 25px; justify-content: space-between; align-items: center; animation: fadeIn 0.3s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
-<body class="dark-mode">
+<body>
 
     <div id="customPopup">
         <div class="popup-box">
-            <h3 id="popupTitle" style="margin-top:0;">BAŞLIK</h3>
-            <p id="popupText" style="color:#888; font-size:14px;"></p>
-            <div style="display:flex; gap:10px; margin-top:25px;">
+            <h3 id="popupTitle">MESAJ</h3>
+            <p id="popupText"></p>
+            <div style="display:flex; gap:10px; margin-top:20px;">
                 <button id="btnPopupNo" class="btn-action" style="background:#444; flex:1;">VAZGEÇ</button>
                 <button id="btnPopupYes" class="btn-action" style="flex:1;">TAMAM</button>
             </div>
@@ -93,78 +88,61 @@
 
     <div id="loginOverlay">
         <div class="lock-box">
-            <h2 style="color:var(--main-accent); letter-spacing:2px;">YETKİLİ GİRİŞİ</h2>
-            <p style="color:#666; font-size:12px; margin-bottom:20px;">Sisteme erişmek için GitHub Token girin.</p>
-            <input type="password" id="entryToken" class="token-input" placeholder="ghp_xxxxxxxxxxxx">
+            <h2 style="color:var(--main-accent);">YETKİLİ GİRİŞİ</h2>
+            <input type="password" id="entryToken" class="token-input" placeholder="GitHub Token Girin">
             <button class="btn-action" style="width:100%" onclick="unlock()">SİSTEMİ AÇ</button>
         </div>
     </div>
 
     <div id="mainPanel">
         <div class="sidebar">
-            <h2 id="sideLogo" style="color:var(--main-accent); text-align:center; margin-bottom:40px;">LOGO PRO</h2>
+            <h2 style="color:var(--main-accent); text-align:center; margin-bottom:40px;">LOGO PRO</h2>
             <button id="nav-up" class="nav-btn active" onclick="showTab('tab-upload', this)">📤 Çoklu Yükle</button>
-            <button id="nav-lib" class="nav-btn" onclick="showTab('tab-library', this)">📂 Logo Kütüphanesi</button>
-            <button id="nav-set" class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar & Tema</button>
-            
+            <button id="nav-lib" class="nav-btn" onclick="showTab('tab-library', this)">📂 Kütüphane</button>
+            <button id="nav-set" class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar</button>
             <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 20px;">
                 <button id="publishBtn" class="btn-green" onclick="publishJson()">SİSTEMİ YAYINLA</button>
-                <p onclick="logout()" style="text-align:center; color:#666; cursor:pointer; font-size:11px; margin-top:15px; text-decoration:underline;">Güvenli Çıkış</p>
+                <p onclick="logout()" style="text-align:center; color:#666; cursor:pointer; font-size:11px; margin-top:15px;">Güvenli Çıkış</p>
             </div>
         </div>
 
         <div class="main-content">
-            <div id="multiDeleteBar">
-                <span id="selectedCount" style="font-weight:bold;">0 logo seçildi</span>
-                <button onclick="deleteSelected()" style="background:white; color:var(--main-accent); border:none; padding:8px 15px; border-radius:6px; font-weight:bold; cursor:pointer;">SEÇİLENLERİ SİL</button>
-            </div>
-
             <div id="tab-upload" class="tab-content">
                 <h1>📤 Çoklu Logo Yükle</h1>
-                <div style="border: 3px dashed var(--border-color); padding: 100px 20px; text-align:center; border-radius:25px; cursor:pointer; background:var(--card-bg);" onclick="document.getElementById('fileInput').click()">
-                    <h2 id="statusText" style="color:#666;">Dosyaları buraya bırakın veya tıklayın</h2>
+                <div style="border: 3px dashed var(--border-color); padding: 100px; text-align:center; border-radius:20px; cursor:pointer;" onclick="document.getElementById('fileInput').click()">
+                    <h2 id="statusText" style="color:#666;">Dosyaları Seçin</h2>
                     <input type="file" id="fileInput" multiple accept="image/*" style="display:none" onchange="handleMultipleUpload(this.files)">
                 </div>
             </div>
 
             <div id="tab-library" class="tab-content" style="display:none;">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
                     <h1>📂 Logo Kütüphanesi</h1>
-                    <div style="display:flex; gap:10px;">
-                        <input type="text" id="searchInput" placeholder="İsimle ara..." onkeyup="loadLogos()" style="padding:12px; border-radius:10px; border:1px solid var(--border-color); background:var(--card-bg); color:var(--text-color); outline:none;">
-                        <select id="sortOrder" onchange="loadLogos()" style="padding:12px; border-radius:10px; border:1px solid var(--border-color); background:var(--card-bg); color:var(--text-color); cursor:pointer;">
-                            <option value="date_desc">En Yeni</option>
-                            <option value="name_asc">A - Z</option>
-                        </select>
+                    <div id="multiDeleteBar" style="display:none; gap:10px; align-items:center; background:var(--main-accent); padding:10px; border-radius:8px; color:white;">
+                        <span id="selectedCount">0 seçildi</span>
+                        <button onclick="deleteSelected()" style="background:white; color:var(--main-accent); border:none; padding:5px 10px; border-radius:4px; font-weight:bold; cursor:pointer;">SİL</button>
                     </div>
+                    <input type="text" id="searchInput" placeholder="İsimle ara..." onkeyup="loadLogos()" style="padding:10px; border-radius:8px; border:1px solid var(--border-color); background:var(--card-bg); color:var(--text-color);">
                 </div>
                 <div id="gridContainer" class="grid-container"></div>
             </div>
 
             <div id="tab-settings" class="tab-content" style="display:none;">
-                <h1>⚙️ Ayarlar & Tema Yönetimi</h1>
-                
-                <div class="settings-card" style="display:flex; justify-content:space-between; align-items:center;">
-                    <div>
-                        <h3 style="margin:0;">Görünüm Modu</h3>
-                        <p style="margin:5px 0 0 0; font-size:13px; color:#888;">Panelin genel aydınlatma temasını değiştirir.</p>
-                    </div>
+                <h1>⚙️ Ayarlar & Tema</h1>
+                <div style="background:var(--card-bg); padding:20px; border-radius:15px; border:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <div><h3>Görünüm Modu</h3><p style="color:#666; font-size:12px;">Koyu / Açık tema geçişi</p></div>
                     <button class="btn-action" onclick="toggleTheme()" id="themeBtn">AÇIK TEMAYA GEÇ</button>
                 </div>
-
-                <div class="settings-card">
-                    <h3 style="margin-top:0;">Vurgu Renkleri (9 Efsane Renk)</h3>
-                    <p style="font-size:13px; color:#888;">Panelin tüm buton ve detay renklerini buradan değiştirebilirsin.</p>
-                    <div class="color-grid" id="colorPickerGrid"></div>
-                </div>
+                <h3>Vurgu Renkleri (10 Renk)</h3>
+                <div class="color-grid" id="colorGrid"></div>
             </div>
         </div>
     </div>
 
 <script>
-    // --- 1. AYARLAR VE RENKLER ---
     const myColors = [
         { name: "Vişne Kırmızısı", code: "#ff0000" },
+        { name: "Uygulama Mavisi", code: "#00d4ff" }, // SENİN İSTEDİĞİN O MAVİ
         { name: "Neon Mavisi", code: "#00f3ff" },
         { name: "Amber Gold", code: "#ffbf00" },
         { name: "Bakır Bronz", code: "#cd7f32" },
@@ -176,43 +154,30 @@
     ];
 
     function initColors() {
-        const grid = document.getElementById('colorPickerGrid');
+        const grid = document.getElementById('colorGrid');
         myColors.forEach(c => {
-            const btn = document.createElement('div');
-            btn.className = 'color-box';
-            btn.style.background = c.code;
-            btn.innerText = c.name;
-            btn.onclick = () => applyColor(c.code);
-            grid.appendChild(btn);
+            const b = document.createElement('div');
+            b.className = 'color-box'; b.style.background = c.code; b.innerText = c.name;
+            b.onclick = () => { document.documentElement.style.setProperty('--main-accent', c.code); localStorage.setItem('theme_accent', c.code); loadLogos(); };
+            grid.appendChild(b);
         });
-        applyColor(localStorage.getItem('theme_accent') || '#ff0000');
+        const saved = localStorage.getItem('theme_accent') || '#ff0000';
+        document.documentElement.style.setProperty('--main-accent', saved);
         if(localStorage.getItem('theme_mode') === 'light') toggleTheme(true);
     }
 
-    function applyColor(code) {
-        document.documentElement.style.setProperty('--main-accent', code);
-        localStorage.setItem('theme_accent', code);
-        document.querySelectorAll('.color-box').forEach(b => {
-            b.classList.toggle('active', b.style.backgroundColor === code);
-        });
-    }
-
     function toggleTheme(init = false) {
-        const body = document.body;
-        const btn = document.getElementById('themeBtn');
-        const isLight = body.classList.toggle('light-mode');
-        
+        const isLight = document.body.classList.toggle('light-mode');
         if(!init) localStorage.setItem('theme_mode', isLight ? 'light' : 'dark');
-        btn.innerText = isLight ? "KOYU TEMAYA GEÇ" : "AÇIK TEMAYA GEÇ";
+        document.getElementById('themeBtn').innerText = isLight ? "KOYU TEMAYA GEÇ" : "AÇIK TEMAYA GEÇ";
     }
 
-    // --- 2. CUSTOM POPUP ---
     const popup = {
         dom: document.getElementById('customPopup'),
-        show: function(title, text, isConfirm = false) {
-            document.getElementById('popupTitle').innerText = title;
-            document.getElementById('popupText').innerText = text;
-            document.getElementById('btnPopupNo').style.display = isConfirm ? 'block' : 'none';
+        show: function(t, txt, conf = false) {
+            document.getElementById('popupTitle').innerText = t;
+            document.getElementById('popupText').innerText = txt;
+            document.getElementById('btnPopupNo').style.display = conf ? 'block' : 'none';
             this.dom.style.display = 'flex';
             return new Promise(res => {
                 document.getElementById('btnPopupYes').onclick = () => { this.dom.style.display='none'; res(true); };
@@ -221,17 +186,9 @@
         }
     };
     window.alert = (m) => popup.show("BİLGİ", m);
-    window.confirm = (m) => popup.show("EMİN MİSİN?", m, true);
+    window.confirm = (m) => popup.show("ONAY", m, true);
 
-    // --- 3. FIREBASE & CORE ---
-    const firebaseConfig = {
-        apiKey: "AIzaSyB...", // BURAYI DOLDUR USTA
-        authDomain: "logo-server-fixed.firebaseapp.com",
-        projectId: "logo-server-fixed",
-        storageBucket: "logo-server-fixed.firebasestorage.app",
-        messagingSenderId: "822558792997",
-        appId: "1:822558792997:web:b83cb53311bb68bbb68ecc"
-    };
+    const firebaseConfig = { apiKey: "AIzaSyB...", authDomain: "logo-server-fixed.firebaseapp.com", projectId: "logo-server-fixed", storageBucket: "logo-server-fixed.firebasestorage.app", messagingSenderId: "822558792997", appId: "1:822558792997:web:b83cb53311bb68bbb68ecc" };
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
     const GITHUB_USER = "trology85";
@@ -260,29 +217,25 @@
         btn.classList.add('active');
     }
 
-    // --- 4. ASIL MOTOR FONKSİYONLARI ---
-
     async function handleMultipleUpload(files) {
         const token = localStorage.getItem('gh_token');
         const status = document.getElementById('statusText');
         let i = 0;
         for (let file of files) {
-            i++;
-            status.innerHTML = `<div class="spinner"></div> Yükleniyor (${i}/${files.length}): ${file.name}`;
+            i++; status.innerHTML = `<div class="spinner"></div> Yükleniyor (${i}/${files.length}): ${file.name}`;
             const reader = new FileReader();
             await new Promise(resolve => {
                 reader.readAsDataURL(file);
                 reader.onload = async () => {
                     const content = reader.result.split(',')[1];
-                    const path = "logos/" + file.name;
-                    const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`, {
+                    const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logos/${file.name}`, {
                         method: "PUT", headers: { "Authorization": `token ${token}` },
                         body: JSON.stringify({ message: "Upload: " + file.name, content: content })
                     });
                     if(res.ok) {
                         await db.collection("logoListesi").add({
                             name: file.name.split('.')[0].toUpperCase(),
-                            url: `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${path}`,
+                            url: `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/logos/${file.name}`,
                             tarih: firebase.firestore.FieldValue.serverTimestamp()
                         });
                     }
@@ -290,27 +243,18 @@
                 };
             });
         }
-        status.innerText = "YÜKLEME BAŞARIYLA TAMAMLANDI!";
-        setTimeout(() => { status.innerText = "Dosyaları Seçin"; loadLogos(); }, 2000);
+        status.innerText = "Yükleme Tamam!"; loadLogos();
     }
 
     function loadLogos() {
-        const order = document.getElementById('sortOrder').value;
         const search = document.getElementById('searchInput').value.toUpperCase();
-        let q = db.collection("logoListesi");
-        q = (order === "name_asc") ? q.orderBy("name", "asc") : q.orderBy("tarih", "desc");
-        
-        q.onSnapshot(s => {
+        db.collection("logoListesi").orderBy("name", "asc").onSnapshot(s => {
             const container = document.getElementById('gridContainer');
             container.innerHTML = "";
             s.forEach(doc => {
                 const d = doc.data();
                 if(d.name.includes(search)) {
-                    container.innerHTML += `
-                    <div class="logo-card">
-                        <input type="checkbox" class="select-check" value="${doc.id}" onchange="updateSelection()">
-                        <img src="${d.url}"><p title="${d.name}">${d.name}</p>
-                    </div>`;
+                    container.innerHTML += `<div class="logo-card"><input type="checkbox" class="select-check" value="${doc.id}" onchange="updateSelection()"><img src="${d.url}"><p>${d.name}</p></div>`;
                 }
             });
         });
@@ -320,52 +264,35 @@
     function updateSelection() {
         selectedIds = Array.from(document.querySelectorAll('.select-check:checked')).map(c => c.value);
         document.getElementById('multiDeleteBar').style.display = selectedIds.length ? 'flex' : 'none';
-        document.getElementById('selectedCount').innerText = selectedIds.length + " logo seçildi";
+        document.getElementById('selectedCount').innerText = selectedIds.length + " seçildi";
     }
 
     async function deleteSelected() {
-        if(await confirm(`Seçilen ${selectedIds.length} logoyu silmek istediğine emin misin?`)) {
+        if(await confirm("Seçilen logoları silmek istediğine emin misin?")) {
             for(let id of selectedIds) { await db.collection("logoListesi").doc(id).delete(); }
-            selectedIds = []; updateSelection();
-            alert("Silme işlemi tamamlandı.");
+            updateSelection();
         }
     }
 
     async function publishJson() {
         const token = localStorage.getItem('gh_token');
         const btn = document.getElementById('publishBtn');
-        btn.innerHTML = `<div class="spinner"></div> YAYINLANIYOR...`;
-        btn.disabled = true;
-
+        btn.innerHTML = `<div class="spinner"></div> Yayınlanıyor...`; btn.disabled = true;
         const snap = await db.collection("logoListesi").orderBy("name", "asc").get();
         let list = [];
         snap.forEach(doc => { const d = doc.data(); list.push({ name: d.name, url: d.url, rev: "rev=1" }); });
-
-        const fileName = "logolar.json";
         const content = btoa(unescape(encodeURIComponent(JSON.stringify(list, null, 2))));
-        
-        const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${fileName}`, {
-            headers: { "Authorization": `token ${token}` }
-        });
-        
-        let sha = "";
-        if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
-
-        const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${fileName}`, {
+        const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { headers: { "Authorization": `token ${token}` } });
+        let sha = ""; if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
+        const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
             method: "PUT", headers: { "Authorization": `token ${token}` },
-            body: JSON.stringify({ message: "Update logolar.json", content: content, sha: sha })
+            body: JSON.stringify({ message: "Update", content: content, sha: sha })
         });
-
-        alert(res.ok ? "Sistem Yayına Alındı!" : "Hata Oluştu!");
-        btn.innerText = "SİSTEMİ YAYINLA";
-        btn.disabled = false;
+        alert(res.ok ? "Başarıyla Yayınlandı!" : "Hata!");
+        btn.innerText = "SİSTEMİ YAYINLA"; btn.disabled = false;
     }
 
-    window.onload = () => {
-        initColors();
-        const t = localStorage.getItem('gh_token');
-        if(t) { document.getElementById('entryToken').value = t; unlock(); }
-    };
+    window.onload = () => { initColors(); const t = localStorage.getItem('gh_token'); if(t) { document.getElementById('entryToken').value = t; unlock(); } };
 </script>
 </body>
 </html>
