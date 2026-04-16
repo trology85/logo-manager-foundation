@@ -130,14 +130,11 @@
                 <div id="failLog" style="background:#0a0a0a; padding:15px; border-radius:12px; color:#ff0000; font-family:monospace; font-size:12px; height:350px; overflow-y:auto; border:1px solid #222;"></div>
             </div>
         </div>
-       <div id="downloadArea" style="display:none; margin-top:20px;">
-    <button id="downloadM3U" class="btn-green">DÜZENLENMİŞ M3U DOSYASINI İNDİR</button>
-</div>
-
-
-<div id="tab-inspector" style="display:none;">
+        <button id="downloadM3U" class="btn-green" style="margin-top:20px;">DÜZENLENMİŞ M3U DOSYASINI İNDİR</button>
+    </div>
+</div> <div id="tab-inspector" style="display:none;">
     <h1>📏 Logo Müfettişi (400x400)</h1>
-    <p style="color:#888;">Arşivdeki tüm logoların standartlara (400x400 PNG) uygunluğunu denetler.</p>
+    <p style="color:#888;">Arşivdeki tüm logoların standartlara uygunluğunu denetler.</p>
     
     <div style="background:var(--card-bg); padding:30px; border-radius:20px; border:1px solid var(--border-color); margin-bottom:20px; text-align:center;">
         <button class="btn-green" onclick="inspectArchive()" style="background:#f39c12; width:300px;">ARŞİVİ DENETLEMEYE BAŞLA</button>
@@ -155,7 +152,16 @@
             </div>
         </div>
     </div>
-</div>
+</div> ```
+
+### 2. Neden Aynı Sayfada Çıkıyordu?
+Senin önceki kodunda muhtemelen `tab-detective` div'ini kapatmadan `tab-inspector` div'ini açmıştın. Bu durumda JavaScript `showTab('tab-detective')` dediğinde, içinde Müfettiş'i de barındıran dev bir kutuyu açıyordu.
+
+**Şimdi bu değişikliği yapınca:**
+1.  Sol menüden **M3U Dedektifi**'ne basınca sadece liste düzenleme gelecek.
+2.  **Logo Müfettişi**'ne basınca sadece boyut ölçme gelecek.
+
+Hadi bir "F5" yap usta, bu sefer duvarlar örüldü, odalar ayrıldı! 😎🚀🏁
 
 </div>
         
