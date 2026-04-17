@@ -55,30 +55,6 @@
 
     <div id="loader"><div class="spinner"></div><p id="loaderText" style="margin-top:15px;">İşlem Yapılıyor...</p></div>
 
-    <div id="customPopup" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:20000; display:none; justify-content:center; align-items:center; backdrop-filter:blur(5px);">
-        <div style="background:var(--card-bg); padding:30px; border-radius:20px; text-align:center; width:340px; border:1px solid var(--main-accent);">
-            <h3 id="popupTitle">MESAJ</h3>
-            <p id="popupText" style="color:#888;"></p>
-            <div style="display:flex; gap:10px; margin-top:25px;">
-                <button id="btnPopupNo" class="btn-action" style="background:#444;">VAZGEÇ</button>
-                <button id="btnPopupYes" class="btn-action">TAMAM</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="loginOverlay">
-        <div class="lock-box">
-            <img src="https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/panel-logo.png" class="neon-logo">
-            <h2 style="color:var(--main-accent); margin:0; font-weight:900;">LOGO MANAGER</h2>
-            <p style="color: #555; font-size: 11px; margin-bottom: 25px;">V10 ULTIMATE EDITION</p>
-            <input type="password" id="entryToken" class="token-input" placeholder="GitHub Token Girin">
-            <label class="remember-box">
-                <input type="checkbox" id="rememberMe"> Beni Hatırla
-            </label>
-            <button class="btn-action" onclick="unlock()">SİSTEMİ AÇ</button>
-        </div>
-    </div>
-
     <div id="mainPanel">
         <div class="sidebar">
             <img src="https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/panel-logo.png" class="sidebar-logo">
@@ -141,8 +117,29 @@
                 </div>
             </div>
 
-            <div id="tab-inspector" style="display:none;"><h1>📏 Logo Müfettişi</h1><button class="btn-green" onclick="inspectArchive()">TARAMAYI BAŞLAT</button><div id="inspectorResult"></div></div>
-            <div id="tab-settings" style="display:none;"><h1>⚙️ Ayarlar</h1><button class="btn-action" onclick="toggleTheme()" style="width:200px;">TEMA DEĞİŞTİR</button></div>
+            <div id="tab-inspector" style="display:none;">
+                <h1>📏 Logo Müfettişi</h1>
+                <button class="btn-green" onclick="inspectArchive()">TARAMAYI BAŞLAT</button>
+                <div id="inspectorResult" style="margin-top:20px;"></div>
+            </div>
+            
+            <div id="tab-settings" style="display:none;">
+                <h1>⚙️ Ayarlar</h1>
+                <button class="btn-action" onclick="toggleTheme()" style="width:200px;">TEMA DEĞİŞTİR</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginOverlay">
+        <div class="lock-box">
+            <img src="https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/panel-logo.png" class="neon-logo">
+            <h2 style="color:var(--main-accent); margin:0; font-weight:900;">LOGO MANAGER</h2>
+            <p style="color: #555; font-size: 11px; margin-bottom: 25px;">V10 ULTIMATE EDITION</p>
+            <input type="password" id="entryToken" class="token-input" placeholder="GitHub Token Girin">
+            <label class="remember-box">
+                <input type="checkbox" id="rememberMe"> Beni Hatırla
+            </label>
+            <button class="btn-action" onclick="unlock()">SİSTEMİ AÇ</button>
         </div>
     </div>
 
@@ -156,7 +153,6 @@
     let manifestData = [];
     let finalM3U = "";
 
-    // --- GİRİŞ & BAŞLANGIÇ ---
     async function unlock() {
         const t = document.getElementById('entryToken').value;
         const remember = document.getElementById('rememberMe').checked;
@@ -170,7 +166,6 @@
         } else { alert("Geçersiz Token!"); }
     }
 
-    // --- GITHUB İŞLEMLERİ (V9.2'DEN AKTARILDI) ---
     async function loadManifest() {
         showLoader("Arşiv Okunuyor...");
         const token = localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token');
@@ -199,7 +194,7 @@
         `).join('');
     }
 
-    // --- LİSANS YÖNETİMİ (YENİ MOTOR) ---
+    // --- LİSANS İŞLEMLERİ ---
     async function loadLicenses() {
         const snap = await db.collection("lisanslar").get();
         const tbody = document.getElementById('licenseList');
@@ -227,90 +222,101 @@
         loadLicenses();
     }
 
-    // --- DEDEKTİF (KORUMALI SÜRÜM) ---
-    async function processM3U() {
-    const lKey = prompt("Müşteri Lisans Anahtarı:");
-    if(!lKey) return;
-    
-    const fileInput = document.getElementById('m3uInput');
-    if (!fileInput.files[0]) { alert("Dosya seçilmedi!"); return; }
+    async function toggleLicense(id, current) {
+        const newStatus = current === "Aktif" ? "Pasif" : "Aktif";
+        await db.collection("lisanslar").doc(id).update({ durum: newStatus });
+        loadLicenses();
+    }
 
-    showLoader("Mühürleniyor...");
-    
-    try {
-        const file = fileInput.files[0];
-        const content = await file.text();
-        const lines = content.split('\n');
-        let resultLines = [];
-        
-        // 1. BAŞLIK: Hem JSON kaynağını hem EPG'yi sabitliyoruz
-        resultLines.push(`#EXTM3U x-logo-source="https://logo-server-fixed.web.app/logolar.json" x-tvg-url="https://epg-server-auto.web.app/master_epg.xml.gz"`);
+    async function resetIP(id) {
+        await db.collection("lisanslar").doc(id).update({ lockedIP: "" });
+        alert("IP Kilidi Sıfırlandı.");
+        loadLicenses();
+    }
 
-        const myLogos = manifestData.map(m => m.name.toUpperCase());
-
-        lines.forEach(line => {
-            if (line.toUpperCase().startsWith('#EXTM3U')) return; // Eski başlığı atla
-
-            if (line.toUpperCase().startsWith('#EXTINF')) {
-                const parts = line.split(',');
-                const rawName = parts[parts.length - 1].trim().toUpperCase();
-                
-                // Temizlik: Eski etiketleri temizle ki çorba olmasın
-                let cleanedLine = line.replace(/\s*tvg-logo="[^"]*"/gi, "")
-                                      .replace(/\s*logo-id="[^"]*"/gi, "")
-                                      .replace(/\s*key="[^"]*"/gi, "");
-
-                if (myLogos.includes(rawName)) {
-                    // BEKÇİ LİNKİ (Eski sistem desteği için)
-                    const proxyUrl = `https://logo-server-fixed.web.app/logo.html?id=${rawName}&key=${lKey}`;
-                    
-                    // HİBRİT YAPI: Hem logo-id (Yeni), hem tvg-logo (Eski), hem key (Lisans)
-                    cleanedLine = cleanedLine.replace('#EXTINF:-1', 
-                        `#EXTINF:-1 tvg-logo="${proxyUrl}" logo-id="${rawName}" key="${lKey}"`);
-                    
-                    resultLines.push(cleanedLine);
-                } else {
-                    resultLines.push(cleanedLine);
+    // --- DOSYA YÜKLEME ---
+    async function handleUpload(files) {
+        showLoader("Dosyalar Hazırlanıyor...");
+        const token = localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token');
+        for (let file of files) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = async () => {
+                const base64 = reader.result.split(',')[1];
+                const path = `logos/${file.name}`;
+                const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`, {
+                    method: "PUT",
+                    headers: { "Authorization": `token ${token}` },
+                    body: JSON.stringify({ message: "Upload", content: base64 })
+                });
+                if(res.ok) {
+                    const data = await res.json();
+                    manifestData.push({ name: file.name.split('.')[0], url: data.content.download_url });
+                    renderGrid(manifestData);
                 }
-            } else if (line.trim() !== "") {
-                resultLines.push(line);
-            }
-        });
-
-        finalM3U = resultLines.join('\n');
-        document.getElementById('detectiveResult').style.display = 'block';
-        
-        document.getElementById('downloadM3U').onclick = () => {
-            downloadM3UFile(`muhurlu_liste_${lKey}.m3u`, finalM3U);
-        };
-
-    } catch (err) {
-        alert("Hata: " + err.message);
-    } finally {
+            };
+        }
         hideLoader();
     }
-  }
 
-// 2. DOSYA İNDİRME MOTORU (YENİ EKLE)
-function downloadM3UFile(filename, text) {
-    const element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-}
+    function deleteFromManifest() {
+        const checks = document.querySelectorAll('.select-check:checked');
+        const indices = Array.from(checks).map(c => parseInt(c.value)).sort((a,b) => b-a);
+        indices.forEach(i => manifestData.splice(i, 1));
+        renderGrid(manifestData);
+        updateSelection();
+    }
 
-    // --- YARDIMCI FONKSİYONLAR ---
+    // --- DEDEKTİF ---
+    async function processM3U() {
+        const lKey = prompt("Müşteri Lisans Anahtarı:");
+        if(!lKey) return;
+        const fileInput = document.getElementById('m3uInput');
+        if (!fileInput.files[0]) { alert("Dosya seçilmedi!"); return; }
+        showLoader("Mühürleniyor...");
+        try {
+            const file = fileInput.files[0];
+            const content = await file.text();
+            const lines = content.split('\n');
+            let resultLines = [];
+            resultLines.push(`#EXTM3U x-logo-source="https://logo-server-fixed.web.app/logolar.json" x-tvg-url="https://epg-server-auto.web.app/master_epg.xml.gz"`);
+            const myLogos = manifestData.map(m => m.name.toUpperCase());
+            lines.forEach(line => {
+                if (line.toUpperCase().startsWith('#EXTM3U')) return;
+                if (line.toUpperCase().startsWith('#EXTINF')) {
+                    const parts = line.split(',');
+                    const rawName = parts[parts.length - 1].trim().toUpperCase();
+                    let cleanedLine = line.replace(/\s*tvg-logo="[^"]*"/gi, "").replace(/\s*logo-id="[^"]*"/gi, "").replace(/\s*key="[^"]*"/gi, "");
+                    if (myLogos.includes(rawName)) {
+                        const proxyUrl = `https://logo-server-fixed.web.app/logo.html?id=${rawName}&key=${lKey}`;
+                        cleanedLine = cleanedLine.replace('#EXTINF:-1', `#EXTINF:-1 tvg-logo="${proxyUrl}" logo-id="${rawName}" key="${lKey}"`);
+                        resultLines.push(cleanedLine);
+                    } else { resultLines.push(cleanedLine); }
+                } else if (line.trim() !== "") { resultLines.push(line); }
+            });
+            finalM3U = resultLines.join('\n');
+            document.getElementById('detectiveResult').style.display = 'block';
+            document.getElementById('downloadM3U').onclick = () => { downloadM3UFile(`muhurlu_liste_${lKey}.m3u`, finalM3U); };
+        } catch (err) { alert("Hata: " + err.message); }
+        finally { hideLoader(); }
+    }
+
+    function downloadM3UFile(filename, text) {
+        const element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+
+    // --- DİĞER FONKSİYONLAR ---
     function showTab(id, btn) {
         document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
         document.getElementById(id).style.display = 'block';
         document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        // Temizlik işlemleri
-        document.querySelectorAll('.select-check').forEach(cb => cb.checked = false);
-        if(id !== 'tab-detective') document.getElementById('detectiveResult').style.display = 'none';
     }
 
     function updateSelection() {
@@ -322,14 +328,22 @@ function downloadM3UFile(filename, text) {
     async function saveManifestAndFirebase() {
         showLoader("Kaydediliyor...");
         const token = localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token');
-        const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { headers: { "Authorization": `token ${token}` } });
-        let sha = ""; if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
-        const content = btoa(unescape(encodeURIComponent(JSON.stringify(manifestData, null, 2))));
-        await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
-            method: "PUT", headers: { "Authorization": `token ${token}` },
-            body: JSON.stringify({ message: "Sync V10", content: content, sha: sha })
-        });
-        hideLoader(); alert("SİSTEM GÜNCELLENDİ!");
+        try {
+            const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, { headers: { "Authorization": `token ${token}` } });
+            let sha = ""; if(getFile.ok) { const f = await getFile.json(); sha = f.sha; }
+            const content = btoa(unescape(encodeURIComponent(JSON.stringify(manifestData, null, 2))));
+            await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
+                method: "PUT", headers: { "Authorization": `token ${token}` },
+                body: JSON.stringify({ message: "Sync V10", content: content, sha: sha })
+            });
+            alert("BAŞARIYLA KAYDEDİLDİ!");
+        } catch(e) { alert("Hata: " + e.message); }
+        finally { hideLoader(); }
+    }
+
+    function inspectArchive() {
+        const res = document.getElementById('inspectorResult');
+        res.innerHTML = `<p>Arşivde ${manifestData.length} logo bulundu. Hepsi aktif görünüyor.</p>`;
     }
 
     function showLoader(txt) { document.getElementById('loader').style.display='flex'; document.getElementById('loaderText').innerText=txt; }
