@@ -243,7 +243,8 @@
                 const parts = line.split(',');
                 const rawName = parts[parts.length - 1].trim().toUpperCase();
                 if (myLogos.includes(rawName)) {
-                    const proxyUrl = `https://senin-gateway.web.app/logo?id=${rawName}&key=${lKey}`;
+                    // Eski proxyUrl yerine bunu yapıştır (Kendi web.app linkini yaz)
+                    const proxyUrl = `https://logo-server-fixed.web.app/logo.html?id=${rawName}&key=${lKey}`;
                     let cleaned = line.replace(/\s*tvg-logo="[^"]*"/gi, "");
                     resultLines.push(cleaned.replace('#EXTINF:-1', `#EXTINF:-1 tvg-logo="${proxyUrl}"`));
                 } else resultLines.push(line);
