@@ -229,14 +229,11 @@
 
     // --- DEDEKTİF (KORUMALI SÜRÜM) ---
     async function processM3U() {
-    const lKey = prompt("Hangi Lisans Anahtarı İçin Hazırlansın? (Örn: PRO-XXXX)");
+    const lKey = prompt("Müşteri Lisans Anahtarı:");
     if(!lKey) return;
     
     const fileInput = document.getElementById('m3uInput');
-    if (!fileInput.files[0]) {
-        alert("Lütfen önce bir M3U dosyası seçin!");
-        return;
-    }
+    if (!fileInput.files[0]) { alert("Dosya seçilmedi!"); return; }
 
     showLoader("Mühürleniyor...");
     
@@ -246,43 +243,49 @@
         const lines = content.split('\n');
         let resultLines = [];
         
-        // Manifest'teki logo isimlerini büyük harfe çevirerek listele
+        // 1. BAŞLIK: Hem JSON kaynağını hem EPG'yi sabitliyoruz
+        resultLines.push(`#EXTM3U x-logo-source="https://logo-server-fixed.web.app/logolar.json" x-tvg-url="https://epg-server-auto.web.app/master_epg.xml.gz"`);
+
         const myLogos = manifestData.map(m => m.name.toUpperCase());
 
         lines.forEach(line => {
+            if (line.toUpperCase().startsWith('#EXTM3U')) return; // Eski başlığı atla
+
             if (line.toUpperCase().startsWith('#EXTINF')) {
-                // Kanal adını çek (virgülden sonraki kısım)
                 const parts = line.split(',');
                 const rawName = parts[parts.length - 1].trim().toUpperCase();
                 
-                // Eğer logo arşivimizde varsa linki mühürle
+                // Temizlik: Eski etiketleri temizle ki çorba olmasın
+                let cleanedLine = line.replace(/\s*tvg-logo="[^"]*"/gi, "")
+                                      .replace(/\s*logo-id="[^"]*"/gi, "")
+                                      .replace(/\s*key="[^"]*"/gi, "");
+
                 if (myLogos.includes(rawName)) {
-                    // SENİN HOSTİNG LİNKİN BURAYA GELECEK:
+                    // BEKÇİ LİNKİ (Eski sistem desteği için)
                     const proxyUrl = `https://logo-server-fixed.web.app/logo.html?id=${rawName}&key=${lKey}`;
                     
-                    // Mevcut tvg-logo kısmını temizle ve yenisini ekle
-                    let cleaned = line.replace(/\s*tvg-logo="[^"]*"/gi, "");
-                    resultLines.push(cleaned.replace('#EXTINF:-1', `#EXTINF:-1 tvg-logo="${proxyUrl}"`));
+                    // HİBRİT YAPI: Hem logo-id (Yeni), hem tvg-logo (Eski), hem key (Lisans)
+                    cleanedLine = cleanedLine.replace('#EXTINF:-1', 
+                        `#EXTINF:-1 tvg-logo="${proxyUrl}" logo-id="${rawName}" key="${lKey}"`);
+                    
+                    resultLines.push(cleanedLine);
                 } else {
-                    resultLines.push(line);
+                    resultLines.push(cleanedLine);
                 }
-            } else {
+            } else if (line.trim() !== "") {
                 resultLines.push(line);
             }
         });
 
         finalM3U = resultLines.join('\n');
-        
-        // Butonu görünür yap ve tıklama olayını bağla
-        const dlBtn = document.getElementById('downloadM3U');
         document.getElementById('detectiveResult').style.display = 'block';
         
-        dlBtn.onclick = () => {
-            downloadM3UFile(`muhurlu_${lKey}.m3u`, finalM3U);
+        document.getElementById('downloadM3U').onclick = () => {
+            downloadM3UFile(`muhurlu_liste_${lKey}.m3u`, finalM3U);
         };
 
     } catch (err) {
-        alert("Hata oluştu: " + err.message);
+        alert("Hata: " + err.message);
     } finally {
         hideLoader();
     }
