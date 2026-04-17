@@ -13,6 +13,10 @@
         #loginOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; }
         .lock-box { background: #111; padding: 50px; border-radius: 30px; border-top: 5px solid var(--main-accent); text-align: center; width: 380px; }
         .token-input { width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: white; border-radius: 12px; margin-bottom: 20px; text-align: center; outline: none; }
+        
+        /* Yeni Login Stilleri */
+        .remember-box { display: flex; align-items: center; justify-content: center; gap: 10px; color: #888; font-size: 13px; margin-bottom: 20px; cursor: pointer; }
+        .remember-box input { accent-color: var(--main-accent); cursor: pointer; }
 
         #mainPanel { display: flex; height: 100vh; opacity: 0; transition: 1s; }
         .sidebar { width: 280px; background: var(--sidebar-bg); padding: 25px; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
@@ -36,6 +40,8 @@
         #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay-bg); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 10001; }
         .spinner { border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--main-accent); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .masked-token { background: #000; padding: 10px; border-radius: 8px; font-family: monospace; color: #1db954; border: 1px solid #222; margin: 10px 0; display: inline-block; }
     </style>
 </head>
 <body>
@@ -57,6 +63,9 @@
         <div class="lock-box">
             <h2 style="color:var(--main-accent);">LOGO MANAGER</h2>
             <input type="password" id="entryToken" class="token-input" placeholder="GitHub Token Girin">
+            <label class="remember-box">
+                <input type="checkbox" id="rememberMe"> Beni Hatırla
+            </label>
             <button class="btn-action" onclick="unlock()">SİSTEMİ AÇ</button>
         </div>
     </div>
@@ -106,10 +115,18 @@
 
             <div id="tab-settings" style="display:none;">
                 <h1>⚙️ Ayarlar</h1>
+                <div style="background:var(--card-bg); padding:20px; border-radius:15px; border:1px solid var(--border-color); margin-bottom:20px;">
+                    <h3 style="margin-top:0;">Aktif Bağlantı Bilgisi</h3>
+                    <p style="color:#888; font-size:13px;">Sistem şu an aşağıdaki GitHub yetki anahtarı ile çalışıyor:</p>
+                    <div id="maskedTokenView" class="masked-token">ghp_••••••••••••</div>
+                </div>
+                
                 <button class="btn-action" onclick="toggleTheme()" id="themeBtn" style="margin-bottom:30px; width:250px;">AÇIK TEMAYA GEÇ</button>
+                
                 <h3>Panel Vurgu Rengi</h3>
                 <div id="colorGrid" class="grid-container" style="grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));"></div>
             </div>
+
           <div id="tab-detective" style="display:none;">
     <h1>📡 M3U Liste Düzenleyici</h1>
     <p style="color:#888;">M3U dosyanızı yükleyin, logoları fihristle eşleyip tertemiz bir liste alın.</p>
@@ -170,17 +187,30 @@
 
     async function unlock() {
         const t = document.getElementById('entryToken').value;
-        if(t.startsWith("ghp_")) {
-            localStorage.setItem('gh_token', t);
+        const remember = document.getElementById('rememberMe').checked;
+
+        if(t.startsWith("ghp_") || t.length > 20) {
+            // Beni Hatırla kontrolü
+            if(remember) {
+                localStorage.setItem('gh_token', t);
+            } else {
+                sessionStorage.setItem('gh_token', t); // Sadece sekme kapanana kadar tut
+            }
+            
             document.getElementById('loginOverlay').style.display = "none";
             document.getElementById('mainPanel').style.opacity = "1";
+            
+            // Maskelenmiş tokeni ayarlar kısmına yaz
+            const masked = t.substring(0, 4) + "••••••••" + t.substring(t.length - 4);
+            document.getElementById('maskedTokenView').innerText = masked;
+
             await loadManifest();
         } else { alert("Geçersiz Token!"); }
     }
 
     async function loadManifest() {
         showLoader("Arşiv Okunuyor...");
-        const token = localStorage.getItem('gh_token');
+        const token = localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token');
         try {
             const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/logolar.json`, {
                 headers: { "Authorization": `token ${token}` }
@@ -248,7 +278,6 @@ async function processM3U() {
             const upperName = rawName.toUpperCase();
 
             if (myLogos.includes(upperName)) {
-                // Mevcut logo taglarını temizle ve yenisini ekle
                 let cleanedLine = line.replace(/\s*tvg-logo="[^"]*"/gi, "");
                 cleanedLine = cleanedLine.replace(/\s*logo-id="[^"]*"/gi, "");
                 const finalLine = cleanedLine.replace(',', ` logo-id="${upperName}",`);
@@ -264,15 +293,11 @@ async function processM3U() {
     });
 
     finalM3U = resultLines.join('\n');
-    
-    // Sonuç panelini göster
     document.getElementById('detectiveResult').style.display = 'block';
-    
     hideLoader();
     alert("Dedektif taramayı bitirdi!");
 }
 
-// İndirme işlemini sadece BURADA (dışarıda) bırakalım, tek bir yerde olması yeterli
 document.getElementById('downloadM3U').onclick = () => {
     if(!finalM3U) return alert("Önce bir dosya işlemen lazım usta!");
     const blob = new Blob([finalM3U], { type: 'text/plain' });
@@ -285,9 +310,9 @@ document.getElementById('downloadM3U').onclick = () => {
     async function inspectArchive() {
     if (!manifestData || manifestData.length === 0) return alert("Fihrist boş usta!");
 
-    const matchLog = document.getElementById('insMatchLog'); // ID Değişti
-    const failLog = document.getElementById('insFailLog');   // ID Değişti
-    const resultDiv = document.getElementById('inspectorResult'); // ID Değişti
+    const matchLog = document.getElementById('insMatchLog');
+    const failLog = document.getElementById('insFailLog');
+    const resultDiv = document.getElementById('inspectorResult');
     
     matchLog.innerHTML = "";
     failLog.innerHTML = "";
@@ -311,7 +336,7 @@ document.getElementById('downloadM3U').onclick = () => {
     hideLoader();
     alert("Denetim bitti!");
 }
-// Görsel boyutunu almak için yardımcı fonksiyon
+
 function getImgDimensions(url) {
     return new Promise((resolve, reject) => {
         let img = new Image();
@@ -323,7 +348,7 @@ function getImgDimensions(url) {
 
     async function handleUpload(files) {
         showLoader("Logolar Yükleniyor...");
-        const token = localStorage.getItem('gh_token');
+        const token = localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token');
         for (let file of files) {
             const reader = new FileReader();
             await new Promise(resolve => {
@@ -348,7 +373,7 @@ function getImgDimensions(url) {
     }
 
     async function saveManifestAndFirebase() {
-        const token = localStorage.getItem('gh_token');
+        const token = localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token');
         if(!token) return alert("Hata: Token yok!");
 
         showLoader("Mühürleme Başladı..."); 
@@ -396,11 +421,17 @@ function getImgDimensions(url) {
         document.getElementById('selCount').innerText = sel.length + " seçildi";
     }
 
+    // GÜNCELLENEN SHOWTAB: Sayfa değişince her şeyi temizler
     function showTab(id, btn) {
         document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
         document.getElementById(id).style.display = 'block';
         document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+
+        // TEMİZLİK: Diğer sayfalardaki seçimleri ve panelleri sıfırla
+        document.querySelectorAll('.select-check').forEach(cb => cb.checked = false);
+        const dt = document.getElementById('deleteTool');
+        if(dt) dt.style.display = 'none';
     }
 
     function toggleTheme() {
@@ -408,7 +439,11 @@ function getImgDimensions(url) {
         document.getElementById('themeBtn').innerText = isLight ? "KOYU TEMAYA GEÇ" : "AÇIK TEMAYA GEÇ";
     }
 
-    function logout() { localStorage.removeItem('gh_token'); location.reload(); }
+    function logout() { 
+        localStorage.removeItem('gh_token'); 
+        sessionStorage.removeItem('gh_token');
+        location.reload(); 
+    }
 
     window.onload = () => {
         const colors = [{name:"Vişne",code:"#ff0000"},{name:"Mavi",code:"#00d4ff"},{name:"Neon",code:"#00f3ff"},{name:"Altın",code:"#ffbf00"},{name:"Bakır",code:"#cd7f32"},{name:"Lacivert",code:"#000080"},{name:"Mor",code:"#8f00ff"},{name:"Nane",code:"#98ff98"},{name:"Petrol",code:"#005f56"},{name:"Platin",code:"#e5e4e2"}];
@@ -419,7 +454,14 @@ function getImgDimensions(url) {
             b.innerText = c.name; b.onclick = () => { document.documentElement.style.setProperty('--main-accent', c.code); };
             cGrid.appendChild(b);
         });
-        if(localStorage.getItem('gh_token')) { document.getElementById('entryToken').value = localStorage.getItem('gh_token'); unlock(); }
+        
+        // Kayıtlı token varsa girişi hazırla
+        const savedToken = localStorage.getItem('gh_token');
+        if(savedToken) { 
+            document.getElementById('entryToken').value = savedToken; 
+            document.getElementById('rememberMe').checked = true;
+            unlock(); 
+        }
     };
 
     function showLoader(txt) { document.getElementById('loader').style.display='flex'; document.getElementById('loaderText').innerText=txt; }
