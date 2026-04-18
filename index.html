@@ -372,10 +372,46 @@
     }
 
     function showTab(id, btn) {
-        document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
-        document.getElementById(id).style.display = 'block';
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    // 1. Sekme Değiştirme İşlemi
+    document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // 2. ARŞİV TEMİZLİĞİ: Tüm seçimleri kaldır ve silme panelini kapat
+    document.querySelectorAll('.select-check').forEach(cb => cb.checked = false);
+    const deleteTool = document.getElementById('deleteTool');
+    if (deleteTool) deleteTool.style.display = 'none';
+
+    // 3. MÜFETTİŞ TEMİZLİĞİ: Eski tarama sonuçlarını sıfırla
+    const inspectorResult = document.getElementById('inspectorResult');
+    const insMatchLog = document.getElementById('insMatchLog');
+    const insFailLog = document.getElementById('insFailLog');
+    
+    if (inspectorResult) {
+        inspectorResult.style.display = 'none'; // Paneli gizle
+        if (insMatchLog) insMatchLog.innerHTML = ""; // İçini boşalt
+        if (insFailLog) insFailLog.innerHTML = "";   // İçini boşalt
+    }
+
+    // 4. DEDEKTİF TEMİZLİĞİ (Bonus): Eğer dedektiften de çıkılırsa orayı da temizleyelim
+    const detectiveResult = document.getElementById('detectiveResult');
+    if (detectiveResult && id !== 'tab-detective') { // Sadece dedektiften çıkınca temizle
+        detectiveResult.style.display = 'none';
+      }
+    }
+
+    function updateSelection() {
+    const sel = document.querySelectorAll('.select-check:checked');
+    const deleteTool = document.getElementById('deleteTool');
+    const selCountText = document.getElementById('selCount');
+    
+    if (deleteTool) {
+        deleteTool.style.display = sel.length ? 'flex' : 'none';
+    }
+    if (selCountText) {
+        selCountText.innerText = sel.length + " seçildi";
+      }
     }
 
     function toggleTheme() {
