@@ -100,10 +100,11 @@
             <h2 style="color:var(--main-accent); text-align:center; margin-bottom:30px; font-weight:900; font-size:18px;">LOGO PRO</h2>
             
             <button class="nav-btn active" onclick="showTab('tab-upload', this)">📤 Çoklu Yükle</button>
-            <button class="nav-btn" onclick="showTab('tab-library', this)">📂 Tüm Arşiv (JSON)</button>
-            <button class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar</button>
+            <button class="nav-btn" onclick="showTab('tab-library', this)">📂 Tüm Arşiv (JSON)</button>            
             <button class="nav-btn" onclick="showTab('tab-detective', this)">🔍 M3U Dedektifi</button>
             <button class="nav-btn" onclick="showTab('tab-inspector', this)">📏 Logo Müfettişi</button>
+            <button class="nav-btn" onclick="showTab('tab-repair', this)">🔧 Liste Onarıcı</button>
+            <button class="nav-btn" onclick="showTab('tab-settings', this)">⚙️ Ayarlar</button>
             
             <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 25px;">
                 <button id="publishBtn" class="btn-green" onclick="saveManifestAndFirebase()">DEĞİŞİKLİKLERİ KAYDET</button>
@@ -165,6 +166,18 @@
                     <button id="downloadM3U" class="btn-green" style="margin-top:20px;">DÜZENLENMİŞ M3U İNDİR</button>
                 </div>
             </div>
+
+            <div id="tab-repair" style="display:none;">
+                 <h1>🔧 Liste Onarıcı (Legacy Mode)</h1>
+                 <p style="color:#666;">Logosu olmayan veya hatalı olan listeleri senin sistemine standart hale getirir.</p>
+                 <div style="background:var(--card-bg); padding:30px; border-radius:20px; border:1px solid var(--border-color);">
+                 <input type="file" id="repairInput" accept=".m3u" style="width:100%; margin-bottom:15px; color:white;">
+                 <button class="btn-action" style="width:100%" onclick="repairM3U()">LİSTEYİ STANDARTLAŞTIR VE ONAR</button>
+                </div>
+            <div id="repairResult" style="display:none; margin-top:20px;">
+            <button id="downloadRepair" class="btn-green" style="width:100%">ONARILMIŞ M3U İNDİR</button>
+                </div>
+           </div>
 
             <div id="tab-inspector" style="display:none;">
                 <h1>📏 Logo Müfettişi (400x400)</h1>
@@ -288,6 +301,53 @@
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob); a.download = "onayli_liste.m3u"; a.click();
     };
+
+    async function repairM3U() {
+      const fileInput = document.getElementById('repairInput');
+      if (!fileInput.files[0]) { alert("Lütfen bir M3U dosyası seçin!"); return; }
+    
+      showLoader("Liste Onarılıyor...");
+      const content = await fileInput.files[0].text();
+      const lines = content.split('\n');
+      let result = ["#EXTM3U"];
+    
+      // Arşivdeki logoları büyük harf yapıp hızlıca tarayalım
+      const myLogos = manifestData.reduce((acc, curr) => {
+        acc[curr.name.toUpperCase()] = curr.url;
+        return acc;
+       }, {});
+
+      lines.forEach(line => {
+        if (line.startsWith('#EXTINF')) {
+            // Mevcut tvg-logo veya logo-id'leri temizle (Sıfırdan temiz yapı kuralım)
+            let cleanLine = line.replace(/\s*tvg-logo="[^"]*"/gi, "").replace(/\s*logo-id="[^"]*"/gi, "");
+            
+            const parts = line.split(',');
+            const rawName = parts[parts.length - 1].trim().toUpperCase();
+            
+            // Eğer kanal ismi arşivinde varsa, senin linklerini enjekte et
+            if (myLogos[rawName]) {
+                const myUrl = myLogos[rawName];
+                cleanLine = cleanLine.replace('#EXTINF:-1', `#EXTINF:-1 tvg-logo="${myUrl}" logo-id="${rawName}"`);
+            }
+            result.push(cleanLine);
+        } else if (line.trim() !== "" && !line.startsWith('#EXTM3U')) {
+            result.push(line);
+        }
+      });
+
+      const blob = new Blob([result.join('\n')], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      document.getElementById('repairResult').style.display = 'block';
+      document.getElementById('downloadRepair').onclick = () => {
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "ONARILMIS_LISTE.m3u";
+        a.click();
+      };
+      hideLoader();
+      alert("Onarım Tamamlandı!");
+    }
 
     async function inspectArchive() {
         const matchLog = document.getElementById('insMatchLog');
