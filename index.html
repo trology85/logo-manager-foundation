@@ -432,38 +432,40 @@
     }
 
     function showTab(id, btn) {
-    const sInput = document.querySelector('input[placeholder*="Ara"]'); // Placeholder'ında "Ara" geçen inputu bulur
-    if(sInput) {
+    // 1. ARAMA VE FİLTRE TEMİZLİĞİ
+    const sInput = document.querySelector('input[placeholder*="Ara"]');
+    if(sInput && sInput.value !== "") { // Sadece içi doluysa temizle
         sInput.value = ""; 
-        renderGrid(manifestData); // Listeyi orijinal (filtresiz) haline döndürür
+        if(typeof renderGrid === "function") renderGrid(manifestData); 
     }
-    // 1. Sekme Değiştirme İşlemi
+
+    // 2. Sekme Değiştirme (İskeleti Koruyan Kısım)
     document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
+    const targetTab = document.getElementById(id);
+    if(targetTab) targetTab.style.display = 'block';
+    
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    // 2. ARŞİV TEMİZLİĞİ: Tüm seçimleri kaldır ve silme panelini kapat
+    // 3. SEÇİM VE SİLME PANELİ SIFIRLAMA
     document.querySelectorAll('.select-check').forEach(cb => cb.checked = false);
     const deleteTool = document.getElementById('deleteTool');
     if (deleteTool) deleteTool.style.display = 'none';
 
-    // 3. MÜFETTİŞ TEMİZLİĞİ: Eski tarama sonuçlarını sıfırla
+    // 4. MÜFETTİŞ VE DEDEKTİF TEMİZLİĞİ
     const inspectorResult = document.getElementById('inspectorResult');
-    const insMatchLog = document.getElementById('insMatchLog');
-    const insFailLog = document.getElementById('insFailLog');
-    
     if (inspectorResult) {
-        inspectorResult.style.display = 'none'; // Paneli gizle
-        if (insMatchLog) insMatchLog.innerHTML = ""; // İçini boşalt
-        if (insFailLog) insFailLog.innerHTML = "";   // İçini boşalt
+        inspectorResult.style.display = 'none';
+        ['insMatchLog', 'insFailLog'].forEach(logId => {
+            const logEl = document.getElementById(logId);
+            if(logEl) logEl.innerHTML = "";
+        });
     }
 
-    // 4. DEDEKTİF TEMİZLİĞİ (Bonus): Eğer dedektiften de çıkılırsa orayı da temizleyelim
     const detectiveResult = document.getElementById('detectiveResult');
-    if (detectiveResult && id !== 'tab-detective') { // Sadece dedektiften çıkınca temizle
+    if (detectiveResult && id !== 'tab-detective') {
         detectiveResult.style.display = 'none';
-      }
+       }
     }
 
     function updateSelection() {
