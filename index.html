@@ -434,9 +434,10 @@
     function showTab(id, btn) {
     // 1. ARAMA VE FİLTRE TEMİZLİĞİ
     const sInput = document.querySelector('input[placeholder*="Ara"]');
-    if(sInput && sInput.value !== "") { // Sadece içi doluysa temizle
-        sInput.value = ""; 
-        if(typeof renderGrid === "function") renderGrid(manifestData); 
+    if(sInput) {
+        sInput.value = ""; // Kutuyu boşalt
+        // KRİTİK SATIR: Tarayıcıya "input değişti, listeyi yenile" emri gönderir
+        sInput.dispatchEvent(new Event('input')); 
     }
 
     // 2. Sekme Değiştirme (İskeleti Koruyan Kısım)
