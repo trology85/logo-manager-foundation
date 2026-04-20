@@ -432,6 +432,11 @@
     }
 
     function showTab(id, btn) {
+    const sInput = document.querySelector('input[placeholder*="Ara"]'); // Placeholder'ında "Ara" geçen inputu bulur
+    if(sInput) {
+        sInput.value = ""; 
+        renderGrid(manifestData); // Listeyi orijinal (filtresiz) haline döndürür
+    }
     // 1. Sekme Değiştirme İşlemi
     document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
     document.getElementById(id).style.display = 'block';
