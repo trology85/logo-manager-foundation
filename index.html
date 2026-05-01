@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>LOGO MANAGER PRO - V9.2 FINAL</title>
+    <title>LOGO MANAGER PRO - V9.5 COMMERCIAL</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/panel-logo.png">
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
@@ -12,24 +12,9 @@
         body { font-family: 'Segoe UI', sans-serif; background: var(--bg-dark); color: var(--text-color); margin: 0; overflow: hidden; transition: 0.3s; }
 
         /* --- LOGO VE NEON EFEKTLERİ --- */
-        .neon-logo {
-            width: 140px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.4));
-            animation: neonPulse 3s infinite ease-in-out;
-        }
-        .sidebar-logo {
-            width: 80px;
-            height: auto;
-            margin: 0 auto 10px auto;
-            display: block;
-            filter: drop-shadow(0 0 5px var(--main-accent));
-        }
-        @keyframes neonPulse {
-            0%, 100% { filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.4)); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.8)); transform: scale(1.03); }
-        }
+        .neon-logo { width: 140px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.4)); animation: neonPulse 3s infinite ease-in-out; }
+        .sidebar-logo { width: 80px; height: auto; margin: 0 auto 10px auto; display: block; filter: drop-shadow(0 0 5px var(--main-accent)); }
+        @keyframes neonPulse { 0%, 100% { filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.4)); transform: scale(1); } 50% { filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.8)); transform: scale(1.03); } }
 
         /* --- GİRİŞ EKRANI --- */
         #loginOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; }
@@ -58,6 +43,16 @@
         .btn-action { background: var(--main-accent); color: white; border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; }
         .btn-green { background: #1db954; color: white; border: none; padding: 15px; border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; }
 
+        /* --- LİSANS TABLO STİLLERİ --- */
+        .license-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid var(--border-color); }
+        .license-table th, .license-table td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        .license-table th { background: rgba(255,0,0,0.05); color: var(--main-accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+        .status-badge { padding: 5px 10px; border-radius: 8px; font-size: 11px; font-weight: bold; }
+        .status-active { background: #1db954; color: white; }
+        .status-passive { background: #ff4444; color: white; }
+        .btn-small { padding: 8px 12px; border-radius: 8px; font-size: 11px; cursor: pointer; border: none; font-weight: bold; color: white; transition: 0.2s; }
+        .btn-small:hover { opacity: 0.8; transform: scale(1.05); }
+
         /* --- LOADERS VE POPUPS --- */
         #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay-bg); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 10001; }
         .spinner { border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--main-accent); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
@@ -84,7 +79,7 @@
         <div class="lock-box">
             <img src="https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/panel-logo.png" class="neon-logo" alt="Logo Pro">
             <h2 style="color:var(--main-accent); margin:0; font-weight:900; letter-spacing: 2px;">LOGO MANAGER</h2>
-            <p style="color: #555; font-size: 11px; margin-bottom: 25px; letter-spacing: 1px;">V9.2 FINAL EDITION</p>
+            <p style="color: #555; font-size: 11px; margin-bottom: 25px; letter-spacing: 1px;">V9.5 COMMERCIAL EDITION</p>
             
             <input type="password" id="entryToken" class="token-input" placeholder="GitHub Token Girin">
             <label class="remember-box">
@@ -101,6 +96,7 @@
             
             <button class="nav-btn active" onclick="showTab('tab-upload', this)">📤 Çoklu Yükle</button>
             <button class="nav-btn" onclick="showTab('tab-library', this)">📂 Tüm Arşiv (JSON)</button>            
+            <button class="nav-btn" onclick="showTab('tab-licenses', this)">🔑 Lisans Yönetimi</button>
             <button class="nav-btn" onclick="showTab('tab-detective', this)">🔍 M3U Dedektifi</button>
             <button class="nav-btn" onclick="showTab('tab-inspector', this)">📏 Logo Müfettişi</button>
             <button class="nav-btn" onclick="showTab('tab-repair', this)">🔧 Liste Onarıcı</button>
@@ -139,6 +135,35 @@
                     </select>
                 </div>
                 <div id="githubGrid" class="grid-container"></div>
+            </div>
+
+            <div id="tab-licenses" style="display:none;">
+                <h1>🔑 Lisans ve Kullanıcı Yönetimi</h1>
+                <div style="background:var(--card-bg); padding:25px; border-radius:20px; border:1px solid var(--border-color); margin-bottom:30px;">
+                    <h3 style="margin-top:0;">Yeni Lisans Oluştur</h3>
+                    <div style="display:flex; gap:15px; align-items:center;">
+                        <input type="text" id="newLicenseUser" placeholder="Kullanıcı Adı/Not" style="flex:1;">
+                        <input type="text" id="newLicenseKey" placeholder="Oluşturulan Key" readonly style="flex:1; background:#000; color:var(--main-accent); font-family:monospace; font-weight:bold;">
+                        <button class="btn-action" style="width:160px;" onclick="generateKey()">KEY ÜRET</button>
+                        <button class="btn-green" style="width:180px;" onclick="addLicense()">LİSANSI KAYDET</button>
+                    </div>
+                </div>
+
+                <table class="license-table">
+                    <thead>
+                        <tr>
+                            <th>Kullanıcı</th>
+                            <th>Lisans Anahtarı (Key)</th>
+                            <th>IP Adresi</th>
+                            <th>Bitiş Tarihi</th>
+                            <th>Durum</th>
+                            <th style="text-align:right;">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="licenseList">
+                        <!-- Lisanslar JS ile dolacak -->
+                    </tbody>
+                </table>
             </div>
 
             <div id="tab-settings" style="display:none;">
@@ -219,6 +244,7 @@
             document.getElementById('maskedTokenView').innerText = masked;
 
             await loadManifest();
+            await loadLicenses(); // Lisansları yükle
         } else { alert("Geçersiz Token!"); }
     }
 
@@ -238,6 +264,99 @@
         } catch (e) { console.error(e); }
         finally { hideLoader(); }
     }
+
+    // --- LİSANS YÖNETİM FONKSİYONLARI ---
+
+    function generateKey() {
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        let key = 'SC-';
+        for(let i=0; i<12; i++) {
+            if(i > 0 && i % 4 === 0) key += '-';
+            key += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        document.getElementById('newLicenseKey').value = key;
+    }
+
+    async function addLicense() {
+        const user = document.getElementById('newLicenseUser').value.trim();
+        const key = document.getElementById('newLicenseKey').value.trim();
+        if(!user || !key) return alert("Lütfen kullanıcı adı ve key bilgilerini doldurun!");
+
+        showLoader("Lisans Kaydediliyor...");
+        try {
+            await db.collection("lisanslar").add({
+                user: user,
+                key: key,
+                ip: "",
+                expiry: "2026-12-31", 
+                active: true,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+            document.getElementById('newLicenseUser').value = "";
+            document.getElementById('newLicenseKey').value = "";
+            await loadLicenses();
+            alert("Lisans başarıyla eklendi.");
+        } catch (e) { alert("Hata: " + e.message); }
+        finally { hideLoader(); }
+    }
+
+    async function loadLicenses() {
+        const list = document.getElementById('licenseList');
+        if(!list) return;
+        
+        try {
+            const snap = await db.collection("lisanslar").orderBy("createdAt", "desc").get();
+            list.innerHTML = "";
+            
+            if(snap.empty) {
+                list.innerHTML = `<tr><td colspan="6" style="text-align:center; color:#555; padding:40px;">Henüz lisans tanımlanmamış.</td></tr>`;
+                return;
+            }
+
+            snap.forEach(doc => {
+                const data = doc.data();
+                list.innerHTML += `
+                    <tr>
+                        <td style="font-weight:bold;">${data.user}</td>
+                        <td style="font-family:monospace; color:var(--main-accent); font-weight:bold;">${data.key}</td>
+                        <td style="color:#888;">${data.ip || 'Bağlanmadı'}</td>
+                        <td>${data.expiry}</td>
+                        <td><span class="status-badge ${data.active ? 'status-active' : 'status-passive'}">${data.active ? 'AKTİF' : 'PASİF'}</span></td>
+                        <td style="text-align:right;">
+                            <button class="btn-small" style="background:#444;" onclick="resetIP('${doc.id}')">IP SIFIRLA</button>
+                            <button class="btn-small" style="background:${data.active ? '#ff4444' : '#1db954'};" onclick="toggleLicense('${doc.id}', ${!data.active})">
+                                ${data.active ? 'DURDUR' : 'BAŞLAT'}
+                            </button>
+                            <button class="btn-small" style="background:#222; color:#555;" onclick="deleteLicense('${doc.id}')">SİL</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        } catch (e) { console.error("Lisans yükleme hatası:", e); }
+    }
+
+    async function resetIP(id) {
+        if(!await confirm("Kullanıcının IP kilidini sıfırlamak istiyor musunuz?")) return;
+        showLoader("IP Sıfırlanıyor...");
+        await db.collection("lisanslar").doc(id).update({ ip: "" });
+        await loadLicenses();
+        hideLoader();
+    }
+
+    async function toggleLicense(id, status) {
+        await db.collection("lisanslar").doc(id).update({ active: status });
+        await loadLicenses();
+    }
+
+    async function deleteLicense(id) {
+        if(!await confirm("Bu lisansı tamamen silmek istediğinize emin misiniz?")) return;
+        showLoader("Siliniyor...");
+        await db.collection("lisanslar").doc(id).delete();
+        await loadLicenses();
+        hideLoader();
+    }
+
+    // --- MEVCUT LOGO FONKSİYONLARI ---
 
     function filterAndSort() {
         const search = document.getElementById('searchInput').value.toUpperCase();
@@ -311,7 +430,6 @@
       const lines = content.split('\n');
       let result = ["#EXTM3U"];
     
-      // Arşivdeki logoları büyük harf yapıp hızlıca tarayalım
       const myLogos = manifestData.reduce((acc, curr) => {
         acc[curr.name.toUpperCase()] = curr.url;
         return acc;
@@ -319,13 +437,9 @@
 
       lines.forEach(line => {
         if (line.startsWith('#EXTINF')) {
-            // Mevcut tvg-logo veya logo-id'leri temizle (Sıfırdan temiz yapı kuralım)
             let cleanLine = line.replace(/\s*tvg-logo="[^"]*"/gi, "").replace(/\s*logo-id="[^"]*"/gi, "");
-            
             const parts = line.split(',');
             const rawName = parts[parts.length - 1].trim().toUpperCase();
-            
-            // Eğer kanal ismi arşivinde varsa, senin linklerini enjekte et
             if (myLogos[rawName]) {
                 const myUrl = myLogos[rawName];
                 cleanLine = cleanLine.replace('#EXTINF:-1', `#EXTINF:-1 tvg-logo="${myUrl}" logo-id="${rawName}"`);
@@ -432,54 +546,18 @@
     }
 
     function showTab(id, btn) {
-    // 1. ARAMA VE FİLTRE TEMİZLİĞİ
-    const sInput = document.querySelector('input[placeholder*="Ara"]');
-    if(sInput) {
-        sInput.value = ""; // Kutuyu boşalt
-        // KRİTİK SATIR: Tarayıcıya "input değişti, listeyi yenile" emri gönderir
-        sInput.dispatchEvent(new Event('input')); 
-    }
-
-    // 2. Sekme Değiştirme (İskeleti Koruyan Kısım)
-    document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
-    const targetTab = document.getElementById(id);
-    if(targetTab) targetTab.style.display = 'block';
-    
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    // 3. SEÇİM VE SİLME PANELİ SIFIRLAMA
-    document.querySelectorAll('.select-check').forEach(cb => cb.checked = false);
-    const deleteTool = document.getElementById('deleteTool');
-    if (deleteTool) deleteTool.style.display = 'none';
-
-    // 4. MÜFETTİŞ VE DEDEKTİF TEMİZLİĞİ
-    const inspectorResult = document.getElementById('inspectorResult');
-    if (inspectorResult) {
-        inspectorResult.style.display = 'none';
-        ['insMatchLog', 'insFailLog'].forEach(logId => {
-            const logEl = document.getElementById(logId);
-            if(logEl) logEl.innerHTML = "";
-        });
-    }
-
-    const detectiveResult = document.getElementById('detectiveResult');
-    if (detectiveResult && id !== 'tab-detective') {
-        detectiveResult.style.display = 'none';
-       }
-    }
-
-    function updateSelection() {
-    const sel = document.querySelectorAll('.select-check:checked');
-    const deleteTool = document.getElementById('deleteTool');
-    const selCountText = document.getElementById('selCount');
-    
-    if (deleteTool) {
-        deleteTool.style.display = sel.length ? 'flex' : 'none';
-    }
-    if (selCountText) {
-        selCountText.innerText = sel.length + " seçildi";
-      }
+        const sInput = document.querySelector('input[placeholder*="Ara"]');
+        if(sInput) { sInput.value = ""; sInput.dispatchEvent(new Event('input')); }
+        document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
+        const targetTab = document.getElementById(id);
+        if(targetTab) targetTab.style.display = 'block';
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.select-check').forEach(cb => cb.checked = false);
+        const deleteTool = document.getElementById('deleteTool');
+        if (deleteTool) deleteTool.style.display = 'none';
+        
+        if(id === 'tab-licenses') loadLicenses();
     }
 
     function toggleTheme() {
@@ -488,7 +566,6 @@
     }
 
     function logout() { localStorage.removeItem('gh_token'); sessionStorage.removeItem('gh_token'); location.reload(); }
-
     function showLoader(txt) { document.getElementById('loader').style.display='flex'; document.getElementById('loaderText').innerText=txt; }
     function hideLoader() { document.getElementById('loader').style.display='none'; }
 
