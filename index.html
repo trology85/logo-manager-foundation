@@ -39,7 +39,7 @@
 
         /* --- BUTONLAR VE KONTROLLER --- */
         .controls { display: flex; gap: 15px; align-items: center; margin-bottom: 30px; }
-        select, input[type="text"] { padding: 12px 18px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); outline: none; }
+        select, input[type="text"], textarea { padding: 12px 18px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); outline: none; width: 100%; box-sizing: border-box; }
         .btn-action { background: var(--main-accent); color: white; border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; }
         .btn-green { background: #1db954; color: white; border: none; padding: 15px; border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; }
 
@@ -97,6 +97,7 @@
             <button class="nav-btn active" onclick="showTab('tab-upload', this)">📤 Çoklu Yükle</button>
             <button class="nav-btn" onclick="showTab('tab-library', this)">📂 Tüm Arşiv (JSON)</button>            
             <button class="nav-btn" onclick="showTab('tab-licenses', this)">🔑 Lisans Yönetimi</button>
+            <button class="nav-btn" onclick="showTab('tab-notifications', this)">📣 Bildirim Gönder</button>
             <button class="nav-btn" onclick="showTab('tab-detective', this)">🔍 M3U Dedektifi</button>
             <button class="nav-btn" onclick="showTab('tab-inspector', this)">📏 Logo Müfettişi</button>
             <button class="nav-btn" onclick="showTab('tab-repair', this)">🔧 Liste Onarıcı</button>
@@ -135,6 +136,34 @@
                     </select>
                 </div>
                 <div id="githubGrid" class="grid-container"></div>
+            </div>
+
+            <div id="tab-notifications" style="display:none;">
+                <h1>📣 Frekans Rehberi Bildirim Gönder</h1>
+                <div style="background:var(--card-bg); padding:30px; border-radius:20px; border:1px solid var(--border-color); max-width: 600px;">
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block; margin-bottom:8px; color:var(--main-accent); font-weight:bold;">Bildirim Başlığı</label>
+                        <input type="text" id="notifTitle" placeholder="Örn: Dünya Kupası Heyecanı!">
+                    </div>
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block; margin-bottom:8px; color:var(--main-accent); font-weight:bold;">Bildirim Mesajı</label>
+                        <textarea id="notifMessage" rows="4" placeholder="Kullanıcılara iletilecek mesaj..."></textarea>
+                    </div>
+                    <div style="margin-bottom:20px;">
+                        <label style="display:block; margin-bottom:8px; color:var(--main-accent); font-weight:bold;">Eylem Tipi</label>
+                        <select id="notifAction" onchange="toggleNotifTarget()">
+                            <option value="none">Normal (Sadece Uygulamayı Açar)</option>
+                            <option value="channel">Belirli Kanalı Aç</option>
+                            <option value="guide">Maç Rehberini Aç</option>
+                        </select>
+                    </div>
+                    <div id="notifTargetBox" style="margin-bottom:20px; display:none;">
+                        <label style="display:block; margin-bottom:8px; color:var(--main-accent); font-weight:bold;">Hedef Kanal Adı</label>
+                        <input type="text" id="notifTarget" placeholder="Örn: TRT 1 HD">
+                    </div>
+                    <button class="btn-green" onclick="sendManualNotification()">BİLDİRİMİ TÜM KULLANICILARA GÖNDER</button>
+                    <p style="font-size:11px; color:#555; margin-top:15px;">* Bildirim kullanıcıların telefonuna arka plan senkronizasyonu sırasında (12 saat içinde) düşecektir.</p>
+                </div>
             </div>
 
             <div id="tab-licenses" style="display:none;">
@@ -222,6 +251,7 @@
 <script>
     const GITHUB_USER = "trology85";
     const GITHUB_REPO = "logo-manager-foundation";
+    const FREKANS_REPO = "Frequency-Update-Service"; // Frekans rehberinin olduğu repo adı
     const firebaseConfig = { apiKey: "AIzaSyDMgOE-RvyqOpNGLM9w6kWzofsCCB8BB54", authDomain: "logo-server-fixed.firebaseapp.com", projectId: "logo-server-fixed", storageBucket: "logo-server-fixed.firebasestorage.app", messagingSenderId: "822558792997", appId: "1:822558792997:web:b83cb53311bb68bbb68ecc" };
     
     firebase.initializeApp(firebaseConfig);
@@ -263,6 +293,72 @@
             document.getElementById('syncStatus').innerText = `(${manifestData.length} Logo)`;
         } catch (e) { console.error(e); }
         finally { hideLoader(); }
+    }
+
+    // --- BİLDİRİM YÖNETİMİ ---
+    function toggleNotifTarget() {
+        const action = document.getElementById('notifAction').value;
+        document.getElementById('notifTargetBox').style.display = action === 'channel' ? 'block' : 'none';
+    }
+
+    async function sendManualNotification() {
+        const title = document.getElementById('notifTitle').value.trim();
+        const message = document.getElementById('notifMessage').value.trim();
+        const action = document.getElementById('notifAction').value;
+        const target = document.getElementById('notifTarget').value.trim();
+
+        if(!title || !message) return alert("Başlık ve mesaj boş olamaz!");
+
+        if(!await confirm("Bu bildirim tüm uygulama kullanıcılarına gönderilecektir. Onaylıyor musunuz?")) return;
+
+        showLoader("Bildirim Gönderiliyor...");
+        const token = localStorage.getItem('gh_token') || sessionStorage.getItem('gh_token');
+        
+        const notifData = {
+            id: Date.now().toString(),
+            title: title,
+            message: message,
+            action: action,
+            target: action === 'channel' ? target : (action === 'guide' ? 'MATCH_GUIDE' : ''),
+            timestamp: Date.now()
+        };
+
+        try {
+            // GitHub repo'sundaki data/bildirimler.json dosyasını güncelle
+            const getFile = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${FREKANS_REPO}/contents/data/bildirimler.json`, { 
+                headers: { "Authorization": `token ${token}` } 
+            });
+            
+            let sha = "";
+            if(getFile.ok) {
+                const f = await getFile.json();
+                sha = f.sha;
+            }
+
+            const content = btoa(unescape(encodeURIComponent(JSON.stringify(notifData, null, 2))));
+            
+            const pushRes = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${FREKANS_REPO}/contents/data/bildirimler.json`, {
+                method: "PUT",
+                headers: { "Authorization": `token ${token}` },
+                body: JSON.stringify({ 
+                    message: "Manual Notification: " + title, 
+                    content: content, 
+                    sha: sha 
+                })
+            });
+
+            if(pushRes.ok) {
+                alert("BİLDİRİM BAŞARIYLA YAYINLANDI!\nKullanıcılar ilk senkronizasyonda alacaktır.");
+                document.getElementById('notifTitle').value = "";
+                document.getElementById('notifMessage').value = "";
+            } else {
+                throw new Error("GitHub güncellenemedi.");
+            }
+        } catch (e) {
+            alert("Hata: " + e.message);
+        } finally {
+            hideLoader();
+        }
     }
 
     // --- LİSANS YÖNETİM FONKSİYONLARI ---
