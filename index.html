@@ -528,7 +528,22 @@
 
         if (sort === "name_asc") filtered.sort((a,b) => a.name.localeCompare(b.name));
         else if (sort === "name_desc") filtered.sort((a,b) => b.name.localeCompare(a.name));
-        else if (sort === "newest") filtered.reverse();
+        else if (sort === "newest") {
+            filtered.sort((a, b) => {
+                const ta = Date.parse(a.updatedAt || a.createdAt || "") || 0;
+                const tb = Date.parse(b.updatedAt || b.createdAt || "") || 0;
+                if (ta !== tb) return tb - ta;
+                return b.originalIndex - a.originalIndex;
+            });
+        }
+        else if (sort === "oldest") {
+            filtered.sort((a, b) => {
+                const ta = Date.parse(a.updatedAt || a.createdAt || "") || 0;
+                const tb = Date.parse(b.updatedAt || b.createdAt || "") || 0;
+                if (ta !== tb) return ta - tb;
+                return a.originalIndex - b.originalIndex;
+            });
+        }
         
         renderGrid(filtered);
     }
@@ -661,6 +676,7 @@
         const added = [];
 
         try {
+            const uploadTime = new Date().toISOString();
             for (let file of selectedFiles) {
                 if (!file.name.toLowerCase().endsWith('.png')) {
                     throw new Error(`${file.name} PNG değil. Logo arşivinde sadece PNG kullanılmalı.`);
@@ -678,9 +694,11 @@
                     existing.name = cleanName;
                     existing.url = baseUrl;
                     existing.rev = nextRev(existing);
+                    if (!existing.createdAt) existing.createdAt = uploadTime;
+                    existing.updatedAt = uploadTime;
                     updated.push(cleanName);
                 } else {
-                    manifestData.push({ name: cleanName, url: baseUrl, rev: "rev=1" });
+                    manifestData.push({ name: cleanName, url: baseUrl, rev: "rev=1", createdAt: uploadTime, updatedAt: uploadTime });
                     added.push(cleanName);
                 }
             }
