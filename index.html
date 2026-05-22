@@ -90,6 +90,7 @@
     </div>
 
     <div id="mainPanel">
+        <div id="pendingCart" style="position:fixed; top:18px; right:22px; z-index:1200; display:none; background:var(--main-accent); color:white; padding:10px 16px; border-radius:999px; font-size:12px; font-weight:900; box-shadow:0 10px 25px rgba(0,0,0,0.35);">0 logo kaydedilmedi</div>
         <div class="sidebar">
             <img src="https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/panel-logo.png" class="sidebar-logo">
             <h2 style="color:var(--main-accent); text-align:center; margin-bottom:30px; font-weight:900; font-size:18px;">LOGO PRO</h2>
@@ -111,7 +112,7 @@
         <div class="main-content">
             <div id="tab-upload">
                 <h1>📤 Yeni Logo Ekle</h1>
-                <div style="border: 2px dashed var(--border-color); padding: 120px; text-align:center; border-radius:30px; cursor:pointer; background:rgba(255,255,255,0.02);" onclick="document.getElementById('fileInput').click()">
+                <div id="uploadDropZone" style="border: 2px dashed var(--border-color); padding: 120px; text-align:center; border-radius:30px; cursor:pointer; background:rgba(255,255,255,0.02);" onclick="document.getElementById('fileInput').click()">
                     <h2 id="statusText" style="color:#555;">Dosyaları Buraya Bırakın</h2>
                     <input type="file" id="fileInput" multiple accept="image/*" style="display:none" onchange="handleUpload(this.files)">
                 </div>
@@ -228,6 +229,62 @@
     const db = firebase.firestore();
     let manifestData = []; 
     let finalM3U = "";
+    let hasUnsavedChanges = false;
+    let pendingAddedCount = 0;
+    let pendingUpdatedCount = 0;
+
+    function updatePendingCart() {
+        const cart = document.getElementById('pendingCart');
+        if (!cart) return;
+        const total = pendingAddedCount + pendingUpdatedCount;
+        if (!hasUnsavedChanges || total <= 0) {
+            cart.style.display = 'none';
+            cart.innerText = '0 logo kaydedilmedi';
+            return;
+        }
+        cart.innerText = `${total} logo kaydedilmedi · Yeni: ${pendingAddedCount} · Güncellenen: ${pendingUpdatedCount}`;
+        cart.style.display = 'block';
+    }
+
+    function markUnsavedChanges(added = 0, updated = 0) {
+        hasUnsavedChanges = true;
+        pendingAddedCount += added;
+        pendingUpdatedCount += updated;
+        updatePendingCart();
+    }
+
+    function clearUnsavedChanges() {
+        hasUnsavedChanges = false;
+        pendingAddedCount = 0;
+        pendingUpdatedCount = 0;
+        updatePendingCart();
+    }
+
+    function resetArchiveSearch() {
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput && searchInput.value) {
+            searchInput.value = '';
+            filterAndSort();
+        }
+    }
+
+    function setupUploadDropZone() {
+        const dropZone = document.getElementById('uploadDropZone');
+        if (!dropZone) return;
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            document.addEventListener(eventName, function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+        });
+
+        dropZone.addEventListener('drop', function(e) {
+            const files = e.dataTransfer ? e.dataTransfer.files : null;
+            handleUpload(files);
+        });
+    }
+
     function normalizeLogoName(name) {
         return (name || "").trim().toLocaleUpperCase('tr-TR');
     }
@@ -628,6 +685,7 @@
                 }
             }
 
+            markUnsavedChanges(added.length, updated.length);
             filterAndSort();
             alert(`Yükleme tamamlandı. Güncellenen: ${updated.length}, Yeni: ${added.length}. Şimdi DEĞİŞİKLİKLERİ KAYDET butonuna bas.`);
         } catch (e) {
@@ -672,6 +730,7 @@
             }
 
             await syncFirebaseLogos();
+            clearUnsavedChanges();
             filterAndSort();
             alert("BAŞARILI! GitHub manifest ve Firebase logo merkezi güncellendi.");
         } catch (e) {
@@ -696,8 +755,7 @@
     }
 
     function showTab(id, btn) {
-        const sInput = document.querySelector('input[placeholder*="Ara"]');
-        if(sInput) { sInput.value = ""; sInput.dispatchEvent(new Event('input')); }
+        resetArchiveSearch();
         document.querySelectorAll('.main-content > div').forEach(d => d.style.display = 'none');
         const targetTab = document.getElementById(id);
         if(targetTab) targetTab.style.display = 'block';
@@ -715,7 +773,10 @@
         document.getElementById('themeBtn').innerText = isLight ? "KOYU TEMAYA GEÇ" : "AÇIK TEMAYA GEÇ";
     }
 
-    function logout() { localStorage.removeItem('gh_token'); sessionStorage.removeItem('gh_token'); location.reload(); }
+    async function logout() {
+        if (hasUnsavedChanges && !await confirm("Kaydedilmemiş logo değişiklikleri var. Çıkarsanız bu değişiklikler manifest ve logo merkezine kaydedilmemiş olabilir. Yine de çıkmak istiyor musunuz?")) return;
+        localStorage.removeItem('gh_token'); sessionStorage.removeItem('gh_token'); location.reload();
+    }
     function showLoader(txt) { document.getElementById('loader').style.display='flex'; document.getElementById('loaderText').innerText=txt; }
     function hideLoader() { document.getElementById('loader').style.display='none'; }
 
@@ -733,7 +794,15 @@
     window.alert = (m) => popup.show("BİLGİ", m);
     window.confirm = (m) => popup.show("ONAY", m, true);
 
+    window.addEventListener('beforeunload', function(e) {
+        if (!hasUnsavedChanges) return;
+        e.preventDefault();
+        e.returnValue = '';
+    });
+
     window.onload = () => {
+        setupUploadDropZone();
+        updatePendingCart();
         const colors = [{name:"Vişne",code:"#ff0000"},{name:"Mavi",code:"#00d4ff"},{name:"Altın",code:"#ffbf00"},{name:"Mor",code:"#8f00ff"},{name:"Nane",code:"#98ff98"}];
         const cGrid = document.getElementById('colorGrid');
         colors.forEach(c => {
