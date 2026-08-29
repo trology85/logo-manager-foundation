@@ -6180,9 +6180,23 @@
     "rev": "rev=1"
   },
   {
+    "name": "SEMERKAND HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SEMERKAND%20HD.png",
+    "rev": "rev=1",
+    "createdAt": "2026-08-29T16:21:37.574Z",
+    "updatedAt": "2026-08-29T16:21:37.574Z"
+  },
+  {
     "name": "SEMERKAND RADYO",
     "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SEMERKAND RADYO.png",
     "rev": "rev=1"
+  },
+  {
+    "name": "SEMERKAND WAY",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/SEMERKAND%20WAY.png",
+    "rev": "rev=1",
+    "createdAt": "2026-08-29T16:21:37.574Z",
+    "updatedAt": "2026-08-29T16:21:37.574Z"
   },
   {
     "name": "SERCEM TV",
