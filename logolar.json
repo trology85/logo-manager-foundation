@@ -2294,9 +2294,11 @@
     "rev": "rev=1"
   },
   {
-    "name": "ERT News HD",
-    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT News HD.png",
-    "rev": "rev=1"
+    "name": "ERT NEWS HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT%20News%20HD.png",
+    "rev": "rev=2",
+    "createdAt": "2026-10-22T11:59:56.995Z",
+    "updatedAt": "2026-10-22T11:59:56.995Z"
   },
   {
     "name": "ERT World Europe",
@@ -2319,6 +2321,13 @@
     "rev": "rev=1",
     "createdAt": "2026-10-20T23:48:08.304Z",
     "updatedAt": "2026-10-20T23:48:08.304Z"
+  },
+  {
+    "name": "ERT2 SPORT HD",
+    "url": "https://raw.githubusercontent.com/trology85/logo-manager-foundation/main/logos/ERT2%20SPORT%20HD.png",
+    "rev": "rev=1",
+    "createdAt": "2026-10-22T11:59:56.995Z",
+    "updatedAt": "2026-10-22T11:59:56.995Z"
   },
   {
     "name": "Erzurum Radyosu",
